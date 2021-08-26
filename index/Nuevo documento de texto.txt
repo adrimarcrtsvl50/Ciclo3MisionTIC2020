@@ -1,7 +1,0 @@
-hola a todos
-como estas
-bien y <ul class="list-unstyled">
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
