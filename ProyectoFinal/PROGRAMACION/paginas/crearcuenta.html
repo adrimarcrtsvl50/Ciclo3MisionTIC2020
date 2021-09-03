@@ -13,8 +13,50 @@
 
         <div class="contenedor">
             <div>
-                <h1>Mi cuenta</h1>
-                <h3 class="chapter">Dirección e información de contacto</h3>
+                <h1>Registrate</h1>
+                <div class="input-contenedor">                    
+                    <select name="Tipo de documento" class= "select-doc" required>
+                        <option disabled selected>Selecciona tipo de documento</option>
+                        <option value="5|CC">CEDULA DE CIUDADANIA</option>
+                        <option value="6|PA">PASAPORTE</option>
+                        <option value="7|AS">ADULTO SIN IDENTIFICACION</option>
+                        <option value="10|CD">CARNET DIPLOMATICO</option>
+                        <option value="12|CN">CERTIFICADO DE NACIDO VIVO</option>
+                        <option value="13|SC">SALVACONDUCTO DE PERMANENCIA</option>
+                        <option value="14|PE">PERMISO ESPECIAL DE PERMANENCIA</option>
+                        <option value="1|MS">MENOR SIN IDENTIFICACION</option>
+                        <option value="2|RC">REGISTRO CIVIL</option>
+                        <option value="3|TI">TARJETA DE IDENTIDAD</option>
+                        <option value="4|CE">CEDULA DE EXTRANJERIA</option>
+                    
+                    </select>
+                        
+                        
+
+
+                </div>
+                
+                <div class="input-contenedor">
+                    <input type="text" placeholder="Nombre">
+    
+                </div>
+
+                <div class="input-contenedor">
+                    <input type="text" placeholder="Apellido">
+    
+                </div>
+
+                <div class="input-contenedor">
+                    <input type="text" placeholder="Correo Electronico">
+    
+                </div>
+
+
+                <div class="input-contenedor">
+                    <input type="password" placeholder="Contraseña">
+    
+                </div>
+                <center><input type="submit" value="Crear Cuenta" class="button"></center>
             </div>
         </div>
     </form>
