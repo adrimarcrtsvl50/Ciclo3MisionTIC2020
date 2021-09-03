@@ -2,6 +2,11 @@ body {
     background: #036;
 }
 
+@font-face {
+    font-family: 'miFuente';
+    src: url(../Fuentes/SEASRN__.ttf);
+}
+
 
 /*cabecera*/
 
@@ -23,16 +28,34 @@ header {
     /* IE6-9 */
 }
 
-#logo {
-    width: 320px;
+.logo {
+    max-width: 1000px;
+    min-height: 130px;
+    display: flex;
+    z-index: 1;
+}
+
+.logo img {
+    width: 250px;
     float: left;
     margin-top: 20px;
     margin-left: 20px;
 }
 
+.titulostile {
+    text-align: center;
+}
+
+.titulostile p {
+    font-family: 'miFuente';
+    color: #1a2537;
+    font-size: 3.5em;
+    margin-left: 150px;
+}
+
 #menu-h {
     max-width: 1000px;
-    min-height: 50px;
+    min-height: 30px;
     background: #000;
     margin: 0 auto;
 }
