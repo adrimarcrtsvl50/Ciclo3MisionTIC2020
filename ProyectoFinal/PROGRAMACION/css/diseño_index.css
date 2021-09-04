@@ -8,6 +8,11 @@ body {
     src: url(../Fuentes/SEASRN__.ttf);
 }
 
+@font-face {
+    font-family: 'miFuente3';
+    src: url(../Fuentes/Roboto-Regular.ttf);
+}
+
 
 /*cabecera*/
 
@@ -27,6 +32,12 @@ header {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cecece', GradientType=0);
     /* IE6-9 */
+}
+
+@media(max-width:640px) {
+    header {
+        display: block;
+    }
 }
 
 .logo {
@@ -106,6 +117,12 @@ header {
     min-height: 700px;
     background: #ccc;
     float: left;
+    text-align: center;
+    font-family: 'miFuente3';
+}
+
+#menu-v h3 {
+    margin-left: 10px;
 }
 
 #contenido {
@@ -113,11 +130,25 @@ header {
     min-height: 700px;
     background: #fff;
     float: right;
+    overflow: hidden;
 }
 
 .contenedor {
     width: 90%;
     padding: 15px;
+    text-align: justify;
+}
+
+.contenedor p {
+    font-family: 'miFuente3';
+    font-size: 20px;
+}
+
+.contenedor a {
+    font-family: 'miFuente3';
+    font-size: 20px;
+    margin-left: 10px;
+    text-align: center;
 }
 
 .formulario {

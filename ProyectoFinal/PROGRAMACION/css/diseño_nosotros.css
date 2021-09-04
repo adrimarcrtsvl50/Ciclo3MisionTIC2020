@@ -1,167 +1,18 @@
-body {
-    background: #036;
-    padding: 20px;
-}
-
-
-/*cabecera*/
-
-header {
-    max-width: 1000px;
-    min-height: 130px;
-    margin: 0 auto;
-    border-radius: 20px 20px 0 0;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,cecece+43,cecece+100 */
-    background: #ffffff;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #ffffff 0%, #cecece 43%, #cecece 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #ffffff 0%, #cecece 43%, #cecece 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #ffffff 0%, #cecece 43%, #cecece 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cecece', GradientType=0);
-    /* IE6-9 */
-}
-
 @font-face {
-    font-family: 'miFuente2';
-    src: url(../Fuentes/SEASRN__.ttf);
-}
-
-.logo {
-    max-width: 1000px;
-    min-height: 130px;
-    display: flex;
-    z-index: 1;
-}
-
-.logo img {
-    width: 250px;
-    float: left;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-.titulostile {
-    text-align: center;
-}
-
-.titulostile p {
-    font-family: 'miFuente2';
-    color: #1a2537;
-    font-size: 3.5em;
-    margin-left: 150px;
-}
-
-#menu-h {
-    max-width: 1000px;
-    min-height: 50px;
-    background: #000;
-    margin: 0 auto;
-}
-
-.button {
-    background: #7f8c8d;
-    color: #fff;
-    display: inline-block;
-    font-size: 1.25em;
-    margin: 20px;
-    padding: 10px 0px;
-    text-align: center;
-    width: 200px;
-    text-decoration: none;
-    box-shadow: 0px 3px 0px #09ebeb;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.button:hover {
-    box-shadow: 0px 0px 0px;
-    padding-top: 7px;
-}
-
-#banner {
-    max-width: 1000px;
-    min-height: 250px;
-    background: #fff;
-    margin: 0 auto;
-}
-
-
-/*cabecera*/
-
-
-/*contenido*/
-
-#contenedor {
-    max-width: 1000px;
-    min-height: 700px;
-    background: #fff;
-    margin: 0 auto;
-}
-
-#menu-v {
-    width: 300px;
-    min-height: 700px;
-    background: #ccc;
-    float: left;
-}
-
-#contenido {
-    width: 700px;
-    min-height: 700px;
-    background: #fff;
-    float: right;
-}
-
-h1 {
-    text-align: center;
-    color: #1a2537;
-    font-size: 20px;
-}
-
-.txt_index {
-    height: 650px;
-    width: 650px;
-    float: left;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-@font-face {
-    font-family: 'miFuente';
+    font-family: 'miFuente3';
     src: url(../Fuentes/Roboto-Regular.ttf);
 }
 
 #txt_nosotros {
     font-size: 20px;
-    font-family: 'miFuente';
+    font-family: 'miFuente3';
     text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #imgnosotros {
     margin-left: 150px;
+    width: 320px;
+    height: 320px;
 }
-
-
-/*contenido*/
-
-
-/*pie de pagina*/
-
-footer {
-    max-width: 1000px;
-    background: #000;
-    margin: 0 auto;
-    border-radius: 0 0 20px 20px;
-    color: #fff;
-    text-align: center;
-    padding: 30px;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-}
-
-
-/*pie de pagina*/
