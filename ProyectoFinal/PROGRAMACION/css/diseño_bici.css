@@ -51,6 +51,10 @@
     font-family: 'miFuente3'
 }
 
+.container .card button {
+    margin-bottom: 10px;
+}
+
 .container .card::-webkit-scrollbar {
     width: 12px;
     background: #efefef;
