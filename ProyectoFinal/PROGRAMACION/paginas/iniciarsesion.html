@@ -12,24 +12,43 @@
     <form class="formulario">
 
         <div class="contenedor">
-            <a href="../paginas/index.html"><img src="../imagenes/flecha-izquierda.png"></a>
+            <div class="container2">
+                <a href="../paginas/indexcli.html"><img src="../imagenes/letra-x.png"></a>
+            </div>
             <h1>Iniciar Sesion</h1>
 
+            <div class="container">
+                <label for="uname"><b>Nombre de usuario</b></label>
+                <input type="text" placeholder="Introduzca el nombre de usuario" name="uname" required>
 
-            <div class="input-contenedor">
-                <input type="text" placeholder="Correo Electronico">
+                <label for="psw"><b>Contraseña</b></label>
+                <input type="password" placeholder="Introduzca la contraseña" name="psw" required>
 
+                <center><input type="submit" value="Inciar Sesion" class="button"></center>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
             </div>
 
-            <div class="input-contenedor">
-                <input type="password" placeholder="Contraseña">
 
-            </div>
-            <center><input type="submit" value="Entrar" class="button"></center>
-
-            <h2>¿Aún no tienes una cuenta?</h2>
+            <h3>¿Aún no tienes una cuenta?</h3>
             <p>Registrate para que puedas iniciar sesión</p>
-            <a href="../paginas/crearcuenta.html">Registrarte</a>
+
+            <a class="container2" href="../paginas/crearcuenta.html">no registrado</a>
+
+
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById('id01');
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
         </div>
 
     </form>

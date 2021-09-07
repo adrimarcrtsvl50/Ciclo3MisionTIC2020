@@ -13,9 +13,21 @@
 
 
         <div class="contenedor">
-            <div>
-                <a href="../paginas/index.html"><img src="../imagenes/flecha-izquierda.png"></a>
+            <div class="container">
+                <div class="container2">
+                    <a href="../paginas/indexcli.html"><img src="../imagenes/letra-x.png"></a>
+                </div>
                 <h1>Registrate</h1>
+
+                <p>Por favor diligencie este formulario para registrar un nuevo usuario.</p>
+
+                <label for="first_name"><b>Nombre</b></label>
+                <input type="text" placeholder="Introduzca su nombre" name="first_name" required>
+
+                <label for="last_name"><b>Apellido</b></label>
+                <input type="text" placeholder="Introduzca su apellido" name="last_name" required>
+                <label for="Tipo de documento"><b>Tipo de documento</b></label>
+                <br>
                 <div class="input-contenedor">
                     <select name="Tipo de documento" class="select-doc" required>
                         <option disabled selected>Selecciona tipo de documento</option>
@@ -25,32 +37,33 @@
                         <option value="4|CE">CEDULA DE EXTRANJERIA</option>
                     
                     </select>
-
-
-
-
                 </div>
+                <label for="id"><b>ID</b></label>
+                <input type="text" placeholder="Introduzca su número de identificación" name="id" required>
 
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Introduzca su Email" name="email" required>
+
+                <label for="tipe_user"><b>Tipo de usuario</b></label>
+                <br>
                 <div class="input-contenedor">
-                    <input type="text" placeholder="Nombre">
-
+                    <select name="tipe_user" class="select-doc" required>
+                    <option value="admin">Administrador</option>
+                    <option value="client">Cliente</option>
+                    </select>
                 </div>
 
-                <div class="input-contenedor">
-                    <input type="text" placeholder="Apellido">
+                <label for="psw"><b>Contraseña</b></label>
+                <input type="password" placeholder="Introduzca su contraseña" name="psw" required>
 
-                </div>
+                <label for="psw-repeat"><b>Repetir contraseña</b></label>
+                <input type="password" placeholder="Repetir contraseña" name="psw-repeat" required>
 
-                <div class="input-contenedor">
-                    <input type="text" placeholder="Correo Electronico">
+                <label>
+                 <input type="checkbox" checked="checked" name="recordar" style="margin-bottom:15px"> Recordarme
+                 </label>
 
-                </div>
 
-
-                <div class="input-contenedor">
-                    <input type="password" placeholder="Contraseña">
-
-                </div>
                 <center><input type="submit" value="Crear Cuenta" class="button"></center>
             </div>
         </div>
