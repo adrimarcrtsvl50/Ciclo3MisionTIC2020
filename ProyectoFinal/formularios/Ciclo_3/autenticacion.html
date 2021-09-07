@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link rel="stylesheet" href="css/autenticacion.css"/>
+
+    <title>Autenticación de usuarios</title>
+</head>
+<body>
+
+<h2>Bienvenidos a enbike.com</h2>
+<p>Misión MinTIC 2022</p>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Iniciar sesión</button>
+
+<p>Elaborado por:</p>
+<p>Jessica, Adriana, Jose, Anthony, Luis</p>
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="images/logo.png" alt="Logo" class="logo" style="width: 129px; height: 72px;">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Nombre de usuario</b></label>
+            <input type="text" placeholder="Introduzca el nombre de usuario" name="uname" required>
+
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Introduzca la contraseña" name="psw" required>
+
+            <button type="submit">Iniciar sesión</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+            <span class="psw">Usuario <a href="#">no registrado</a></span>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link rel="stylesheet" href="css/administracion.css"/>
+
+    <title>Gestión de inventario</title>
+
+</head>
+<body>
+<img src="images/logo.png" alt="enbike.com"
+
+     title="enbike.com" style="width: 129px; height: 72px;">
+<br>
+<h2>Gestión de inventario</h2>
+<p>Seleccione la opcion deseada:</p>
+
+<div class="tab">
+    <button class="tablinks" onclick="openBike(event, 'registrar')">Registrar</button>
+    <button class="tablinks" onclick="openBike(event, 'modificar')">Modificar</button>
+    <button class="tablinks" onclick="openBike(event, 'eliminar')">Eliminar</button>
+    <button class="tablinks" onclick="openBike(event, 'cambiar_estado')">Cambiar estado</button>
+</div>
+
+<div id="registrar" class="tabcontent">
+    <p>Diligencie los campos a continuacion:</p>
+    <label> Serial
+        <br>
+        <input name="serial" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Marca
+        <br>
+        <input name="marca" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Tipo
+        <br>
+        <input name="tipo" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Tamaño
+        <br>
+        <input name="tamano" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Género
+        <br>
+        <input name="genero" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Color
+        <br>
+        <input name="color" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Modelo
+        <br>
+        <input name="modelo" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Estado
+        <br>
+        <input name="estado" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <button name="registrar" value="True" autofocus="autofocus"
+
+                type="submit">Registrar
+        </button>
+    </div>
+</div>
+
+<div id="modificar" class="tabcontent">
+    <p>Diligencie los campos a continuacion:</p>
+    <label> Serial
+        <br>
+        <input name="serial" action="" autocomplete="off"
+               required="required">
+    </label>
+        <button name="consultar" value="True" autofocus="autofocus"
+                type="submit">Consultar
+        </button>
+    <br>
+    <br>
+    <label> Marca
+        <br>
+        <input name="marca" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Tipo
+        <br>
+        <input name="tipo" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Tamaño
+        <br>
+        <input name="tamano" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Género
+        <br>
+        <input name="genero" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Color
+        <br>
+        <input name="color" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Modelo
+        <br>
+        <input name="modelo" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <label> Estado
+        <br>
+        <input name="estado" action="" autocomplete="off"
+               required="required">
+    </label>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <button name="modificar" value="True" autofocus="autofocus"
+
+                type="submit">Modificar
+        </button>
+    </div>
+</div>
+
+<div id="eliminar" class="tabcontent">
+    <p>Diligencie los campos a continuacion:</p>
+    <label> Serial
+        <br>
+        <input name="serial" action="" autocomplete="off"
+               required="required">
+    </label>
+    <div style="text-align: center;">
+        <button name="eliminar" value="True" autofocus="autofocus"
+
+                type="submit">Eliminar
+        </button>
+    </div>
+</div>
+
+<div id="cambiar_estado" class="tabcontent">
+    <p>Diligencie los campos a continuacion:</p>
+    <label> Serial
+        <br>
+        <input name="serial" action="" autocomplete="off"
+               required="required">
+    </label>
+        <button name="consultar" value="True" autofocus="autofocus"
+                type="submit">Consultar
+        </button>
+    <br>
+    <br>
+    <label> Estado
+        <br>
+        <select name="estado">
+
+            <option value="disponible">Disponible</option>
+            <option value="prestamo">Prestamo</option>
+            <option value="mantenimiento">Mantenimiento</option>
+        </select>
+    </label>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <button name="cambiar_estado" value="True" autofocus="autofocus"
+
+                type="submit">Cambiar estado
+        </button>
+    </div>
+</div>
+
+<script>
+    function openBike(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
