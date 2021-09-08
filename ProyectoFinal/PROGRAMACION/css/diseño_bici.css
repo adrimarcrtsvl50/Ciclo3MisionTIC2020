@@ -92,3 +92,12 @@
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e8e7de', endColorstr='#3dedd2', GradientType=0);
     /* IE6-9 */
 }
+
+@media (max-width: 640px) {
+    .container {
+        width: 600px;
+    }
+    .container .card {
+        width: 100%;
+    }
+}

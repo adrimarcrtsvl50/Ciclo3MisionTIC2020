@@ -1,254 +1,370 @@
-body {
-    background: #036;
-    padding: 20px;
-}
-
-@font-face {
-    font-family: 'miFuente';
-    src: url(../Fuentes/SEASRN__.ttf);
-}
-
-@font-face {
-    font-family: 'miFuente3';
-    src: url(../Fuentes/Roboto-Regular.ttf);
-}
-
-
-/*cabecera*/
-
-header {
-    max-width: 1000px;
-    min-height: 130px;
-    margin: 0 auto;
-    border-radius: 20px 20px 0 0;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,cecece+43,cecece+100 */
-    background: #ffffff;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #ffffff 0%, #cecece 43%, #cecece 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #ffffff 0%, #cecece 43%, #cecece 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #ffffff 0%, #cecece 43%, #cecece 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cecece', GradientType=0);
-    /* IE6-9 */
-}
-
-@media(max-width:640px) {
-    header {
+    body {
+        background: #036;
+        padding: 20px;
+    }
+    
+    @font-face {
+        font-family: 'miFuente';
+        src: url(../Fuentes/SEASRN__.ttf);
+    }
+    
+    @font-face {
+        font-family: 'miFuente3';
+        src: url(../Fuentes/Roboto-Regular.ttf);
+    }
+    
+    .caja {
         display: block;
+        grid-template-areas: "header" "nav" "banner" "contenedor" "footer";
     }
-}
-
-.logo {
-    max-width: 1000px;
-    min-height: 130px;
-    display: flex;
-    z-index: 1;
-}
-
-.logo img {
-    width: 250px;
-    float: left;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-.titulostile {
-    text-align: center;
-}
-
-.titulostile p {
-    font-family: 'miFuente';
-    color: #1a2537;
-    font-size: 3.5em;
-    margin-left: 150px;
-}
-
-#menu-h {
-    max-width: 1000px;
-    min-height: 30px;
-    background: #000;
-    margin: 0 auto;
-}
-
-.button_for {
-    width: 40%;
-    background: #7f8c8d;
-    color: #fff;
-    display: inline-block;
-    font-size: 20px;
-    margin: 20px;
-    padding: 10px 0px;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0px 3px 0px #09ebeb;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.button {
-    background: #7f8c8d;
-    color: #fff;
-    display: inline-block;
-    font-size: 1.25em;
-    margin: 20px;
-    padding: 10px 0px;
-    text-align: center;
-    width: 200px;
-    text-decoration: none;
-    box-shadow: 0px 3px 0px #09ebeb;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.button:hover {
-    box-shadow: 0px 0px 0px;
-    padding-top: 7px;
-}
-
-#banner {
-    max-width: 1000px;
-    min-height: 250px;
-    background: #fff;
-    margin: 0 auto;
-}
-
-
-/*cabecera*/
-
-
-/*contenido*/
-
-#contenedor {
-    max-width: 1000px;
-    min-height: 700px;
-    background: #fff;
-    margin: 0 auto;
-}
-
-#menu-v {
-    width: 300px;
-    min-height: 700px;
-    background: #ccc;
-    float: left;
-    text-align: center;
-    font-family: 'miFuente3';
-}
-
-#menu-v h3 {
-    margin-left: 10px;
-}
-
-#contenido {
-    width: 700px;
-    min-height: 700px;
-    background: #fff;
-    float: right;
-    overflow: hidden;
-}
-
-.contenedor {
-    width: 95%;
-    padding: 15px;
-    text-align: justify;
-}
-
-.contenedor p {
-    font-family: 'miFuente3';
-    font-size: 20px;
-}
-
-.contenedor a {
-    font-family: 'miFuente3';
-    font-size: 20px;
-    margin-left: 10px;
-    text-align: center;
-}
-
-.formulario {
-    background: #fff;
-    margin-top: 150px;
-    padding: 3px;
-}
-
-h1 {
-    text-align: center;
-    color: #1a2537;
-    font-size: 40px;
-}
-
-input[type="text"],
-input[type="password"] {
-    font-size: 20px;
-}
-
-.input-contenedor {
-    margin-bottom: 15px;
-    border: 1px solid #aaa;
-}
-
-@media(min-width:768px) {
+    /*cabecera*/
+    
+    header {
+        grid-area: header;
+        max-width: 1000px;
+        min-height: 130px;
+        margin: 0 auto;
+        border-radius: 20px 20px 0 0;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,cecece+43,cecece+100 */
+        background: #ffffff;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #ffffff 0%, #cecece 43%, #cecece 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #ffffff 0%, #cecece 43%, #cecece 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #ffffff 0%, #cecece 43%, #cecece 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cecece', GradientType=0);
+        /* IE6-9 */
+    }
+    
+    .logo {
+        padding: 10px;
+    }
+    
+    .site-identity {
+        float: left;
+        width: 100%;
+        height: 115px;
+    }
+    
+    .site-identity p {
+        display: inline-block;
+        font-family: 'miFuente';
+        color: #1a2537;
+        font-size: 3.5em;
+        width: 79%;
+        text-align: center;
+        margin-top: 25px;
+    }
+    
+    .site-identity img {
+        float: left;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    
+    #menu-h {
+        grid-area: nav;
+        max-width: 1000px;
+        min-height: 30px;
+        background: #000;
+        margin: 0 auto;
+    }
+    
+    .button_for {
+        width: 40%;
+        background: #7f8c8d;
+        color: #fff;
+        display: inline-block;
+        font-size: 20px;
+        margin: 20px;
+        padding: 10px 0px;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0px 3px 0px #09ebeb;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+    
+    .button {
+        background: #7f8c8d;
+        color: #fff;
+        display: inline-block;
+        font-size: 1.25em;
+        margin: 20px;
+        padding: 10px 0px;
+        text-align: center;
+        width: 200px;
+        text-decoration: none;
+        box-shadow: 0px 3px 0px #09ebeb;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        box-shadow: 0px 0px 0px;
+        padding-top: 7px;
+    }
+    
+    #banner {
+        grid-area: banner;
+        max-width: 1000px;
+        min-height: 250px;
+        background: #fff;
+        margin: 0 auto;
+    }
+    
+    #banner img {
+        max-width: 1000px;
+        min-height: 250px;
+    }
+    /*cabecera*/
+    /*contenido*/
+    
+    #contenedor {
+        grid-area: contenedor;
+        max-width: 1000px;
+        min-height: 700px;
+        background: #fff;
+        margin: 0 auto;
+    }
+    
+    #menu-v {
+        width: 300px;
+        min-height: 700px;
+        background: #ccc;
+        float: left;
+        text-align: center;
+        font-family: 'miFuente3';
+    }
+    
+    #menu-v h3 {
+        margin-left: 10px;
+    }
+    
+    #contenido {
+        width: 700px;
+        min-height: 700px;
+        background: #fff;
+        float: right;
+        overflow: hidden;
+    }
+    
+    .contenedor {
+        width: 95%;
+        padding: 15px;
+        text-align: justify;
+    }
+    
+    .contenedor p {
+        font-family: 'miFuente3';
+        font-size: 20px;
+    }
+    
+    .contenedor a {
+        font-family: 'miFuente3';
+        font-size: 20px;
+        margin-left: 10px;
+        text-align: center;
+    }
+    
     .formulario {
-        margin: auto;
-        width: 500px;
+        background: #fff;
         margin-top: 150px;
-        border-radius: 2%;
+        padding: 3px;
     }
-}
-
-.select-doc {
-    display: inline-block;
-    width: 100%;
-    cursor: pointer;
-    padding: 7px 10px;
-    height: 42px;
-    outline: 0;
-    border: 0;
-    font-family: 'miFuente3';
-}
-
-
-/*contenido*/
-
-
-/*pie de pagina*/
-
-footer {
-    max-width: 1000px;
-    background: #000;
-    margin: 0 auto;
-    border-radius: 0 0 20px 20px;
-    color: #fff;
-    text-align: center;
-    padding: 30px;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-}
-
-
-/*pie de pagina*/
-
-
-/* Full-width input fields */
-
-input[type=text],
-input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.container {
-    text-align: left;
-    font-family: 'miFuente3';
-    font-size: 20px;
-}
-
-.container2 {
-    text-align: right;
-}
+    
+    h1 {
+        text-align: center;
+        color: #1a2537;
+        font-size: 40px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        font-size: 20px;
+    }
+    
+    .input-contenedor {
+        margin-bottom: 15px;
+        border: 1px solid #aaa;
+    }
+    
+    .select-doc {
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 7px 10px;
+        height: 42px;
+        outline: 0;
+        border: 0;
+        font-family: 'miFuente3';
+    }
+    /*contenido*/
+    /*pie de pagina*/
+    
+    footer {
+        grid-area: footer;
+        max-width: 1000px;
+        background: #000;
+        margin: 0 auto;
+        border-radius: 0 0 20px 20px;
+        color: #fff;
+        text-align: center;
+        padding: 30px;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+    /*pie de pagina*/
+    /* Full-width input fields */
+    
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        text-align: left;
+        font-family: 'miFuente3';
+        font-size: 20px;
+    }
+    
+    .container2 {
+        text-align: right;
+    }
+    
+    @media (max-width: 640px) {
+        .caja {
+            grid-area: "header" " menu-h" "banner" "contenedor" "footer";
+            width: 900px;
+        }
+        header {
+            width: 100%;
+            height: 100%;
+        }
+        .site-identity p {
+            display: block;
+        }
+        #contenedor {
+            width: 100%;
+        }
+        #contenido {
+            width: 600px;
+        }
+        #banner img {
+            width: 100%;
+        }
+        .formulario {
+            width: 100%;
+        }
+        .container {
+            width: 100%;
+        }
+        .button_for {
+            display: block;
+            width: 80%;
+        }
+        .input-contenedor {
+            width: 80%;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 95%;
+        }
+    }
+    
+    @media (max-width: 640px) and (max-width: 1280px) {
+        .caja {
+            grid-area: "header" " menu-h" "banner" "contenedor" "footer";
+            width: 900px;
+        }
+        header {
+            width: 100%;
+            height: 100%;
+        }
+        .site-identity p {
+            display: block;
+        }
+        #contenedor {
+            width: 100%;
+        }
+        #contenido {
+            width: 600px;
+        }
+        #banner img {
+            width: 100%;
+        }
+        .formulario {
+            width: 100%;
+        }
+        .container {
+            width: 100%;
+        }
+        .button_for {
+            display: block;
+            width: 80%;
+        }
+        .input-contenedor {
+            width: 80%;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 95%;
+        }
+    }
+    
+    @media (max-width: 1280px) {
+        .caja {
+            grid-area: "header" " menu-h" "banner" "contenedor" "footer";
+            width: 1000px;
+        }
+        header {
+            width: 100%;
+            height: 100%;
+        }
+        .site-identity p {
+            display: block;
+        }
+        #contenedor {
+            width: 100%;
+        }
+        #contenido {
+            width: 600px;
+        }
+        #banner img {
+            width: 100%;
+        }
+        .formulario {
+            width: 100%;
+        }
+        .container {
+            width: 100%;
+        }
+        .button_for {
+            display: block;
+            width: 80%;
+        }
+        .input-contenedor {
+            width: 80%;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 95%;
+        }
+    }
+    
+    @media(min-width:768px) {
+        .formulario {
+            margin: auto;
+            width: 500px;
+            margin-top: 150px;
+            border-radius: 2%;
+        }
+    }
