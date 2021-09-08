@@ -104,11 +104,10 @@
     
     .button:hover {
         background: cadetblue;
-        
     }
+    
     .button_for:hover {
         background: cadetblue;
-        
     }
     
     #banner {
@@ -243,6 +242,7 @@
     .container2 {
         text-align: right;
     }
+    /*condicion para celular*/
     
     @media (max-width: 640px) {
         .caja {
@@ -283,6 +283,7 @@
             width: 95%;
         }
     }
+    /*condicion para tablet*/
     
     @media (max-width: 640px) and (max-width: 1280px) {
         .caja {
@@ -323,6 +324,7 @@
             width: 95%;
         }
     }
+    /*condicion para tablet*/
     
     @media (max-width: 1280px) {
         .caja {
