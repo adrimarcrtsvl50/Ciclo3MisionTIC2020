@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Diseño web enBike.com</title>
+    <link rel="stylesheet" href="../css/diseño_index.css">
+    <link rel="stylesheet" href="../css/diseño_devolverad.css">
+</head>
+
+<body>
+    <div class="caja">
+        <header>
+            <section class="logo">
+
+                <div class="site-identity">
+                    <a href="../paginas/indexadmin.html"><img src="../imagenes/LOGO.png" alt="Site Name" /></a>
+                    <p><a>enBike.com</a></p>
+                </div>
+
+            </section>
+        </header>
+        <nav id="menu-h">
+            <a href="../paginas/iniciarsesion.html" class="button radius">Iniciar Sesion</a></li>
+
+        </nav>
+        <section id="banner">
+            <img src="../imagenes/EBike_Banner.jpg" alt="banner">
+        </section>
+        <section id="contenedor">
+            <nav id="menu-v">
+                <h3>Registar sigientes Formularios</h3>
+                <a href="../paginas/inventarios.html" class="button">GESTION DE INVENTARIOS</a></li>
+                <a href="../paginas/devolucion.html" class="button">DEVOLVER</a></li>
+            </nav>
+            <section id="contenido">
+                <div class="containerdev">
+                    <h1>GESTIÓN DE AQUILAR</h1>
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'checkin')">Registro de devolución</button>
+                    </div>
+                    <div id="checkin" class="tabcontent">
+                        <p>Diligencie los campos a continuacion:</p>
+                        <label> Serial
+                        <br>
+                        <input name="serial" action="" autocomplete="off"
+                               required="required">
+                    </label>
+                        <button name="consultar" value="True" autofocus="autofocus" type="submit">Consultar
+                        </button>
+                        <br>
+                        <br>
+                        <label> Estado
+                        <br>
+                        <select class="select-css" name="estado">
+                            <option value="devuelto">Devuelto</option>
+                            <option value="nodevuelto">No devuelto</option>
+                        </select>
+                    </label>
+                        <br>
+                        <br>
+                        <div style="text-align: center;">
+                            <button id="boton" name="cambiar_estado" value="True" autofocus="autofocus" type="submit">Cambiar estado
+                        </button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <script openByke(evt, cityName) src="../js/devolver.js"></script>
+            </section>
+        </section>
+        <footer>
+            Derechos Reservados &copy; 2021 <br> Diseñado por: Anthony Heinz - Jose Ferro - Jessica Patricia -Adriana Cortes <br> Email: enBike@gmail.com
+        </footer>
+    </div>
+</body>
+
+</html>

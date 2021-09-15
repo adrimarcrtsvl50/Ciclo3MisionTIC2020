@@ -1,175 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <link rel="stylesheet" href="css/cliente.css"/>
+    <link rel="stylesheet" href="css/cliente.css" />
 
     <title>Portal cliente</title>
 
 </head>
+
 <body>
-<img src="images/logo.png" alt="enbike.com"
-
-     title="enbike.com" style="width: 129px; height: 72px;">
-<br>
-<h2>Portal cliente</h2>
-<p>Seleccione la opcion deseada:</p>
-
-<div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'checkout')">Registro de salida</button>
-    <button class="tablinks" onclick="openCity(event, 'checkin')">Registro de devolución</button>
-</div>
-
-<div id="checkout" class="tabcontent">
-
-    <h2>Lista de productos</h2>
-
-    <table>
-        <tr>
-            <th>Tipo</th>
-            <th>Talla</th>
-            <th>Estado</th>
-        </tr>
-        <tr>
-            <td>MTB</td>
-            <td>L</td>
-            <td>Disponible</td>
-        </tr>
-        <tr>
-            <td>Circuito</td>
-            <td>M</td>
-            <td>Préstamo</td>
-        </tr>
-        <tr>
-            <td>MTB</td>
-            <td>M</td>
-            <td>Mantenimiento</td>
-        </tr>
-        <tr>
-            <td>MTB</td>
-            <td>M</td>
-            <td>Disponible</td>
-        </tr>
-        <tr>
-            <td>Circuito</td>
-            <td>L</td>
-            <td>Préstamo</td>
-        </tr>
-        <tr>
-            <td>Circuito</td>
-            <td>M</td>
-            <td>Disponible</td>
-        </tr>
-    </table>
+    <img src="images/logo.png" alt="enbike.com" title="enbike.com" style="width: 129px; height: 72px;">
     <br>
-    <label for="initdate"><i class="fa fa-user"></i> Fecha de inicio</label>
-    <input type="date" id="initdate" name="initdate">
-    <br>
-    <label for="enddate"><i class="fa fa-user"></i> Fecha de entrega</label>
-    <input type="date" id="enddate" name="enddate">
-    <p>Resumen productos seleccionados</p>
-    <div class="row">
-        <div class="col-75">
-            <div class="container">
-                <form action="/action_page.php">
-                    <div class="row">
-                        <div class="col-50">
-                            <h3>Dirección de facturación</h3>
-                            <label for="fname"><i class="fa fa-user"></i> Nombre completo</label>
-                            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                            <input type="text" id="email" name="email" placeholder="john@example.com">
-                            <label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
-                            <input type="text" id="adr" name="address" placeholder="Carrera 123 # 45 -67">
-                            <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
-                            <input type="text" id="city" name="city" placeholder="Bogotá">
+    <h2>Portal cliente</h2>
+    <p>Seleccione la opcion deseada:</p>
 
-                            <div class="row">
-                                <div class="col-50">
-                                    <label for="state">Departamento</label>
-                                    <input type="text" id="state" name="state" placeholder="Bogotá">
-                                </div>
-                                <div class="col-50">
-                                    <label for="telephone">Teléfono</label>
-                                    <input type="text" id="telephone" name="telephone" placeholder="6011234567">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-50">
-                            <h3>Pago</h3>
-                            <label for="fname">Tarjetas aceptadas</label>
-                            <div class="icon-container">
-                                <i class="fa fa-cc-visa" style="color:navy;"></i>
-                                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                <i class="fa fa-cc-discover" style="color:orange;"></i>
-                            </div>
-                            <label for="cname">Nombre en tarjeta</label>
-                            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-                            <label for="ccnum">Número de tarjeta de crédito</label>
-                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                            <label for="expmonth">Vencimiento</label>
-                            <input type="text" id="expmonth" name="expmonth" placeholder="MM/AA">
-                            <div class="row">
-                                <div class="col-50">
-                                    <label for="cvv">CVV</label>
-                                    <input type="text" id="cvv" name="cvv" placeholder="###">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <input type="submit" value="Confirmar reserva" class="btn">
-                </form>
-            </div>
-        </div>
-        <div class="col-25">
-            <div class="container">
-                <h4>Carrito de compras <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-                <p><a href="#">Bicicleta MTB F 29" 8 dias</a> <span class="price">valor dia 100 * 8 dias = $800</span></p>
-                <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-                <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-                <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-                <hr>
-                <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-            </div>
-        </div>
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'checkout')">Registro de salida</button>
+        <button class="tablinks" onclick="openCity(event, 'checkin')">Registro de devolución</button>
     </div>
 
-</div>
+    <div id="checkout" class="tabcontent">
 
-<div id="checkin" class="tabcontent">
-    <p>Diligencie los campos a continuacion:</p>
-    <label> Serial
+        <h2>Lista de productos</h2>
+
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Talla</th>
+                <th>Estado</th>
+            </tr>
+            <tr>
+                <td>MTB</td>
+                <td>L</td>
+                <td>Disponible</td>
+            </tr>
+            <tr>
+                <td>Circuito</td>
+                <td>M</td>
+                <td>Préstamo</td>
+            </tr>
+            <tr>
+                <td>MTB</td>
+                <td>M</td>
+                <td>Mantenimiento</td>
+            </tr>
+            <tr>
+                <td>MTB</td>
+                <td>M</td>
+                <td>Disponible</td>
+            </tr>
+            <tr>
+                <td>Circuito</td>
+                <td>L</td>
+                <td>Préstamo</td>
+            </tr>
+            <tr>
+                <td>Circuito</td>
+                <td>M</td>
+                <td>Disponible</td>
+            </tr>
+        </table>
+        <br>
+        <label for="initdate"><i class="fa fa-user"></i> Fecha de inicio</label>
+        <input type="date" id="initdate" name="initdate">
+        <br>
+        <label for="enddate"><i class="fa fa-user"></i> Fecha de entrega</label>
+        <input type="date" id="enddate" name="enddate">
+        <p>Resumen productos seleccionados</p>
+        <div class="row">
+            <div class="col-75">
+                <div class="container">
+                    <form action="/action_page.php">
+                        <div class="row">
+                            <div class="col-50">
+                                <h3>Dirección de facturación</h3>
+                                <label for="fname"><i class="fa fa-user"></i> Nombre completo</label>
+                                <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                <input type="text" id="email" name="email" placeholder="john@example.com">
+                                <label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
+                                <input type="text" id="adr" name="address" placeholder="Carrera 123 # 45 -67">
+                                <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
+                                <input type="text" id="city" name="city" placeholder="Bogotá">
+
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="state">Departamento</label>
+                                        <input type="text" id="state" name="state" placeholder="Bogotá">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="telephone">Teléfono</label>
+                                        <input type="text" id="telephone" name="telephone" placeholder="6011234567">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-50">
+                                <h3>Pago</h3>
+                                <label for="fname">Tarjetas aceptadas</label>
+                                <div class="icon-container">
+                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                </div>
+                                <label for="cname">Nombre en tarjeta</label>
+                                <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                <label for="ccnum">Número de tarjeta de crédito</label>
+                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                <label for="expmonth">Vencimiento</label>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="MM/AA">
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="###">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Confirmar reserva" class="btn">
+                    </form>
+                </div>
+            </div>
+            <div class="col-25">
+                <div class="container">
+                    <h4>Carrito de compras <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+                    <p><a href="#">Bicicleta MTB F 29" 8 dias</a> <span class="price">valor dia 100 * 8 dias = $800</span></p>
+                    <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+                    <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+                    <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+                    <hr>
+                    <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="checkin" class="tabcontent">
+        <p>Diligencie los campos a continuacion:</p>
+        <label> Serial
         <br>
         <input name="serial" action="" autocomplete="off"
                required="required">
     </label>
-        <button name="consultar" value="True" autofocus="autofocus"
-                type="submit">Consultar
+        <button name="consultar" value="True" autofocus="autofocus" type="submit">Consultar
         </button>
-    <br>
-    <br>
-    <label> Estado
+        <br>
+        <br>
+        <label> Estado
         <br>
         <select name="estado">
             <option value="devuelto">Devuelto</option>
             <option value="nodevuelto">No devuelto</option>
         </select>
     </label>
-    <br>
-    <br>
-    <div style="text-align: center;">
-        <button name="cambiar_estado" value="True" autofocus="autofocus"
-
-                type="submit">Cambiar estado
+        <br>
+        <br>
+        <div style="text-align: center;">
+            <button name="cambiar_estado" value="True" autofocus="autofocus" type="submit">Cambiar estado
         </button>
+        </div>
     </div>
-</div>
 
-<script openByke(evt, cityName) src="js/cliente.js"></script>
+    <script openByke(evt, cityName) src="js/cliente.js"></script>
 
 </body>
+
 </html>
