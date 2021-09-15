@@ -8,7 +8,7 @@
 
 /* Style the container*/
 
-.container1 {
+.containerreg {
     width: 700px;
     min-height: 700px;
     height: 430px;
@@ -19,25 +19,10 @@
 
 /* Style the container*/
 
-.container1 p {
+.containerreg p {
     font-family: 'miFuente3';
     margin-left: 20px;
     font-size: 20px;
-}
-
-
-/* Style the form */
-
-form {
-    width: 500px;
-    margin: auto;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 10px 10px;
-    box-sizing: border-box;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 7px;
-    font-family: monospace;
 }
 
 

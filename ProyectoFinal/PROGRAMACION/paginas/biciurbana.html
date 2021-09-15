@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="../css/diseño_index.css">
     <link rel="stylesheet" href="../css/diseño_bici.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -34,36 +47,95 @@
                 <h3>Elige el tipo de bicicleta que deseas rentar</h3>
                 <a href="../paginas/bicimontana.html" class="button">MONTAÑA</a></li>
                 <a href="../paginas/biciruta.html" class="button">RUTA</a></li>
-                <a href="../paginas/biciurbana.html" class="button">URBANA</a></li><br /> <br />
+                <a href="../paginas/biciurbana.html" class="button">URBANA</a></li>
+                <a href="../paginas/registrosalida.html" class="button">REGISTRO DE SALIDA</a></li><br />
                 <h3>Aqui encontraras todo lo que necesitas saber sobre nosotros</h3>
                 <a href="../paginas/nosotros.html" class="button">NOSOTROS</a></li>
                 <a href="../paginas/ayuda.html" class="button">CONTACTANOS</a></li>
             </nav>
             <section id="contenido">
-                <div class="container">
+                <div class="containerbici mt-4  mb-5">
                     <h1> BICICLETA DE URBANA</h1>
-                    <div class="card">
-                        <img src="../imagenes/bicicleta montaña/ima1.jpg" alt="">
-                        <h4>Bicicleta EXA 12 Velocidades – carbono y SRAM NX</h4>
-                        <p>Rin 29" La medida de rin más popular del mercado actual, ideal para recorridos urbanos y en caminos destapados.</p>
-                        <a href="#">Leer más</a>
-                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-5">
+                            <div class="card">
+                                <img src="../imagenes/bicicleta montaña/ima1.jpg" class="card-img-top w-100" />
+                                <div class="card-body">
+                                    <h2 class="card-title">NAKXUS Plenty</h2>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="card-text">Bicicleta De Montaña Rin 29" Aluminio 24 Vel Shimano MTB | NAKXUS Plenty G200</p>
+                                        <p class="card-text mr-4 text-success">$500000</p>
+                                    </div>
+                                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalId">More</a>
+                                </div>
 
-                    <div class="card">
-                        <img src="../imagenes/bicicleta montaña/ima2.jpg" alt="">
-                        <h4>Nombre bici</h4>
-                        <p>detalle</p>
-                        <a href="#">Leer más</a>
-                    </div>
+                            </div>
+                        </div>
 
-                    <div class="card">
-                        <img src="../imagenes/bicicleta montaña/ima3.png" alt="">
-                        <h4>Nombre bici</h4>
-                        <p>detalle</p>
-                        <a href="#">Leer más</a>
-                    </div>
+                        <div class="col-md-6 mt-5">
+                            <div class="card">
+                                <img src="../imagenes/bicicleta montaña/ima2.jpg" class="card-img-top w-100" />
+                                <div class="card-body">
+                                    <h2 class="card-title">NAKXUS Plenty</h2>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="card-text">Bicicleta De Montaña Rin 29" Aluminio 24 Vel Shimano MTB | NAKXUS Plenty G200</p>
+                                        <p class="card-text mr-4 text-success">$500000</p>
+                                    </div>
+                                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalId">More</a>
+                                </div>
 
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mt-5">
+                            <div class="card">
+                                <img src="../imagenes/bicicleta montaña/ima3.png" class="card-img-top w-100" />
+                                <div class="card-body">
+                                    <h2 class="card-title">NAKXUS Plenty</h2>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="card-text">Bicicleta De Montaña Rin 29" Aluminio 24 Vel Shimano MTB | NAKXUS Plenty G200</p>
+                                        <p class="card-text mr-4 text-success">$500000</p>
+                                    </div>
+                                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalId">More</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!--Model Code-->
+                <div class="modal fade" id="modalId">
+                    <div class="modal-dialog bg-success">
+                        <div class="modal-content" style="transform: scaleX(1.4);">
+                            <div class="modal-header pb-2">
+                                <h1 class="font-weight-light ml-4">Description</h1>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row mt-2 p-3">
+                                    <div class="col-md-6">
+                                        <img src="" width="100%" height="280px" class="rounded">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h2 class="product_name"></h2>
+                                        <p style="box-sizing: border-box;" class="product_desc">hshshhshshs</p>
+                                        <p>Review: &nbsp; &nbsp; &nbsp;</p>
+                                        <i class="fa fa-star text-warning ml-2"></i>
+                                        <i class="fa fa-star text-warning ml-2"></i>
+                                        <i class="fa fa-star text-warning ml-2"></i>
+                                        <i class="fa fa-star text-warning ml-2"></i>
+                                        <i class="fa fa-star  ml-2"></i>
+                                        <h4 class="product_price"></h4>
+                                        <button class="btn btn-success mt-2" style="width: 150px;">Add to card</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script openByke(evt, cityName) src="../js/bicicletasview.js"></script>
             </section>
         </section>
         <footer>
