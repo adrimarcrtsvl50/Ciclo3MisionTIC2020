@@ -1,68 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <link rel="stylesheet" href="css/cliente.css"/>
+    <link rel="stylesheet" href="css/cliente.css" />
 
     <title>Portal cliente</title>
 
 </head>
+
 <body>
-<img src="images/logo.png" alt="enbike.com"
-
-     title="enbike.com" style="width: 129px; height: 72px;">
-<br>
-<h2>Portal cliente</h2>
-<p>Seleccione la opcion deseada:</p>
-
-<div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'checkout')">Registro de salida</button>
-    <button class="tablinks" onclick="openCity(event, 'checkin')">Registro de devolución</button>
-</div>
-
-<div id="checkout" class="tabcontent">
-
-    <h2>Lista de productos</h2>
-
-    <table>
-        <tr>
-            <th>Tipo</th>
-            <th>Talla</th>
-            <th>Estado</th>
-        </tr>
-        <tr>
-            <td>MTB</td>
-            <td>L</td>
-            <td>Disponible</td>
-        </tr>
-        <tr>
-            <td>Circuito</td>
-            <td>M</td>
-            <td>Préstamo</td>
-        </tr>
-        <tr>
-            <td>MTB</td>
-            <td>M</td>
-            <td>Mantenimiento</td>
-        </tr>
-        <tr>
-            <td>MTB</td>
-            <td>M</td>
-            <td>Disponible</td>
-        </tr>
-        <tr>
-            <td>Circuito</td>
-            <td>L</td>
-            <td>Préstamo</td>
-        </tr>
-        <tr>
-            <td>Circuito</td>
-            <td>M</td>
-            <td>Disponible</td>
-        </tr>
-    </table>
+    <img src="images/logo.png" alt="enbike.com" title="enbike.com" style="width: 129px; height: 72px;">
     <br>
     <label for="initdate"><i class="fa fa-user"></i> Fecha de inicio</label>
     <input type="date" id="initdate" name="initdate">
@@ -96,33 +46,33 @@
                                     <input type="text" id="telephone" name="telephone" placeholder="6011234567">
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-50">
-                            <h3>Pago</h3>
-                            <label for="fname">Tarjetas aceptadas</label>
-                            <div class="icon-container">
-                                <i class="fa fa-cc-visa" style="color:navy;"></i>
-                                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                <i class="fa fa-cc-discover" style="color:orange;"></i>
-                            </div>
-                            <label for="cname">Nombre en tarjeta</label>
-                            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-                            <label for="ccnum">Número de tarjeta de crédito</label>
-                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                            <label for="expmonth">Vencimiento</label>
-                            <input type="text" id="expmonth" name="expmonth" placeholder="MM/AA">
-                            <div class="row">
-                                <div class="col-50">
-                                    <label for="cvv">CVV</label>
-                                    <input type="text" id="cvv" name="cvv" placeholder="###">
+                            <div class="col-50">
+                                <h3>Pago</h3>
+                                <label for="fname">Tarjetas aceptadas</label>
+                                <div class="icon-container">
+                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                </div>
+                                <label for="cname">Nombre en tarjeta</label>
+                                <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                <label for="ccnum">Número de tarjeta de crédito</label>
+                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                <label for="expmonth">Vencimiento</label>
+                                <input type="text" id="expmonth" name="expmonth" placeholder="MM/AA">
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="###">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <input type="submit" value="Confirmar reserva" class="btn">
-                </form>
+                        <input type="submit" value="Confirmar reserva" class="btn">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="col-25">
@@ -138,9 +88,8 @@
                 <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
 
 <div id="checkin" class="tabcontent">
     <p>Diligencie los campos a continuacion:</p>
@@ -161,9 +110,9 @@
     <div style="text-align: center;">
         <button class="btn">Cambiar estado</button>
     </div>
-</div>
 
-<script openByke(evt, cityName) src="js/cliente.js"></script>
+    <script openByke(evt, cityName) src="js/cliente.js"></script>
 
 </body>
+
 </html>

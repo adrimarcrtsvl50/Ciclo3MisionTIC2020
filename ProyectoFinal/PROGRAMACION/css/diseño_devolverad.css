@@ -5,23 +5,13 @@
     src: url(../Fuentes/Roboto-Regular.ttf);
 }
 
-
-/* Style the container*/
-
-.containerreg {
+.containerdev {
     width: 700px;
     min-height: 700px;
     height: 430px;
     margin: auto;
     overflow: auto;
-}
-
-
-/* Style the container*/
-
-.containerreg p {
     font-family: 'miFuente3';
-    margin-left: 20px;
     font-size: 20px;
 }
 
@@ -32,6 +22,8 @@
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    font-family: 'miFuente3';
+    font-size: 20px;
 }
 
 
@@ -46,6 +38,8 @@
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
+    font-family: 'miFuente3';
+    font-size: 20px;
 }
 
 
@@ -71,17 +65,7 @@
     border: 1px solid #ccc;
     border-top: none;
     font-family: 'miFuente3';
-}
-
-
-/* Style the input */
-
-input {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 7px;
-    box-sizing: border-box;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 
@@ -97,6 +81,8 @@ input {
     cursor: pointer;
     padding: 10px 0px;
     width: 30%;
+    font-family: 'miFuente3';
+    font-size: 20px;
 }
 
 
@@ -105,19 +91,6 @@ input {
 #boton:hover {
     box-shadow: 0px 0px 0px;
     padding-top: 7px;
-}
-
-
-/* Style the button */
-
-#boton1 {
-    font-family: 'miFuente3';
-    font-size: 15px;
-    padding: .375rem .75rem;
-    border: 1px solid #061cdf;
-    border-radius: .25rem;
-    color: #031a30;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out;
 }
 
 
@@ -213,29 +186,4 @@ input {
 .select-css:disabled:hover,
 .select-css[aria-disabled=true] {
     border-color: #aaa;
-}
-
-
-/* Style the container */
-
-.container1::-webkit-scrollbar {
-    width: 12px;
-    background: #efefef;
-}
-
-
-/* Style the container */
-
-.container1::-webkit-scrollbar-thumb {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e8e7de+0,3dedd2+98 */
-    background: #e8e7de;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #e8e7de 0%, #3dedd2 98%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #e8e7de 0%, #3dedd2 98%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #e8e7de 0%, #3dedd2 98%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e8e7de', endColorstr='#3dedd2', GradientType=0);
-    /* IE6-9 */
 }

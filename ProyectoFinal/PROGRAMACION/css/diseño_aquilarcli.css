@@ -1,3 +1,18 @@
+/* Style the font*/
+
+@font-face {
+    font-family: 'miFuente3';
+    src: url(../Fuentes/Roboto-Regular.ttf);
+}
+
+.containeraqi {
+    width: 700px;
+    min-height: 700px;
+    height: 430px;
+    margin: auto;
+    overflow: auto;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -15,10 +30,6 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-body {
-    font-family: Arial;
-}
-
 
 /* Style the tab */
 
@@ -28,10 +39,7 @@ body {
     background-color: #f1f1f1;
 }
 
-
-/* Style the buttons inside the tab */
-
-.tab button {
+* Style the buttons inside the tab */ .tab button {
     background-color: inherit;
     float: left;
     border: none;
@@ -64,16 +72,6 @@ body {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-}
-
-body {
-    font-family: Arial;
-    font-size: 17px;
-    padding: 8px;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 .row {
@@ -115,7 +113,6 @@ body {
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 3px;
-    margin: 10px;
 }
 
 input[type=text] {
@@ -176,5 +173,4 @@ span.price {
     .col-25 {
         margin-bottom: 20px;
     }
-
 }
