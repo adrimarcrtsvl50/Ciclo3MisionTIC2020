@@ -54,7 +54,6 @@ body {
     border-top: none;
 }
 
-/* comienza */
 body {
     font-family: Arial;
     font-size: 17px;
@@ -157,4 +156,6 @@ span.price {
     .col-25 {
         margin-bottom: 20px;
     }
+
 }
+

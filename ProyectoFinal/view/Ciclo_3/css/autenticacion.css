@@ -41,6 +41,12 @@ button:hover {
     background-color: #f44336;
 }
 
+.noregisteredbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #2196F3;
+}
+
 
 /* Center the image and position the close button */
 

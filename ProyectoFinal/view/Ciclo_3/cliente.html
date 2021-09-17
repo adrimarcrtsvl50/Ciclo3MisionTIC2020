@@ -75,7 +75,7 @@
             <div class="container">
                 <form action="/action_page.php">
                     <div class="row">
-                        <div class="col-50">
+                        <div class="input">
                             <h3>Dirección de facturación</h3>
                             <label for="fname"><i class="fa fa-user"></i> Nombre completo</label>
                             <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
@@ -127,8 +127,10 @@
         </div>
         <div class="col-25">
             <div class="container">
-                <h4>Carrito de compras <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-                <p><a href="#">Bicicleta MTB F 29" 8 dias</a> <span class="price">valor dia 100 * 8 dias = $800</span></p>
+                <h4>Carrito de compras <span class="price" style="color:black"><i
+                        class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+                <p><a href="#">Bicicleta MTB F 29" 8 dias</a> <span class="price">valor dia 100 * 8 dias = $800</span>
+                </p>
                 <p><a href="#">Product 2</a> <span class="price">$5</span></p>
                 <p><a href="#">Product 3</a> <span class="price">$8</span></p>
                 <p><a href="#">Product 4</a> <span class="price">$2</span></p>
@@ -142,19 +144,14 @@
 
 <div id="checkin" class="tabcontent">
     <p>Diligencie los campos a continuacion:</p>
-    <label> Serial
-        <br>
-        <input name="serial" action="" autocomplete="off"
-               required="required">
-    </label>
-        <button name="consultar" value="True" autofocus="autofocus"
-                type="submit">Consultar
-        </button>
+    <label> Serial <input name="serial" action="" autocomplete="off" required="required"></label>
+    <button class="btn"><span>Consultar </span></button>
     <br>
     <br>
     <label> Estado
         <br>
-        <select name="estado">
+        <select name="estado"
+                style="width: 100%; padding: 16px 20px; border: none; border-radius: 4px; background-color: #f1f1f1;">
             <option value="devuelto">Devuelto</option>
             <option value="nodevuelto">No devuelto</option>
         </select>
@@ -162,10 +159,7 @@
     <br>
     <br>
     <div style="text-align: center;">
-        <button name="cambiar_estado" value="True" autofocus="autofocus"
-
-                type="submit">Cambiar estado
-        </button>
+        <button class="btn">Cambiar estado</button>
     </div>
 </div>
 
