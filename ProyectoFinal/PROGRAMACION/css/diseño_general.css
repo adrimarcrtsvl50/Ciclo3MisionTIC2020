@@ -160,6 +160,19 @@ header {
     cursor: pointer;
 }
 
+header,
+.alert {
+    z-index: 100;
+}
+
+.hide {
+    display: none;
+}
+
+.remove {
+    display: none;
+}
+
 
 /*iniciarsesion*/
 

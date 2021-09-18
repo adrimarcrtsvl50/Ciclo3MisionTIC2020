@@ -27,6 +27,14 @@ function addTocarritoItem(e) {
 }
 
 function addItemCarrito(newItem) {
+
+    const alert = document.querySelector('.alert')
+
+    setTimeout(function() {
+        alert.classList.add('hide')
+    }, 2000)
+    alert.classList.remove('hide')
+
     const InputElemnto = tbody.getElementsByClassName('input__elemento')
     for (let i = 0; i < carrito.length; i++) {
         if (carrito[i].title.trim() === newItem.title.trim()) {
@@ -112,6 +120,7 @@ function CarritoTotal() {
     itemCartIva.innerHTML = `$${Iva}`
     itemCartMulta.innerHTML = `$${Multa}`
     itemCartTotal.innerHTML = `$${Total}`
+    addLocalStorage()
 }
 
 
@@ -125,6 +134,14 @@ function removeItemCarrito(e) {
             carrito.splice(i, 1)
         }
     }
+
+    const alert = document.querySelector('.remove')
+
+    setTimeout(function() {
+        alert.classList.add('remove')
+    }, 2000)
+    alert.classList.remove('remove')
+
     tr.remove()
     CarritoTotal()
     renderCarritocard()
@@ -146,4 +163,18 @@ function sumaCantidad(e) {
         }
 
     })
+}
+
+function addLocalStorage() {
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+
+
+window.onload = function() {
+    const storage = JSON.parse(localStorage.getItem('carrito'));
+    if (storage) {
+        carrito = storage;
+        renderCarrito()
+        renderCarritocard()
+    }
 }
