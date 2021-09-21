@@ -5,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Diseño web enBike.com</title>
-    <link rel="stylesheet" href="../css/diseño_index.css">
-    <link rel="stylesheet" href="../css/diseño_bienvenida.css">
+    <link rel="stylesheet" href="../css/diseño_general.css">
+    <link rel="stylesheet" href="../css/diseño_registrarbici.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3f79f6487f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="caja">
         <header>
             <section class="logo">
-
                 <div class="site-identity">
                     <a href="../paginas/indexadmin.html"><img src="../imagenes/LOGO.png" alt="Site Name" /></a>
                     <p><a>enBike.com</a></p>
@@ -22,33 +32,337 @@
             </section>
         </header>
         <nav id="menu-h">
-            <a href="../paginas/iniciarsesion.html" class="button radius">Iniciar Sesion</a></li>
+
+            <ul class="menu">
+                <li><a href="#">Sección de socios</a>
+                    <ul class="submenu">
+                        <li><a href="../paginas/iniciarsesion.html">Iniciar sesion</a></li>
+                </li>
+                </ul>
 
         </nav>
         <section id="banner">
             <img src="../imagenes/EBike_Banner.jpg" alt="banner">
         </section>
         <section id="contenedor">
-            <nav id="menu-v">
-                <h3>Registar sigientes Formularios</h3>
-                <a href="../paginas/inventarios.html" class="button">GESTION DE INVENTARIOS</a></li>
-                <a href="../paginas/devolucion.html" class="button">DEVOLVER</a></li>
+            <nav class="container-fluid bg-dark position-sticky top-0 ">
+                <ul class="nav nav-pills mb-3 py-3 container" id="pills-tab" role="tablist">
+                    <li class="nav-item text-primary" role="presentation">
+                        <a class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="pills-inventario-tab" data-bs-toggle="pill" data-bs-target="#pills-inventario" type="button" role="tab" aria-controls="pills-inventario" aria-selected="false">Gestión de Inventarios</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-devoluciones-tab" data-bs-toggle="pill" data-bs-target="#pills-devoluciones" type="button" role="tab" aria-controls="pills-devoluciones" aria-selected="false">Gestión de Devoluciones</a>
+                    </li>
+                </ul>
             </nav>
-            <section id="contenido">
-                <div class="containerbien">
-
-                    <h1>BIENVENIDOS</h1>
-                    <p>
-                        <img src="../imagenes/enBike-1.png" alt="" id="imgbienvenidos">
-                        <p id="txt_nosotros">Anunciamos el lanzamiento de la página enBike, una página especializada en aquilar de bicicletas Scott, Cannondale, GW entre otras y al mejor precio ¿No ves el producto que necesitas? No hay problema, dentro de la página nos puedes
-                            contactar para preguntar por tu producto deseado, recuerda que día a día contamos con más y más productos. Recibimos todas las tarjetas, consignaciones en Nequi, Bancolombia y Davivienda. ¡Visita ya! enBike.com
-                            <br />
-
+            <div class="tab-content" id="pills-tabContent">
+                <!--Home-->
+                <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="containerbien">
+                        <h1>BIENVENIDOS</h1>
+                        <p>
+                            <img src="../imagenes/enBike-1.png" alt="" id="imgbienvenidos">
+                            <p id="txt_nosotros">Anunciamos el lanzamiento de la página enBike, una página especializada en aquilar de bicicletas Scott, Cannondale, GW entre otras y al mejor precio ¿No ves el producto que necesitas? No hay problema, dentro de la página nos
+                                puedes contactar para preguntar por tu producto deseado, recuerda que día a día contamos con más y más productos. Recibimos todas las tarjetas, consignaciones en Nequi, Bancolombia y Davivienda. ¡Visita ya! enBike.com
+                                <br />
+                            </p>
                         </p>
-
-                    </p>
+                    </div>
                 </div>
-            </section>
+                <!--Gestion de Inventario-->
+                <div class="tab-pane fade show active container" id="pills-inventario" role="tabpanel" aria-labelledby="pills-inventario-tab">
+                    <div class="containerreg">
+                        <h1>GESTIÓN DE INVENTARIO</h1>
+                        <p>Seleccione la opcion deseada:</p>
+
+                        <div class="tab">
+                            <button class="tablinks" onclick="openBike(event, 'registrar')">Registrar</button>
+                            <button class="tablinks" onclick="openBike(event, 'modificar')">Modificar</button>
+                            <button class="tablinks" onclick="openBike(event, 'eliminar')">Eliminar</button>
+                            <button class="tablinks" onclick="openBike(event, 'cambiar_estado')">Cambiar estado</button>
+                        </div>
+                        <div id="registrar" class="tabcontent">
+                            <p>Diligencie los campos a continuacion:</p>
+                            <label> Imagen
+                                    <br>
+                                    <form2 action="" method="POST">
+                                        <input type="file" name="file" id="file" accept=".jpg,.png,.jpeg">
+                                        <div id="preview"></div>
+                                    </form2>
+                                </label>
+                            <br>
+
+                            <label> Serial
+                                    <br>
+                                    <input name="serial" action="" autocomplete="off"
+                                           required="required">
+                                </label>
+                            <br>
+
+                            <label> Descripción
+                                <br>
+                                <textarea class="form-control" name="descripcion" rows="3"></textarea>
+                            </label>
+                            <br>
+
+                            <label> Marca
+                                    <br>
+                                    <input name="marca" action="" autocomplete="off"
+                                           required="required">
+                                </label>
+                            <br>
+
+                            <label> Tipo
+                                    <br>
+                                    <input name="tipo" action="" autocomplete="off"
+                                           required="required">
+                                </label>
+                            <br>
+
+                            <label> Tamaño
+                                    <br>
+                                    <input name="tamano" action="" autocomplete="off"
+                                           required="required">
+                                </label>
+                            <br>
+
+                            <label>Género
+                                <br>
+                                <select class="select-css1" name="genero"  required="required">                
+                                    <option value="femenino">Femenino</option>
+                                    <option value="masculino">Masculino</option>                            <
+                                </select>
+                            </label>
+                            <br>
+
+                            <label> Color
+                                    <br>
+                                    <input name="color" action="" autocomplete="off"
+                                           required="required">
+                                </label>
+                            <br>
+
+                            <label> Modelo
+                                    <br>
+                                    <input name="modelo" action="" autocomplete="off"
+                                           required="required">
+                                </label>
+                            <br>
+
+                            <label> Edad
+                                <br>
+                                <select class="select-css1" name="edad"  required="required">                
+                                    <option value="adulto">Adulto</option>
+                                    <option value="nino">Niño</option>                            
+                                </select>
+                            </label>
+                            <br>
+
+                            <label> Talla
+                                <br>
+                                <select class="select-css1" name="talla"  required="required">                
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>  
+                                    <option value="l">L</option>                            
+                                </select>
+                            </label>
+                            <br>
+
+                            <label> Estado
+                                <br>
+                                <select class="select-css1" name="estado"  required="required">                
+                                    <option value="disponible">Disponible</option>
+                                    <option value="prestamo">Prestamo</option>
+                                    <option value="mantenimiento">Mantenimiento</option>
+                                </select>
+                            </label>
+                            <br>
+                            <br>
+                            <div style="text-align: center;">
+                                <button id="boton" name="registrar" value="True" autofocus="autofocus" type="submit">REGISTRAR
+                                    </button>
+                            </div>
+                        </div>
+
+                        <!--MODIFICAR-->
+                        <div id="modificar" class="tabcontent">
+                            <p>Diligencie los campos a continuacion:</p>
+                            <label> Serial
+                                    <br>
+                                    <input name="serial" action="" autocomplete="off"required="required">                                 
+                                </label>
+                            <br>
+                            <button id="boton1" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar</button>
+                            <br>
+                            <br>
+
+                            <label> Descripción
+                                <br>
+                                <textarea class="form-control" name="descripcion" rows="3"></textarea>
+                            </label>
+                            <br>
+
+                            <label> Marca
+                                    <br>
+                                     <input name="marca" action="" autocomplete="off"required="required">              
+                                </label>
+                            <br>
+
+                            <label> Tipo
+                                    <br>
+                                    <input name="tipo" action="" autocomplete="off"
+                                        required="required">
+                                </label>
+                            <br>
+
+                            <label> Tamaño
+                                    <br>
+                                    <input name="tamano" action="" autocomplete="off"
+                                        required="required">
+                                </label>
+                            <br>
+
+                            <label>Género
+                                <br>
+                                <select class="select-css1" name="genero"  required="required">                
+                                    <option value="femenino">Femenino</option>
+                                    <option value="masculino">Masculino</option>                            <
+                                </select>
+                            </label>
+                            <br>
+
+                            <label> Color
+                                    <br>
+                                    <input name="color" action="" autocomplete="off"
+                                        required="required">
+                                </label>
+                            <br>
+
+                            <label> Modelo
+                                    <br>
+                                    <input name="modelo" action="" autocomplete="off"
+                                        required="required">
+                                </label>
+                            <br>
+
+                            <label> Edad
+                                <br>
+                                <select class="select-css1" name="edad"  required="required">                
+                                    <option value="adulto">Adulto</option>
+                                    <option value="nino">Niño</option>                            
+                                </select>
+                            </label>
+                            <br>
+
+                            <label> Talla
+                                <br>
+                                <select class="select-css1" name="talla"  required="required">                
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>  
+                                    <option value="l">L</option>                            
+                                </select>
+                            </label>
+                            <br>
+
+                            <label> Estado
+                                <br>
+                                <select class="select-css1" name="estado"  required="required">                
+                                    <option value="disponible">Disponible</option>
+                                    <option value="prestamo">Prestamo</option>
+                                    <option value="mantenimiento">Mantenimiento</option>
+                                </select>
+                            </label>
+                            <br>
+
+                            <div style="text-align: center;">
+                                <button id="boton" name="modificar" value="True" autofocus="autofocus" type="submit">MODIFICAR</button>
+                            </div>
+                        </div>
+                        <!--ELIMINAR-->
+                        <div id="eliminar" class="tabcontent">
+                            <p>Diligencie los campos a continuacion:</p>
+                            <label> Serial
+                                    <br>
+                                    <input name="serial" action="" autocomplete="off"
+                                           required="required">
+                                </label>
+                            <div style="text-align: center;">
+                                <button id="boton" name="eliminar" value="True" autofocus="autofocus" type="submit">ELIMINAR
+                                    </button>
+                            </div>
+                        </div>
+                        <!--cambiar estado-->
+                        <div id="cambiar_estado" class="tabcontent">
+                            <p>Diligencie los campos a continuacion:</p>
+                            <label> Serial
+                                    <br>
+                                    <input name="serial" action="" autocomplete="off"
+                                           required="required">
+                                </label>
+                            <button id="boton1" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar
+                                    </button>
+                            <br>
+                            <br>
+                            <label> Estado
+                                    <br>
+                                    <select class="select-css1" name="estado">
+                            
+                                        <option value="disponible">Disponible</option>
+                                        <option value="prestamo">Prestamo</option>
+                                        <option value="mantenimiento">Mantenimiento</option>
+                                    </select>
+                                </label>
+                            <br>
+                            <br>
+                            <div style="text-align: center;">
+                                <button id="boton" name="cambiar_estado" value="True" autofocus="autofocus" type="submit">CAMBIAR ESTADO
+                                    </button>
+                            </div>
+                        </div>
+                    </div>
+                    <script openByke(evt, cityName) src="../js/inventarios.js"></script>
+                    <script src="../js/abrirarchivos.js"></script>
+                </div>
+                <!--Gestion de Devoluciones-->
+                <div class="tab-pane fade " id="pills-devoluciones" role="tabpanel" aria-labelledby="pills-devoluciones-tab">
+                    <div class="containerdev">
+                        <h1>GESTIÓN DE DEVOLUCIONES</h1>
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'checkin')">Registro de devolución</button>
+                        </div>
+                        <div id="checkin" class="tabcontent">
+                            <p>Diligencie los campos a continuacion:</p>
+                            <label> Serial
+                            <br>
+                            <input name="serial" action="" autocomplete="off"
+                                   required="required">
+                        </label>
+                            <button id="boton1" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar
+                            </button>
+                            <br>
+                            <br>
+                            <label> Estado
+                            <br>
+                            <select class="select-css" name="estado">
+                                <option value="devuelto">Devuelto</option>
+                                <option value="nodevuelto">No devuelto</option>
+                            </select>
+                        </label>
+                            <br>
+                            <br>
+                            <div style="text-align: center;">
+                                <button id="boton" name="cambiar_estado" value="True" autofocus="autofocus" type="submit">Cambiar estado
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <script openByke(evt, cityName) src="../js/devolver.js"></script>
+                </div>
+            </div>
+        </section>
         </section>
         <footer>
             Derechos Reservados &copy; 2021 <br> Diseñado por: Anthony Heinz - Jose Ferro - Jessica Patricia -Adriana Cortes <br> Email: enBike@gmail.com

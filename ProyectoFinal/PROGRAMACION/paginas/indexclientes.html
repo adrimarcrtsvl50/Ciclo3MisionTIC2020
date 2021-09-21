@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Diseño web enBike.com</title>
+    <link rel="stylesheet" href="../css/diseño_general.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3f79f6487f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="caja">
+        <header>
+            <section class="logo">
+                <div class="site-identity">
+                    <a href="../paginas/indexclientes.html"><img src="../imagenes/LOGO.png" alt="Site Name" /></a>
+                    <p><a>enBike.com</a></p>
+                </div>
+
+            </section>
+        </header>
+        <nav id="menu-h">
+
+            <ul class="menu">
+                <li><a href="#">Sección de socios</a>
+                    <ul class="submenu">
+                        <li><a href="../paginas/iniciarsesion.html">Iniciar sesion</a></li>
+                        <li><a href="../paginas/registrar.html">Registrarse</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+        <section id="banner">
+            <img src="../imagenes/EBike_Banner.jpg" alt="banner">
+        </section>
+        <section id="contenedor">
+            <nav class="container-fluid bg-dark position-sticky top-0 ">
+                <ul class="nav nav-pills mb-3 py-3 container" id="pills-tab" role="tablist">
+                    <li class="nav-item text-primary" role="presentation">
+                        <a class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="pills-producto-tab" data-bs-toggle="pill" data-bs-target="#pills-producto" type="button" role="tab" aria-controls="pills-producto" aria-selected="false">Productos</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-carrito-tab" data-bs-toggle="pill" data-bs-target="#pills-carrito" type="button" role="tab" aria-controls="pills-carrito" aria-selected="false">Carrito</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-nosotros-tab" data-bs-toggle="pill" data-bs-target="#pills-nosotros" type="button" role="tab" aria-controls="pills-nosotros" aria-selected="false">Nosotros</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contactanos</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+                Producto Añadido al carrito!
+            </div>
+            <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+                Producto removido!
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+                <!--Home-->
+                <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="containerbien">
+                        <h1>BIENVENIDOS</h1>
+                        <p>
+                            <img src="../imagenes/enBike-1.png" alt="" id="imgbienvenidos">
+                            <p id="txt_nosotros">Anunciamos el lanzamiento de la página enBike, una página especializada en aquilar de bicicletas Scott, Cannondale, GW entre otras y al mejor precio ¿No ves el producto que necesitas? No hay problema, dentro de la página nos
+                                puedes contactar para preguntar por tu producto deseado, recuerda que día a día contamos con más y más productos. Recibimos todas las tarjetas, consignaciones en Nequi, Bancolombia y Davivienda. ¡Visita ya! enBike.com
+                                <br />
+                            </p>
+                        </p>
+                    </div>
+                </div>
+                <!--Producto-->
+                <div class="tab-pane fade show active container" id="pills-producto" role="tabpanel" aria-labelledby="pills-producto-tab">
+                    <h1 class=" m-4 text-primary">Productos de Bicicletas</h1>
+                    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+                        <div class="col d-flex justify-content-center mb-4">
+                            <div class="card shadow mb-1  rounded" style="width: 50rem;">
+                                <h5 class="card-title pt-2 text-center text-primary">EXO</h5>
+                                <img src="../imagenes/bicicleta montaña/ima1.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text text-dark-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark-50 description1">
+                                        <label for="more">More</label><br>
+                                        <label class="font-weight-bold">Serie: <span class="product_serie ml-2">123</span></label>
+                                        <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2">EXO</span></label>
+                                        <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2">Montaña</span></label>
+                                        <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2">29"</span></label>
+                                        <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2">Masculino</span></label>
+                                        <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2">rojo</span></label>
+                                        <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2">M-2</span></label>
+                                        <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2">mantenimiento</span></label>
+                                        <label class="ml-2  font-weight-bold">Talla: <span class="product_talla ml-2">L</span></label>
+                                        <label class="font-weight-bold">Edad: <span class="product_edad ml-2">Adulto</span></label>
+                                    </p>
+                                    <h5 class="text-primary">Precio: <span class="precio">$ 5</span></h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary buttonaña">Añadir a Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col d-flex justify-content-center mb-4">
+                            <div class="card shadow mb-1  rounded" style="width: 50rem;">
+                                <h5 class="card-title pt-2 text-center text-primary">EXO1</h5>
+                                <img src="../imagenes/bicicleta montaña/ima2.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text text-dark-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark-50 description1">
+                                        <label for="more">More</label><br>
+                                        <label class="font-weight-bold">Serie: <span class="product_serie ml-2">123</span></label>
+                                        <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2">EXO</span></label>
+                                        <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2">Montaña</span></label>
+                                        <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2">29"</span></label>
+                                        <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2">Masculino</span></label>
+                                        <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2">rojo</span></label>
+                                        <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2">M-2</span></label>
+                                        <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2">mantenimiento</span></label>
+                                        <label class="ml-2  font-weight-bold">Talla: <span class="product_talla ml-2">L</span></label>
+                                        <label class="font-weight-bold">Edad: <span class="product_edad ml-2">Adulto</span></label>
+                                    </p>
+                                    <h5 class="text-primary">Precio: <span class="precio">$ 5</span></h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary buttonaña">Añadir a Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col d-flex justify-content-center mb-4">
+                            <div class="card shadow mb-1  rounded" style="width: 50rem;">
+                                <h5 class="card-title pt-2 text-center text-primary">EXO2</h5>
+                                <img src="../imagenes/bicicleta montaña/ima3.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text text-dark-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark-50 description1">
+                                        <label for="more">More</label><br>
+                                        <label class="font-weight-bold">Serie: <span class="product_serie ml-2">123</span></label>
+                                        <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2">EXO</span></label>
+                                        <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2">Montaña</span></label>
+                                        <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2">29"</span></label>
+                                        <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2">Masculino</span></label>
+                                        <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2">rojo</span></label>
+                                        <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2">M-2</span></label>
+                                        <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2">mantenimiento</span></label>
+                                        <label class="ml-2  font-weight-bold">Talla: <span class="product_talla ml-2">L</span></label>
+                                        <label class="font-weight-bold">Edad: <span class="product_edad ml-2">Adulto</span></label>
+                                    </p>
+                                    <h5 class="text-primary">Precio: <span class="precio">$ 5</span></h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary buttonaña">Añadir a Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col d-flex justify-content-center mb-4">
+                            <div class="card shadow mb-1  rounded" style="width: 50rem;">
+                                <h5 class="card-title pt-2 text-center text-primary">EXO3</h5>
+                                <img src="../imagenes/bicicleta montaña/ima3.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text text-dark-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark-50 description1">
+                                        <label for="more">More</label><br>
+                                        <label class="font-weight-bold">Serie: <span class="product_serie ml-2">123</span></label>
+                                        <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2">EXO</span></label>
+                                        <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2">Montaña</span></label>
+                                        <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2">29"</span></label>
+                                        <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2">Masculino</span></label>
+                                        <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2">rojo</span></label>
+                                        <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2">M-2</span></label>
+                                        <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2">mantenimiento</span></label>
+                                        <label class="ml-2  font-weight-bold">Talla: <span class="product_talla ml-2">L</span></label>
+                                        <label class="font-weight-bold">Edad: <span class="product_edad ml-2">Adulto</span></label>
+                                    </p>
+                                    <h5 class="text-primary">Precio: <span class="precio">$ 5</span></h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary buttonaña">Añadir a Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col d-flex justify-content-center mb-4">
+                            <div class="card shadow mb-1  rounded" style="width: 50rem;">
+                                <h5 class="card-title pt-2 text-center text-primary">EXO4</h5>
+                                <img src="../imagenes/bicicleta montaña/ima3.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text text-dark-50 description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark-50 description1">
+                                        <label for="more">More</label><br>
+                                        <label class="font-weight-bold">Serie: <span class="product_serie ml-2">123</span></label>
+                                        <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2">EXO</span></label>
+                                        <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2">Montaña</span></label>
+                                        <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2">29"</span></label>
+                                        <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2">Masculino</span></label>
+                                        <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2">rojo</span></label>
+                                        <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2">M-2</span></label>
+                                        <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2">mantenimiento</span></label>
+                                        <label class="ml-2  font-weight-bold">Talla: <span class="product_talla ml-2">L</span></label>
+                                        <label class="font-weight-bold">Edad: <span class="product_edad ml-2">Adulto</span></label>
+                                    </p>
+                                    <h5 class="text-primary">Precio: <span class="precio">$ 5</span></h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary buttonaña">Añadir a Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Carro-->
+                <div class="tab-pane fade carrito" id="pills-carrito" role="tabpanel" aria-labelledby="pills-carrito-tab">
+                    <h1>GESTIÓN DE AQUILAR</h1>
+                    <h2>Lista de productos</h2>
+                    <!--Lista de productos-->
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr class="text-primary">
+                                <th scope="col">#</th>
+                                <th scope="col">Productos</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Talla</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+
+
+
+                        </tbody>
+                    </table>
+                    <br>
+                    <!--Fechas de aquilar-->
+                    <label for="initdate"><i class="fa fa-user"></i> Fecha de inicio</label>
+                    <input type="date" id="initdate" name="initdate">
+                    <br>
+                    <label for="enddate"><i class="fa fa-user"></i> Fecha de entrega</label>
+                    <input type="date" id="enddate" name="enddate">
+                    <br>
+
+                    <!--Resumen productos seleccionados-->
+                    <p>Resumen productos seleccionados</p>
+                    <div class="row1">
+                        <div class="col-75">
+                            <div class="container2">
+                                <form1 action="/action_page.php">
+                                    <div class="row1">
+                                        <div class="col-50">
+                                            <h3>Dirección de facturación</h3>
+                                            <label for="fname"><i class="fa fa-user"></i> Nombre completo</label>
+                                            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                            <input type="text" id="email" name="email" placeholder="john@example.com">
+                                            <label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
+                                            <input type="text" id="adr" name="address" placeholder="Carrera 123 # 45 -67">
+                                            <label for="city"><i class="fa fa-institution"></i> Ciudad</label>
+                                            <input type="text" id="city" name="city" placeholder="Bogotá">
+
+                                            <div class="row">
+                                                <div class="col-50">
+                                                    <label for="state">Departamento</label>
+                                                    <input type="text" id="state" name="state" placeholder="Bogotá">
+                                                </div>
+                                                <div class="col-50">
+                                                    <label for="telephone">Teléfono</label>
+                                                    <input type="text" id="telephone" name="telephone" placeholder="6011234567">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-50">
+                                            <h3>Pago</h3>
+                                            <label for="fname">Tarjetas aceptadas</label>
+                                            <div class="icon-container">
+                                                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                            </div>
+                                            <label for="cname">Nombre en tarjeta</label>
+                                            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                                            <label for="ccnum">Número de tarjeta de crédito</label>
+                                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                                            <label for="expmonth">Vencimiento</label>
+                                            <input type="text" id="expmonth" name="expmonth" placeholder="MM/AA">
+                                            <div class="row">
+                                                <div class="col-50">
+                                                    <label for="cvv">CVV</label>
+                                                    <input type="text" id="cvv" name="cvv" placeholder="###">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-success btn-lg btn-block" name="Confirmar reserva" value="True" autofocus="autofocus" type="submit">Confirmar reserva</button>
+                                </form1>
+                            </div>
+                        </div>
+                        <div class="col-25">
+                            <div class="container2 ">
+                                <h4 class="">Carrito de compras <i class="fa fa-shopping-cart"></i> <span class="price " style="color:black"> </span>
+                                </h4>
+                                <div class="tbody1">
+
+                                </div>
+                                <hr>
+                                <p>SubTotal <span class="price itemCartSubTotal" style="color:black"><b>$0</b></span></p>
+                                <p>Iva <span class="price itemCartIva" style="color:black"><b>$0</b></span></p>
+                                <p>Multa <span class="price itemCartMulta" style="color:black"><b>$0</b></span></p>
+                                <p>Total <span class="price itemCartTotal" style="color:black"><b>$0</b></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Nosotros-->
+                <div class="tab-pane fade " id="pills-nosotros" role="tabpanel" aria-labelledby="pills-nosotros-tab">
+                    <div class="txt_index">
+                        <h1>QUIÉNES SOMOS</h1>
+                        <p>
+                            <p id="txt_nosotros">enBike.com amamos tu pasión!!! Las mejores marcas de ciclismo del mundo en un solo lugar desde 1989.
+                                <br /> La bicicleta es el medio de transporte más eficiente que existe, ayuda a combatir el cambio climático, alivia el tráfico urbano, te permite estar en forma y descubrir lugares que de otra forma jamás hubieras conocido,
+                                nos une y al mismo tiempo nos sirve de vía de escape.
+                                <br />
+                            </p>
+                            <img src="../imagenes/quienes-somos.jpg" alt="" id="imgnosotros">
+                        </p>
+                    </div>
+                </div>
+                <!--Contactanos-->
+                <div class="tab-pane fade " id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="containercontact">
+                        <h1>¡Habla Con Nosotros!</h1>
+                        <p>Siempre estamos encantados de atender tus dudas, preguntas y solicitudes.
+                            <br> Comunícate con nosotros para conocer más de nuestras bicicletas, productos, si tienes dudas sobre alguna alquización realizada en nuestra tienda física o e-commerce.
+                        </p>
+                        <form action="">
+                            <h2>¡Sigamos en contacto!</h2>
+                            <input type="text" name="Nombre" placeholder="Nombre" />
+                            <input type="text" name="Correo" placeholder="Correo" />
+                            <input type="text" name="Telefono" placeholder="Telefono" />
+                            <textarea name="mensaje" placeholder="Escriba aqui su mensaje"></textarea>
+                            <input type="button" value="ENVIAR" id="boton">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+        <footer>
+            Derechos Reservados &copy; 2021 <br> Diseñado por: Anthony Heinz - Jose Ferro - Jessica Patricia -Adriana Cortes <br> Email: enBike@gmail.com
+        </footer>
+    </div>
+</body>
+<script src="../js/prueba.js"></script>
+
+</html>
