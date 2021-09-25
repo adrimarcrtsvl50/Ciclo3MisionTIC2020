@@ -472,13 +472,18 @@ textarea {
 }
 
 .description1 {
-    height: 25px;
+    height: 100px;
     overflow: hidden;
     transition: height .3s ease-in .3s;
 }
 
 .description1:hover {
-    height: 280px;
+    height: 320px;
+}
+
+.card-img-top {
+    width: 80%;
+    height: 100px;
 }
 
 
