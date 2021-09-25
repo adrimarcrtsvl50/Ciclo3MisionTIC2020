@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-public class Perfil {
+public class Profile {
     
     @Id
     @Column(nullable = false, unique = true)
@@ -22,10 +22,10 @@ public class Perfil {
     private String apellido;
     
     @Column(nullable = false)
-    private Date fecha_nacimiento;
+    private Date fechaNacimiento;
 
     @Column(nullable = false)
-    private String tipo_usuario;
+    private String tipoUsuario;
 
     public Integer getId() {
         return id;
@@ -51,19 +51,19 @@ public class Perfil {
         this.apellido = apellido;
     }
 
-    public Date getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getTipo_usuario() {
-        return tipo_usuario;
+    public String getTipoUsuario() {
+        return tipoUsuario;
     }
 
-    public void setTipo_usuario(String tipo_usuario) {
-        this.tipo_usuario = tipo_usuario;
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 }
