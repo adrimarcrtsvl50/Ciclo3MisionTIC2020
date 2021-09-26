@@ -5,11 +5,11 @@
  */
 package com.enbike.enbike.repositories;
 
-import com.enbike.enbike.models.Bike;
+import com.enbike.enbike.models.Card;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BikeRepository extends JpaRepository<Bike, Integer> {
+public interface CardRepository extends JpaRepository<Card, Integer> {
     
 }

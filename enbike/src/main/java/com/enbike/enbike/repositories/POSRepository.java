@@ -5,11 +5,12 @@
  */
 package com.enbike.enbike.repositories;
 
-import com.enbike.enbike.models.Bike;
+import com.enbike.enbike.models.POS;
+import com.enbike.enbike.models.Rent;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BikeRepository extends JpaRepository<Bike, Integer> {
+public interface POSRepository extends JpaRepository<POS, Integer> {
     
 }

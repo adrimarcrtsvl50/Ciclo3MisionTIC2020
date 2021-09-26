@@ -5,17 +5,15 @@
  */
 package com.enbike.enbike.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "Calendar")
-public class Calendar {
+@Table(name = "rent")
+public class Rent {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, unique = true)
     private Integer id;
     
@@ -25,13 +23,13 @@ public class Calendar {
     @Column(nullable = false)
     private Date fechaFinal;
     
-    @Column(nullable = false)
+    @Column
     private Date fechaEntrega;
 
-    @Column()
+    @Column
     private Integer duracionEstimada;
 
-    @Column()
+    @Column
     private Integer duracionReal;
 
     public Integer getId() {

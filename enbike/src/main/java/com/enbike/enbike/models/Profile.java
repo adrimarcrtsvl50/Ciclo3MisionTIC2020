@@ -6,10 +6,11 @@
 package com.enbike.enbike.models;
 
 import javax.persistence.*;
+import javax.security.auth.callback.PasswordCallback;
 import java.sql.Date;
 
 @Entity
-@Table(name = "Profile")
+@Table(name = "profile")
 public class Profile {
     
     @Id
@@ -27,6 +28,9 @@ public class Profile {
 
     @Column(nullable = false)
     private String tipoUsuario;
+
+    @Column(nullable = false)
+    private String contrasena;
 
     public Integer getId() {
         return id;
