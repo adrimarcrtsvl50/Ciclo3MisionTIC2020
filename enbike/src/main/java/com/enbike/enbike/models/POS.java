@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "POS")
 public class POS {
     
     @Id
