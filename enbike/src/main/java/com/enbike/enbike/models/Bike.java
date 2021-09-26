@@ -13,7 +13,7 @@ public class Bike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, unique = true)
-    private Integer serial;
+    private Integer id;
     
     @Column(nullable = false)
     private String marca;
@@ -36,12 +36,12 @@ public class Bike {
     @Column(nullable = false)
     private String modelo;
 
-    public Integer getSerial() {
-        return serial;
+    public Integer getId() {
+        return id;
     }
 
-    public void setSerial(Integer serial) {
-        this.serial = serial;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getMarca() {

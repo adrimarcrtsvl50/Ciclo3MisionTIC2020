@@ -26,5 +26,8 @@ public class ProfileService {
     public Profile save(Profile profile) {
         return profileRepository.save(profile);
     }
-    
+
+    public void deleteById(Integer id) {
+        profileRepository.deleteById(id);
+    }
 }

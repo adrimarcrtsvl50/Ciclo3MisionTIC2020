@@ -26,5 +26,8 @@ public class BillingAddressService {
     public BillingAddress save(BillingAddress billingAddress) {
         return billingAddressRepository.save(billingAddress);
     }
-    
+
+    public void deleteById(Integer id) {
+        billingAddressRepository.deleteById(id);
+    }
 }

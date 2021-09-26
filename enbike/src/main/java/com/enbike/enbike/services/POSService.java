@@ -26,5 +26,8 @@ public class POSService {
     public POS save(POS pos) {
         return posRepository.save(pos);
     }
-    
+
+    public void deleteById(Integer id) {
+        posRepository.deleteById(id);
+    }
 }

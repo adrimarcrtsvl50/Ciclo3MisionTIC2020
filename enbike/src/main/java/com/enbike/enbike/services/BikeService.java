@@ -17,13 +17,19 @@ public class BikeService {
     
     @Autowired
     private BikeRepository bikeRepository;
-    
+
     public ArrayList<Bike> findAll() {
         return (ArrayList<Bike>) bikeRepository.findAll();
     }
 
+    public Bike getById(Integer id){ return bikeRepository.getById(id);}
+
     public Bike save(Bike bike) {
         return bikeRepository.save(bike);
     }
-    
+
+    public void deleteById(Integer id) {
+        bikeRepository.deleteById(id);
+    }
+
 }

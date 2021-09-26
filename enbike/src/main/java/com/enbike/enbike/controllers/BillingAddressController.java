@@ -30,4 +30,9 @@ public class BillingAddressController {
         return billingAddressService.save(billingAddress);
     }
 
+    @PostMapping("/delete/{id}")
+    public void delete(@PathVariable(value = "id") Integer id) {
+        billingAddressService.deleteById(id);
+    }
+
 }

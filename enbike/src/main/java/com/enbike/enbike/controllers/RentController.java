@@ -30,4 +30,9 @@ public class RentController {
         return RentService.save(rent);
     }
 
+    @PostMapping("/delete/{id}")
+    public void delete(@PathVariable(value = "id") Integer id) {
+        RentService.deleteById(id);
+    }
+
 }

@@ -26,5 +26,8 @@ public class CardService {
     public Card save(Card card) {
         return cardRepository.save(card);
     }
-    
+
+    public void deleteById(Integer id) {
+        cardRepository.deleteById(id);
+    }
 }

@@ -26,5 +26,8 @@ public class RentService {
     public Rent save(Rent rent) {
         return rentRepository.save(rent);
     }
-    
+
+    public void deleteById(Integer id) {
+        rentRepository.deleteById(id);
+    }
 }
