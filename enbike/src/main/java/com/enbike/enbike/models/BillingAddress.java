@@ -8,6 +8,7 @@ package com.enbike.enbike.models;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "BillingAddress")
 public class BillingAddress {
     
     @Id
