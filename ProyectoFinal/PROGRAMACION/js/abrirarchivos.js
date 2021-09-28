@@ -17,34 +17,44 @@
 
       //metodo de guardar datos
       const save = () => {
-          $('#boton').on('click', function() {
-              const datosBike = {
+              $('#boton').on('click', function() {
+                  const datosBike = {
 
-                  marca: $('#marca').val(),
-                  tipo: $('#tipo').val(),
-                  tamano: $('#tamano').val(),
-                  genero: $('#genero').val(),
-                  color: $('#color').val(),
-                  modelo: $('#modelo').val(),
-                  estado: $('#estado').val(),
+                      marca: $('#marca').val(),
+                      tipo: $('#tipo').val(),
+                      tamano: $('#tamano').val(),
+                      genero: $('#genero').val(),
+                      color: $('#color').val(),
+                      modelo: $('#modelo').val(),
+                      estado: $('#estado').val(),
 
 
-              }
-              $.ajax({
-                  url: 'http://localhost:8080/bikes',
-                  contentType: 'application/json',
-                  type: 'POST',
-                  data: JSON.stringify(datosBike),
-                  dataType: 'json',
-                  success: (data) => {
-                      console.log('bike registrado!')
                   }
+                  $.ajax({
+                      url: 'http://localhost:8080/bikes',
+                      contentType: 'application/json',
+                      type: 'POST',
+                      data: JSON.stringify(datosBike),
+                      dataType: 'json',
+                      success: (data) => {
+                          resert();
+                          console.log('bike registrado!')
+                      }
 
 
+                  })
               })
-          })
+          }
+          //metodo para limpiar el formulario
+      const resert = () => {
+          $('#marca').val('');
+          $('#tipo').val('');
+          $('#tamano').val('');
+          $('#genero').val('');
+          $('#color').val('');
+          $('#modelo').val('');
+          $('#estado').val('');
       }
-
 
       //llamadas a funciones
       save();
