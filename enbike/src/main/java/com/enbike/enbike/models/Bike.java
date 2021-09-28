@@ -5,7 +5,10 @@
  */
 package com.enbike.enbike.models;
 
+import javassist.bytecode.ByteArray;
+
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Bike {
@@ -35,6 +38,15 @@ public class Bike {
 
     @Column(nullable = false)
     private String modelo;
+
+    @Column(nullable = false)
+    private Long precio;
+
+    @Column(nullable = false)
+    private String edad;
+
+//    @Column
+//    private String imagen;
 
     public Integer getId() {
         return id;
@@ -98,5 +110,39 @@ public class Bike {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public Long getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Long precio) {
+        this.precio = precio;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
+//    public String getImagen() {
+//        return imagen;
+//    }
+//
+//    public void setImagen(String imagen) {
+//        this.imagen = imagen;
+//    }
+    @OneToMany(mappedBy = "fk_id_bike")
+    private Collection<Rent> id_rent;
+
+    public Collection<Rent> getId_rent() {
+        return id_rent;
+    }
+
+    public void setId_rent(Collection<Rent> id_rent) {
+        this.id_rent = id_rent;
     }
 }

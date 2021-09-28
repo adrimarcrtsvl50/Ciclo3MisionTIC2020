@@ -67,4 +67,15 @@ public class POS {
     public void setTotal(Long total) {
         this.total = total;
     }
+
+    @OneToOne(mappedBy = "fk_rent_pos", optional = false)
+    private Rent id_rent;
+
+    public Rent getId_rent() {
+        return id_rent;
+    }
+
+    public void setId_rent(Rent id_rent) {
+        this.id_rent = id_rent;
+    }
 }

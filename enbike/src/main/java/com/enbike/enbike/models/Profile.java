@@ -71,4 +71,26 @@ public class Profile {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
+
+    @ManyToOne(optional = false)
+    private Card fk_id_profile;
+
+    public Card getFk_id_profile() {
+        return fk_id_profile;
+    }
+
+    public void setFk_id_profile(Card fk_id_profile) {
+        this.fk_id_profile = fk_id_profile;
+    }
+
+    @OneToOne(mappedBy = "fk_rent_prof", optional = false)
+    private Rent id_rent;
+
+    public Rent getId_rent() {
+        return id_rent;
+    }
+
+    public void setId_rent(Rent id_rent) {
+        this.id_rent = id_rent;
+    }
 }

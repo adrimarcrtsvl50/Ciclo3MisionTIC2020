@@ -7,6 +7,7 @@ package com.enbike.enbike.models;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Collection;
 
 @Entity
 public class Card {
@@ -66,5 +67,16 @@ public class Card {
 
     public void setCvv(Integer cvv) {
         this.cvv = cvv;
+    }
+
+    @OneToMany(mappedBy = "fk_id_profile")
+    private Collection<Profile> id_profile;
+
+    public Collection<Profile> getId_profile() {
+        return id_profile;
+    }
+
+    public void setId_profile(Collection<Profile> id_profile) {
+        this.id_profile = id_profile;
     }
 }
