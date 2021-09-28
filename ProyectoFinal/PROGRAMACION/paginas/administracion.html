@@ -58,6 +58,12 @@
                     </li>
                 </ul>
             </nav>
+            <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+                La bicicleta esta registrada
+            </div>
+            <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+                La bicicleta no esta registrada
+            </div>
             <div class="tab-content" id="pills-tabContent">
                 <!--Home-->
                 <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -95,13 +101,6 @@
                                 </label>
                             <br>
 
-                            <label> Serial
-                                    <br>
-                                    <input id="serial" name="serial" action="" autocomplete="off"
-                                           required="required">
-                                </label>
-                            <br>
-
                             <label> Precio
                                 <br>
                                 <input id="precio" name="descripcion" action="" autocomplete="off"
@@ -116,16 +115,9 @@
                                 </label>
                             <br>
 
-                            <label> Tipo
+                            <label> Modelo
                                     <br>
-                                    <input id="tipo" name="tipo" action="" autocomplete="off"
-                                           required="required">
-                                </label>
-                            <br>
-
-                            <label> Tamaño
-                                    <br>
-                                    <input id="tamano" name="tamano" action="" autocomplete="off"
+                                    <input id="modelo" name="tipo" action="" autocomplete="off"
                                            required="required">
                                 </label>
                             <br>
@@ -146,10 +138,19 @@
                                 </label>
                             <br>
 
-                            <label> Modelo
+                            <label>Tipo
                                     <br>
-                                    <input id="modelo" name="modelo" action="" autocomplete="off"
-                                           required="required">
+                                    <select id="tipo" class="select-css1" name="modelo" autocomplete="off" required="required">                
+                                            <option value="montana">Montaña</option>
+                                            <option value="urbano">Urbano</option> 
+                                            <option value="ruta">Ruta</option> 
+                                            <option value="hibridas">Híbridas</option>     
+                                            <option value="plegables">plegables</option> 
+                                            <option value="fixies">Fixies y single speed</option> 
+                                            <option value="mbx">MBX</option>   
+                                            <option value="cruisers">Cruisers</option>      
+                                            <option value="fat">Fat Bikes</option>               
+                                        </select>
                                 </label>
                             <br>
 
@@ -162,9 +163,9 @@
                             </label>
                             <br>
 
-                            <label> Talla
+                            <label> Tamaño
                                 <br>
-                                <select id="talla" class="select-css1" name="talla"  required="required">                
+                                <select id="tamano" class="select-css1" name="talla"  required="required">                
                                     <option value="s">S</option>
                                     <option value="m">M</option>  
                                     <option value="l">L</option>                            

@@ -19,16 +19,15 @@
       const save = () => {
               $('#boton').on('click', function() {
                   const datosBike = {
-
-                      marca: $('#marca').val(),
-                      tipo: $('#tipo').val(),
-                      tamano: $('#tamano').val(),
-                      genero: $('#genero').val(),
                       color: $('#color').val(),
-                      modelo: $('#modelo').val(),
+                      edad: $('#edad1').val(),
                       estado: $('#estado').val(),
-
-
+                      genero: $('#genero').val(),
+                      marca: $('#marca').val(),
+                      modelo: $('#modelo').val(),
+                      precio: $('#precio').val(),
+                      tamano: $('#tamano').val(),
+                      tipo: $('#tipo').val(),
                   }
                   $.ajax({
                       url: 'http://localhost:8080/bikes',
@@ -38,6 +37,12 @@
                       dataType: 'json',
                       success: (data) => {
                           resert();
+                          const alert = document.querySelector('.alert')
+
+                          setTimeout(function() {
+                              alert.classList.add('hide')
+                          }, 2000)
+                          alert.classList.remove('hide')
                           console.log('bike registrado!')
                       }
 
@@ -47,13 +52,15 @@
           }
           //metodo para limpiar el formulario
       const resert = () => {
-          $('#marca').val('');
-          $('#tipo').val('');
-          $('#tamano').val('');
-          $('#genero').val('');
           $('#color').val('');
-          $('#modelo').val('');
+          $('#edad1').val('');
           $('#estado').val('');
+          $('#genero').val('');
+          $('#marca').val('');
+          $('#modelo').val('');
+          $('#precio').val('');
+          $('#tamano').val('');
+          $('#tipo').val('');
       }
 
       //llamadas a funciones
