@@ -24,7 +24,7 @@
         <header>
             <section class="logo">
                 <div class="site-identity">
-                    <a href="../paginas/indexclientes.html"><img src="../imagenes/LOGO.png" alt="Site Name" /></a>
+                    <a href="../paginas/clientes.html"><img src="../imagenes/LOGO.png" alt="Site Name" /></a>
                     <p><a>enBike.com</a></p>
                 </div>
 
@@ -35,7 +35,7 @@
             <ul class="menu">
                 <li><a href="#">Sección de socios</a>
                     <ul class="submenu">
-                        <li><a href="../paginas/iniciarsesion.html">Iniciar sesion</a></li>
+                        <li><a href="../paginas/index.html">Iniciar sesion</a></li>
                         <li><a href="../paginas/registrar.html">Registrarse</a></li>
                     </ul>
                 </li>
@@ -236,13 +236,37 @@
                     </table>
                     <br>
                     <!--Fechas de aquilar-->
-                    <label for="initdate"><i class="fa fa-user"></i> Fecha de inicio</label>
-                    <input type="date" id="initdate" name="initdate">
-                    <br>
-                    <label for="enddate"><i class="fa fa-user"></i> Fecha de entrega</label>
-                    <input type="date" id="enddate" name="enddate">
-                    <br>
+                    <div class="card1">
+                        <label for="FechaI"><i class="fa fa-user"></i> Fecha de inicio</label>
+                        <input type="Date" id="FechaI" name="FechaI" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask required/>
+                        <br>
+                        <label for="FechaFin"><i class="fa fa-user"></i> Fecha de entrega</label>
+                        <input type="Date" id="FechaFin" name="FechaFin" data-inputmask="'alias': 'dd/mm/yyyy'" />
+                        <br>
+                        <input id="Tiempo" name="Tiempo" value="" disabled/>
+                    </div>
+                    <!---prueba-->
 
+                    <script type="text/javascript">
+                        // JavaScript program to illustrate
+                        // calculation of no. of days between two date
+
+                        // To set two dates to two variables
+                        var fechai = document.querySelector("FechaI").value;
+                        var date2 = new Date("07/30/2019");
+
+                        // To calculate the time difference of two dates
+                        var Difference_In_Time = date2.getTime() - fechai;
+
+                        // To calculate the no. of days between two dates
+                        var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
+                        //To display the final no. of days (result)
+                        document.write("Total number of days between dates <br>" +
+                            date1 + "<br> and <br>" +
+                            date2 + " is: <br> " +
+                            Difference_In_Days);
+                    </script>
                     <!--Resumen productos seleccionados-->
                     <p>Resumen productos seleccionados</p>
                     <div class="row1">

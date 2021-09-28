@@ -25,7 +25,7 @@
         <header>
             <section class="logo">
                 <div class="site-identity">
-                    <a href="../paginas/indexadmin.html"><img src="../imagenes/LOGO.png" alt="Site Name" /></a>
+                    <a href="../paginas/administracion.html"><img src="../imagenes/LOGO.png" alt="Site Name" /></a>
                     <p><a>enBike.com</a></p>
                 </div>
 
@@ -36,7 +36,7 @@
             <ul class="menu">
                 <li><a href="#">Sección de socios</a>
                     <ul class="submenu">
-                        <li><a href="../paginas/iniciarsesion.html">Iniciar sesion</a></li>
+                        <li><a href="../paginas/index.html">Iniciar sesion</a></li>
                 </li>
                 </ul>
 
@@ -97,41 +97,42 @@
 
                             <label> Serial
                                     <br>
-                                    <input name="serial" action="" autocomplete="off"
+                                    <input id="serial" name="serial" action="" autocomplete="off"
                                            required="required">
                                 </label>
                             <br>
 
-                            <label> Descripción
+                            <label> Precio
                                 <br>
-                                <textarea class="form-control" name="descripcion" rows="3"></textarea>
+                                <input id="precio" name="descripcion" action="" autocomplete="off"
+                                required="required"></input>
                             </label>
                             <br>
 
                             <label> Marca
                                     <br>
-                                    <input name="marca" action="" autocomplete="off"
+                                    <input id="marca" name="marca" action="" autocomplete="off"
                                            required="required">
                                 </label>
                             <br>
 
                             <label> Tipo
                                     <br>
-                                    <input name="tipo" action="" autocomplete="off"
+                                    <input id="tipo" name="tipo" action="" autocomplete="off"
                                            required="required">
                                 </label>
                             <br>
 
                             <label> Tamaño
                                     <br>
-                                    <input name="tamano" action="" autocomplete="off"
+                                    <input id="tamano" name="tamano" action="" autocomplete="off"
                                            required="required">
                                 </label>
                             <br>
 
                             <label>Género
                                 <br>
-                                <select class="select-css1" name="genero"  required="required">                
+                                <select id="genero" class="select-css1" name="genero"  required="required">                
                                     <option value="femenino">Femenino</option>
                                     <option value="masculino">Masculino</option>                            <
                                 </select>
@@ -140,21 +141,21 @@
 
                             <label> Color
                                     <br>
-                                    <input name="color" action="" autocomplete="off"
+                                    <input id="color" name="color" action="" autocomplete="off"
                                            required="required">
                                 </label>
                             <br>
 
                             <label> Modelo
                                     <br>
-                                    <input name="modelo" action="" autocomplete="off"
+                                    <input id="modelo" name="modelo" action="" autocomplete="off"
                                            required="required">
                                 </label>
                             <br>
 
                             <label> Edad
                                 <br>
-                                <select class="select-css1" name="edad"  required="required">                
+                                <select id="edad1" class="select-css1" name="edad"  required="required">                
                                     <option value="adulto">Adulto</option>
                                     <option value="nino">Niño</option>                            
                                 </select>
@@ -163,7 +164,7 @@
 
                             <label> Talla
                                 <br>
-                                <select class="select-css1" name="talla"  required="required">                
+                                <select id="talla" class="select-css1" name="talla"  required="required">                
                                     <option value="s">S</option>
                                     <option value="m">M</option>  
                                     <option value="l">L</option>                            
@@ -173,7 +174,7 @@
 
                             <label> Estado
                                 <br>
-                                <select class="select-css1" name="estado"  required="required">                
+                                <select id="estado" class="select-css1" name="estado"  required="required">                
                                     <option value="disponible">Disponible</option>
                                     <option value="prestamo">Prestamo</option>
                                     <option value="mantenimiento">Mantenimiento</option>

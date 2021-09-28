@@ -11,3 +11,42 @@
           preview.append(image);
       }
   }
+
+
+  $(document).ready(() => {
+
+      //metodo de guardar datos
+      const save = () => {
+          $('#boton').on('click', function() {
+              const datosBike = {
+
+                  marca: $('#marca').val(),
+                  tipo: $('#tipo').val(),
+                  tamano: $('#tamano').val(),
+                  genero: $('#genero').val(),
+                  color: $('#color').val(),
+                  modelo: $('#modelo').val(),
+                  estado: $('#estado').val(),
+
+
+              }
+              $.ajax({
+                  url: 'http://localhost:8080/bikes',
+                  contentType: 'application/json',
+                  type: 'POST',
+                  data: JSON.stringify(datosBike),
+                  dataType: 'json',
+                  success: (data) => {
+                      console.log('bike registrado!')
+                  }
+
+
+              })
+          })
+      }
+
+
+      //llamadas a funciones
+      save();
+
+  })

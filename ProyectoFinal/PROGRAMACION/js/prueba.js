@@ -165,6 +165,13 @@ function sumaCantidad(e) {
     })
 }
 
+function compararFechas(e) {
+    var fechai = document.getElementById("FechaI").value;
+    console.log(fechai)
+}
+
+
+
 function addLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
@@ -178,3 +185,7 @@ window.onload = function() {
         renderCarritocard()
     }
 }
+
+$(document).ready(() => {
+
+})
