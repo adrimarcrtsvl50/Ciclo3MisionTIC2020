@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping(path = "/rents")
-@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST })
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})
 public class RentController {
     
     @Autowired
@@ -30,7 +30,7 @@ public class RentController {
         return RentService.save(rent);
     }
 
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable(value = "id") Integer id) {
         RentService.deleteById(id);
     }
