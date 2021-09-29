@@ -6,7 +6,6 @@
 package com.enbike.enbike.controllers;
 
 import com.enbike.enbike.models.Bike;
-import com.enbike.enbike.repositories.BikeRepository;
 import com.enbike.enbike.services.BikeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,6 @@ public class BikeController {
 
     @Autowired
     private BikeService bikeService;
-    private BikeRepository bikeRepository;
 
     @GetMapping
     public ArrayList<Bike> findAll() {
@@ -30,7 +28,7 @@ public class BikeController {
     }
 
     @GetMapping("/{id}")
-    public Bike findById(@PathVariable(value = "id") Integer id) {
+    public Bike getById(@PathVariable(value = "id") Integer id) {
         return bikeService.getById(id);
     }
 

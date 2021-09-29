@@ -128,13 +128,6 @@ public class Bike {
         this.edad = edad;
     }
 
-//    public String getImagen() {
-//        return imagen;
-//    }
-//
-//    public void setImagen(String imagen) {
-//        this.imagen = imagen;
-//    }
     @OneToMany(mappedBy = "fk_id_bike")
     private Collection<Rent> id_rent;
 
