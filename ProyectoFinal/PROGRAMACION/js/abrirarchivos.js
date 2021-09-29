@@ -63,7 +63,7 @@
                       dataType: 'json',
                       success: (res) => {
                           resert1();
-
+                          hello
                           const alert = document.querySelector('.alert')
 
                           setTimeout(function() {
