@@ -62,8 +62,9 @@
                 La bicicleta esta registrada
             </div>
             <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
-                La bicicleta no esta registrada
+                La bicicleta fue eliminada
             </div>
+
             <div class="tab-content" id="pills-tabContent">
                 <!--Home-->
                 <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -90,6 +91,7 @@
                             <button class="tablinks" onclick="openBike(event, 'eliminar')">Eliminar</button>
                             <button class="tablinks" onclick="openBike(event, 'cambiar_estado')">Cambiar estado</button>
                         </div>
+                        <!--Registrar-->
                         <div id="registrar" class="tabcontent">
                             <p>Diligencie los campos a continuacion:</p>
                             <label> Imagen
@@ -184,7 +186,7 @@
                             <br>
                             <br>
                             <div style="text-align: center;">
-                                <button id="boton" name="registrar" value="True" autofocus="autofocus" type="submit">REGISTRAR
+                                <button id="btn_Regis" class="btns" name="registrar" value="True" autofocus="autofocus" type="submit">REGISTRAR
                                     </button>
                             </div>
                         </div>
@@ -199,12 +201,6 @@
                             <br>
                             <button id="boton1" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar</button>
                             <br>
-                            <br>
-
-                            <label> Descripción
-                                <br>
-                                <textarea class="form-control" name="descripcion" rows="3"></textarea>
-                            </label>
                             <br>
 
                             <label> Marca
@@ -280,20 +276,23 @@
                             <br>
 
                             <div style="text-align: center;">
-                                <button id="boton" name="modificar" value="True" autofocus="autofocus" type="submit">MODIFICAR</button>
+                                <button id="btn_Modif" class="btns" name="modificar" value="True" autofocus="autofocus" type="submit">MODIFICAR</button>
                             </div>
                         </div>
                         <!--ELIMINAR-->
+
                         <div id="eliminar" class="tabcontent">
                             <p>Diligencie los campos a continuacion:</p>
-                            <label> Serial
+                            <div class="serEli">
+                                <label> Serial
                                     <br>
-                                    <input name="serial" action="" autocomplete="off"
+                                    <input id="serial" name="serial" action="" autocomplete="off"
                                            required="required">
                                 </label>
-                            <div style="text-align: center;">
-                                <button id="boton" name="eliminar" value="True" autofocus="autofocus" type="submit">ELIMINAR
+                                <div style="text-align: center;">
+                                    <button id="btn_Elim" class="btns" name="eliminar" value="True" autofocus="autofocus" type="submit">ELIMINAR
                                     </button>
+                                </div>
                             </div>
                         </div>
                         <!--cambiar estado-->
@@ -320,7 +319,7 @@
                             <br>
                             <br>
                             <div style="text-align: center;">
-                                <button id="boton" name="cambiar_estado" value="True" autofocus="autofocus" type="submit">CAMBIAR ESTADO
+                                <button id="btn_Camb" class="btns" name="cambiar_estado" value="True" autofocus="autofocus" type="submit">CAMBIAR ESTADO
                                     </button>
                             </div>
                         </div>

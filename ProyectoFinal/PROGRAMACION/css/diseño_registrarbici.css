@@ -78,7 +78,7 @@ label {
 
 /* Style the button */
 
-#boton {
+.btns {
     border: 1px solid #061cdf;
     border-radius: .25rem;
     color: #031a30;
@@ -93,7 +93,7 @@ label {
 
 /* Style the button */
 
-#boton:hover {
+.btns:hover {
     box-shadow: 0px 0px 0px;
     padding-top: 7px;
 }

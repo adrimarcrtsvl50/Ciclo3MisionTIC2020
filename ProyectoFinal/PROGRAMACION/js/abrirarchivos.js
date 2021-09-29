@@ -17,7 +17,7 @@
 
       //metodo de guardar datos
       const save = () => {
-              $('#boton').on('click', function() {
+              $('#btn_Regis').on('click', function() {
                   const datosBike = {
                       color: $('#color').val(),
                       edad: $('#edad1').val(),
@@ -38,7 +38,7 @@
                       success: (data) => {
                           resert();
                           const alert = document.querySelector('.alert')
-
+                          console.log(alert)
                           setTimeout(function() {
                               alert.classList.add('hide')
                           }, 2000)
@@ -49,6 +49,34 @@
 
                   })
               })
+          }
+          //eliminar una lista de la bicicletas
+      const deleteBikes = () => {
+              $(document).on('click', '#btn_Elim', function() {
+
+                  let detalle = document.getElementById('serial');
+                  let id = $(detalle).val()
+                  console.log(id)
+                  $.ajax({
+                      url: 'http://localhost:8080/bikes/' + id,
+                      type: 'DELETE',
+                      dataType: 'json',
+                      success: (res) => {
+                          resert1();
+
+                          const alert = document.querySelector('.alert')
+
+                          setTimeout(function() {
+                              alert.classList.add('remove')
+                          }, 2000)
+                          alert.classList.remove('remove')
+                          console.log('bike no registrado!')
+                      }
+
+                  })
+
+              })
+
           }
           //metodo para limpiar el formulario
       const resert = () => {
@@ -63,7 +91,13 @@
           $('#tipo').val('');
       }
 
+      const resert1 = () => {
+          $('#serial').val('');
+
+      }
+
       //llamadas a funciones
       save();
+      deleteBikes();
 
   })
