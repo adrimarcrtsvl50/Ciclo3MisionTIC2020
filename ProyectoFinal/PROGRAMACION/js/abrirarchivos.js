@@ -38,15 +38,11 @@
                       success: (data) => {
                           resert();
                           const alert = document.querySelector('.alert')
-                          console.log(alert)
                           setTimeout(function() {
                               alert.classList.add('hide')
                           }, 2000)
                           alert.classList.remove('hide')
-                          console.log('bike registrado!')
                       }
-
-
                   })
               })
           }
@@ -55,22 +51,20 @@
               $(document).on('click', '#btn_Elim', function() {
 
                   let detalle = document.getElementById('serial');
-                  let id = $(detalle).val()
+                  let id = $(detalle).val();
                   console.log(id)
                   $.ajax({
                       url: 'http://localhost:8080/bikes/' + id,
+                      contentType: 'application/json',
                       type: 'DELETE',
                       dataType: 'json',
-                      success: (res) => {
+                      success: (data) => {
                           resert1();
-                          hello
                           const alert = document.querySelector('.alert')
-
                           setTimeout(function() {
-                              alert.classList.add('remove')
+                              alert.classList.add('hide')
                           }, 2000)
-                          alert.classList.remove('remove')
-                          console.log('bike no registrado!')
+                          alert.classList.remove('hide')
                       }
 
                   })
@@ -95,6 +89,7 @@
           $('#serial').val('');
 
       }
+
 
       //llamadas a funciones
       save();

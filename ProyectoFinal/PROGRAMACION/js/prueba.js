@@ -1,6 +1,56 @@
-const Clickbutton = document.querySelectorAll('.buttonaña')
+$(document).ready(() => {
+    const list = () => {
+        $.ajax({
+            url: 'http://localhost:8080/bikes',
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+                let data = '';
+                res.forEach(element => {
+                    data += `
+                    <div class=" col d-flex justify-content-center mb-4">
+                        <div class="card shadow mb-1  rounded" style="width: 50rem;">
+                            <h5 class="card-title pt-2 text-center text-primary">${element.marca}</h5>
+                            <div class="card-body">
+                                <p class="card-text text-dark-50 description1">
+                                    <img src="../imagenes/bicicleta montaña/ima1.jpg" class="card-img-top" alt="...">
+                                    <label class="font-weight-bold">Serie: <span class="product_serie ml-2">${element.id}</span></label>
+                                    <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2">${element.marca}</span></label>
+                                    <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2">${element.tipo}</span></label>
+                                    <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2">${element.tamano}</span></label>
+                                    <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2">${element.genero}</span></label>
+                                    <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2">${element.color}</span></label>
+                                    <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2">${element.modelo}</span></label>
+                                    <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2">${element.estado}</span></label>                        
+                                    <label class="font-weight-bold">Edad: <span class="product_edad ml-2">${element.edad}</span></label>
+                                </p>
+                                <h5 class="text-primary">Precio: <span class="precio">${element.precio}</span></h5>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary button_add">Añadir a Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+                });
+                $('#tbodycard').html(data);
+
+
+            }
+        })
+    }
+
+    list();
+
+
+})
+
+//const tbodycard = document.querySelectorAll('#tbodycard')
+//console.log(tbodycard)
 const tbody = document.querySelector('.tbody')
 const tbody1 = document.querySelector('.tbody1')
+const Clickbutton = document.querySelectorAll('#button_add')
+console.log(Clickbutton)
 let carrito = []
 
 Clickbutton.forEach(btn => {
@@ -14,7 +64,7 @@ function addTocarritoItem(e) {
     const itemPrice = item.querySelector('.precio').textContent;
     const itemTalla = item.querySelector('.product_talla').textContent;
     const itemImg = item.querySelector('.card-img-top').src;
-
+    console.log(item, itemTitle)
     const newItem = {
         title: itemTitle,
         precio: itemPrice,
@@ -57,22 +107,22 @@ function renderCarrito() {
         const tr = document.createElement('tr')
         tr.classList.add('ItemCarrito')
         const Content = `
-        <th scope="row">1</th>
-        <td class="table_productos">
-            <img src=${item.img} alt="">
-            <h6 class="title">${item.title}</h6>
-        </td>
-        <td class="table_precio">
-            <p>${item.precio}</p>
-        </td>
-        <td class="table_talla">
-            <p>${item.talla}</p>
-        </td>
-        <td class="table_cantidad">
-            <input type="number" min="1" value=${item.cantidad} class="input__elemento">
-            <button class="delete btn btn-danger">x</button>
-        </td>
-    `
+                    <th scope="row">1</th>
+                    <td class="table_productos">
+                        <img src=${item.img} alt="">
+                        <h6 class="title">${item.title}</h6>
+                    </td>
+                    <td class="table_precio">
+                        <p>${item.precio}</p>
+                    </td>
+                    <td class="table_talla">
+                        <p>${item.talla}</p>
+                    </td>
+                    <td class="table_cantidad">
+                        <input type="number" min="1" value=${item.cantidad} class="input__elemento">
+                        <button class="delete btn btn-danger">x</button>
+                    </td>
+                `
         tr.innerHTML = Content;
         tbody.append(tr)
         tr.querySelector(".delete").addEventListener('click', removeItemCarrito)
@@ -88,8 +138,8 @@ function renderCarritocard() {
         const p = document.createElement('p')
         p.classList.add('ItemCarrito1')
         const Content = `
-        <a class="nombrepro">${item.title} </a> <span class="price ">${item.precio}</span> <span class="price ml-4">can: ${item.cantidad}</span>
-    `
+                    <a class="nombrepro">${item.title} </a> <span class="price ">${item.precio}</span> <span class="price ml-4">can: ${item.cantidad}</span>
+                `
         p.innerHTML = Content;
         tbody1.append(p)
 
@@ -185,7 +235,3 @@ window.onload = function() {
         renderCarritocard()
     }
 }
-
-$(document).ready(() => {
-
-})
