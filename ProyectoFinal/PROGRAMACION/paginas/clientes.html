@@ -88,8 +88,30 @@
                 <!--Producto-->
                 <div class="tab-pane fade show active container" id="pills-producto" role="tabpanel" aria-labelledby="pills-producto-tab">
                     <h1 class=" m-4 text-primary">Catalogos de Bicicletas</h1>
-                    <div id="tbodycard" class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-
+                    <div id="tbodycard" class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4" each="element: ${bike}">
+                        <div class=" col d-flex justify-content-center mb-4">
+                            <div class="card shadow mb-1  rounded" style="width: 50rem;">
+                                <h5 class="card-title pt-2 text-center text-primary"></h5>
+                                <div class="card-body">
+                                    <p class="card-text text-dark-50 description1">
+                                        <img src="../imagenes/bicicleta montaña/ima1.jpg" class="card-img-top" alt="...">
+                                        <label class="font-weight-bold">Serie: <span class="product_serie ml-2"></span></label>
+                                        <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2"></span></label>
+                                        <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2"></span></label>
+                                        <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2"></span></label>
+                                        <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2"></span></label>
+                                        <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2"></span></label>
+                                        <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2"></span></label>
+                                        <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2"></span></label>
+                                        <label class="font-weight-bold">Edad: <span class="product_edad ml-2"></span></label>
+                                    </p>
+                                    <h5 class="text-primary">Precio: <span class="precio"></span></h5>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary button_add">Añadir a Carrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
@@ -241,6 +263,6 @@
         </footer>
     </div>
 </body>
-<script src="../js/prueba.js"></script>
+<script type="text/javascript" src="../js/prueba.js"></script>
 
 </html>
