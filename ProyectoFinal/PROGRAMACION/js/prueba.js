@@ -5,16 +5,43 @@ $(document).ready(() => {
             type: 'GET',
             dataType: 'json',
             success: function(res) {
+                let data = '';
+                res.forEach(element => {
 
-                $('#tbodycard').empty();
-                $('#tbodycard').append(res);
+                        const titulo = document.querySelector('.card-title')
+                        const product_serie = document.querySelector('.product_serie')
+                        const product_marca = document.querySelector('.product_marca')
+                        const product_tipo = document.querySelector('.product_tipo')
+                        const product_tamano = document.querySelector('.product_tamano')
+                        const product_genero = document.querySelector('.product_genero')
+                        const product_color = document.querySelector('.product_color')
+                        const product_modelo = document.querySelector('.product_modelo')
+                        const product_estado = document.querySelector('.product_estado')
+                        const product_edad = document.querySelector('.product_edad')
+                        const precio = document.querySelector('.precio')
+                        titulo.innerHTML = `${element.marca}`
+                        product_serie.innerHTML = `${element.id}`
+                        product_marca.innerHTML = `${element.marca}`
+                        product_tipo.innerHTML = `${element.tipo}`
+                        product_tamano.innerHTML = `${element.tamano}`
+                        product_genero.innerHTML = `${element.genero}`
+                        product_color.innerHTML = `${element.color}`
+                        product_modelo.innerHTML = `${element.modelo}`
+                        product_estado.innerHTML = `${element.estado}`
+                        product_edad.innerHTML = `${element.edad}`
+                        precio.innerHTML = `$${element.precio}`
+                    })
+                    // $('#tbodycard').html(data);
+
             },
             error: function(e) {
 
                 console.log("ERROR : ", e);
             }
+
         });
     }
+
 
     list();
 
@@ -25,7 +52,7 @@ $(document).ready(() => {
 //console.log(tbodycard)
 const tbody = document.querySelector('.tbody')
 const tbody1 = document.querySelector('.tbody1')
-const Clickbutton = document.querySelectorAll('#button_add')
+const Clickbutton = document.querySelectorAll('.button_add')
 let carrito = []
 
 Clickbutton.forEach(btn => {
@@ -37,7 +64,7 @@ function addTocarritoItem(e) {
     const item = button.closest('.card')
     const itemTitle = item.querySelector('.card-title').textContent;
     const itemPrice = item.querySelector('.precio').textContent;
-    const itemTalla = item.querySelector('.product_talla').textContent;
+    const itemTalla = item.querySelector('.product_tamano').textContent;
     const itemImg = item.querySelector('.card-img-top').src;
     console.log(item, itemTitle)
     const newItem = {
