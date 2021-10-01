@@ -6,6 +6,7 @@
 package com.enbike.enbike.services;
 
 
+import com.enbike.enbike.models.Bike;
 import com.enbike.enbike.models.Profile;
 import com.enbike.enbike.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class ProfileService {
     public ArrayList<Profile> findAll() {
         return (ArrayList<Profile>) profileRepository.findAll();
     }
+
+    public Profile findById(Integer id){ return profileRepository.findById(id).get();}
 
     public Profile save(Profile profile) {
         return profileRepository.save(profile);

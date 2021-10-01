@@ -5,6 +5,7 @@
  */
 package com.enbike.enbike.controllers;
 
+import com.enbike.enbike.models.POS;
 import com.enbike.enbike.models.Profile;
 import com.enbike.enbike.services.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,21 +19,26 @@ import java.util.ArrayList;
 public class ProfileController {
     
     @Autowired
-    private ProfileService ProfileService;
+    private ProfileService profileService;
     
     @GetMapping
     public ArrayList<Profile> findAll() {
-        return ProfileService.findAll();
+        return profileService.findAll();
+    }
+
+    @GetMapping("{id}")
+    public Profile findById(@PathVariable Integer id) {
+        return profileService.findById(id);
     }
     
     @PostMapping
     public Profile save(@RequestBody Profile profile) {
-        return ProfileService.save(profile);
+        return profileService.save(profile);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable(value = "id") Integer id) {
-        ProfileService.deleteById(id);
+        profileService.deleteById(id);
     }
 
 }

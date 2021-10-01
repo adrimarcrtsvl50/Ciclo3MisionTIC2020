@@ -5,6 +5,7 @@
  */
 package com.enbike.enbike.controllers;
 
+import com.enbike.enbike.models.Card;
 import com.enbike.enbike.models.POS;
 import com.enbike.enbike.services.POSService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,21 +19,26 @@ import java.util.ArrayList;
 public class POSController {
     
     @Autowired
-    private POSService POSService;
+    private POSService posService;
     
     @GetMapping
     public ArrayList<POS> findAll() {
-        return POSService.findAll();
+        return posService.findAll();
+    }
+
+    @GetMapping("{id}")
+    public POS findById(@PathVariable Integer id) {
+        return posService.findById(id);
     }
     
     @PostMapping
     public POS save(@RequestBody POS pos) {
-        return POSService.save(pos);
+        return posService.save(pos);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable(value = "id") Integer id) {
-        POSService.deleteById(id);
+        posService.deleteById(id);
     }
 
 }

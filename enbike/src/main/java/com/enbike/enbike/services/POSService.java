@@ -6,6 +6,7 @@
 package com.enbike.enbike.services;
 
 
+import com.enbike.enbike.models.Bike;
 import com.enbike.enbike.models.POS;
 import com.enbike.enbike.repositories.POSRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class POSService {
     public ArrayList<POS> findAll() {
         return (ArrayList<POS>) posRepository.findAll();
     }
+
+    public POS findById(Integer id){ return posRepository.findById(id).get();}
 
     public POS save(POS pos) {
         return posRepository.save(pos);

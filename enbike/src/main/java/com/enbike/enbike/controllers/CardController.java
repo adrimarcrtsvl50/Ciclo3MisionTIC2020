@@ -5,6 +5,7 @@
  */
 package com.enbike.enbike.controllers;
 
+import com.enbike.enbike.models.BillingAddress;
 import com.enbike.enbike.models.Card;
 import com.enbike.enbike.services.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,11 @@ public class CardController {
     @GetMapping
     public ArrayList<Card> findAll() {
         return cardService.findAll();
+    }
+
+    @GetMapping("{id}")
+    public Card findById(@PathVariable Integer id) {
+        return cardService.findById(id);
     }
     
     @PostMapping

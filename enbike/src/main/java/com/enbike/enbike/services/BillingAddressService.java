@@ -6,6 +6,7 @@
 package com.enbike.enbike.services;
 
 
+import com.enbike.enbike.models.Bike;
 import com.enbike.enbike.models.BillingAddress;
 import com.enbike.enbike.repositories.BillingAddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class BillingAddressService {
     public ArrayList<BillingAddress> findAll() {
         return (ArrayList<BillingAddress>) billingAddressRepository.findAll();
     }
+
+    public BillingAddress findById(Integer id){ return billingAddressRepository.findById(id).get();}
 
     public BillingAddress save(BillingAddress billingAddress) {
         return billingAddressRepository.save(billingAddress);

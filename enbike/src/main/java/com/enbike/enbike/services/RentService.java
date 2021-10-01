@@ -6,6 +6,7 @@
 package com.enbike.enbike.services;
 
 
+import com.enbike.enbike.models.Bike;
 import com.enbike.enbike.models.Rent;
 import com.enbike.enbike.repositories.RentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class RentService {
     public ArrayList<Rent> findAll() {
         return (ArrayList<Rent>) rentRepository.findAll();
     }
+
+    public Rent findById(Integer id){ return rentRepository.findById(id).get();}
 
     public Rent save(Rent rent) {
         return rentRepository.save(rent);

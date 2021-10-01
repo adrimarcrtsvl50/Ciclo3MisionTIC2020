@@ -5,6 +5,7 @@
  */
 package com.enbike.enbike.controllers;
 
+import com.enbike.enbike.models.Profile;
 import com.enbike.enbike.models.Rent;
 import com.enbike.enbike.services.RentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,21 +19,26 @@ import java.util.ArrayList;
 public class RentController {
     
     @Autowired
-    private RentService RentService;
+    private RentService rentService;
     
     @GetMapping
     public ArrayList<Rent> findAll() {
-        return RentService.findAll();
+        return rentService.findAll();
+    }
+
+    @GetMapping("{id}")
+    public Rent findById(@PathVariable Integer id) {
+        return rentService.findById(id);
     }
     
     @PostMapping
     public Rent save(@RequestBody Rent rent) {
-        return RentService.save(rent);
+        return rentService.save(rent);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable(value = "id") Integer id) {
-        RentService.deleteById(id);
+        rentService.deleteById(id);
     }
 
 }

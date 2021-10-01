@@ -6,6 +6,7 @@
 package com.enbike.enbike.services;
 
 
+import com.enbike.enbike.models.Bike;
 import com.enbike.enbike.models.Card;
 import com.enbike.enbike.repositories.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class CardService {
     public ArrayList<Card> findAll() {
         return (ArrayList<Card>) cardRepository.findAll();
     }
+
+    public Card findById(Integer id){ return cardRepository.findById(id).get();}
 
     public Card save(Card card) {
         return cardRepository.save(card);

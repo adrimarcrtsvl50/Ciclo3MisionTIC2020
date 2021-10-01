@@ -27,9 +27,9 @@ public class BikeController {
         return bikeService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Bike getById(@PathVariable(value = "id") Integer id) {
-        return bikeService.getById(id);
+    @GetMapping("{id}")
+    public Bike findById(@PathVariable Integer id) {
+        return bikeService.findById(id);
     }
 
     @PostMapping
@@ -37,10 +37,9 @@ public class BikeController {
         return bikeService.save(bike);
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable(value = "id") Integer id) {
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) {
         bikeService.deleteById(id);
     }
-
 
 }

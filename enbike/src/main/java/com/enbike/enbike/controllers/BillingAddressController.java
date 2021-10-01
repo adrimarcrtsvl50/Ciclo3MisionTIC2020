@@ -5,6 +5,7 @@
  */
 package com.enbike.enbike.controllers;
 
+import com.enbike.enbike.models.Bike;
 import com.enbike.enbike.models.BillingAddress;
 import com.enbike.enbike.services.BillingAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,11 @@ public class BillingAddressController {
     @GetMapping
     public ArrayList<BillingAddress> findAll() {
         return billingAddressService.findAll();
+    }
+
+    @GetMapping("{id}")
+    public BillingAddress findById(@PathVariable Integer id) {
+        return billingAddressService.findById(id);
     }
     
     @PostMapping
