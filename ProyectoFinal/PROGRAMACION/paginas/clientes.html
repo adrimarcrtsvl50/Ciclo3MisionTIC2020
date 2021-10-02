@@ -88,37 +88,34 @@
                 <!--Producto-->
                 <div class="tab-pane fade show active container" id="pills-producto" role="tabpanel" aria-labelledby="pills-producto-tab">
                     <h1 class=" m-4 text-primary">Catalogos de Bicicletas</h1>
-                    <div id="tbodycard" class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4" each="element: ${bike}">
-                        <div class=" col d-flex justify-content-center mb-4">
-                            <div class="card shadow mb-1  rounded" style="width: 50rem;">
-                                <h5 class="card-title pt-2 text-center text-primary"></h5>
-                                <div class="card-body">
-                                    <p class="card-text text-dark-50 description1">
-                                        <img src="../imagenes/bicicleta montaña/ima1.jpg" class="card-img-top" alt="...">
-                                        <label class="font-weight-bold">Serie: <span class="product_serie ml-2"></span></label>
-                                        <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2"></span></label>
-                                        <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2"></span></label>
-                                        <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2"></span></label>
-                                        <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2"></span></label>
-                                        <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2"></span></label>
-                                        <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2"></span></label>
-                                        <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2"></span></label>
-                                        <label class="font-weight-bold">Edad: <span class="product_edad ml-2"></span></label>
-                                    </p>
-                                    <h5 class="text-primary">Precio: <span class="precio"></span></h5>
-                                    <div class="d-grid gap-2">
-                                        <button class="btn btn-primary button_add">Añadir a Carrito</button>
-                                    </div>
+                    <div id="pills-producto1" class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+                    </div>
+                </div>
+                <template id="template-productos">
+                    <div id="product-card" class=" col d-flex justify-content-center mb-4">
+                        <div class="card shadow mb-1  rounded" style="width: 50rem;">
+                            <h5 class="card-title pt-2 text-center text-primary"></h5>
+                            <div class="card-body">
+                                <p class="card-text text-dark-50 description1">
+                                    <img src="../imagenes/bicicleta montaña/ima1.jpg" class="card-img-top" alt="...">
+                                    <label class="font-weight-bold">Serie: <span class="product_serie ml-2"></span></label>
+                                    <label class="ml-4 font-weight-bold">Marca: <span class="product_marca ml-2"></span></label>
+                                    <label class="font-weight-bold ml-4">Tipo: <span class="product_tipo ml-2"></span></label>
+                                    <label class=" font-weight-bold">Tamaño: <span class="product_tamano ml-2"></span></label>
+                                    <label class="ml-2 font-weight-bold">Genero: <span class="product_genero ml-2"></span></label>
+                                    <label class="ml-2 font-weight-bold">Color: <span class="product_color ml-2"></span></label>
+                                    <label class="font-weight-bold">Modelo: <span class="product_modelo ml-2"></span></label>
+                                    <label class="ml-2  font-weight-bold">Estado: <span class="product_estado ml-2"></span></label>
+                                    <label class="font-weight-bold">Edad: <span class="product_edad ml-2"></span></label>
+                                </p>
+                                <h5 class="text-primary">Precio: <span class="precio"></span></h5>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary button_add">Añadir a Carrito</button>
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
                     </div>
-                </div>
+                </template>
                 <!--Carro-->
                 <div class="tab-pane fade carrito" id="pills-carrito" role="tabpanel" aria-labelledby="pills-carrito-tab">
                     <h1>GESTIÓN DE ALQUILAR</h1>
@@ -130,13 +127,31 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Productos</th>
                                 <th scope="col">Precio</th>
-                                <th scope="col">Talla</th>
+                                <th scope="col">Tamaño</th>
                                 <th scope="col">Cantidad</th>
+                                <th scope="col">Acción</th>
                             </tr>
                         </thead>
-                        <tbody class="tbody">
-                        </tbody>
+                        <tbody id="tbody"></tbody>
                     </table>
+                    <template id="template-carrito">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td class="table_productos">
+                                <img src="../imagenes/bicicleta montaña/ima1.jpg" alt="">
+                                <h6 class="title">mrx</h6>
+                            </td>
+                            <td class="table_precio">$<span>500</span></td>
+                            <td class="table_tamano">L</td>
+                            <td class="table_cantidad">1</td>
+                            <td class="tabla_botones">
+                                <button class="btn btn-info sumar">+</button>
+                                <button class="btn btn-success disminuir">-</button>
+                                <button class="delete btn btn-danger">x</button>
+                            </td>
+                        </tr>  
+                    </template>
+
                     <br>
                     <!--Fechas de aquilar-->
                     <div class="card1">
@@ -212,15 +227,24 @@
                             <div class="container2 ">
                                 <h4 class="">Carrito de compras <i class="fa fa-shopping-cart"></i> <span class="price " style="color:black"> </span>
                                 </h4>
-                                <div class="tbody1">
+                                <div id="tbody1">
 
                                 </div>
                                 <hr>
-                                <p>SubTotal <span class="price itemCartSubTotal" style="color:black"><b>$0</b></span></p>
-                                <p>Iva <span class="price itemCartIva" style="color:black"><b>$0</b></span></p>
-                                <p>Multa <span class="price itemCartMulta" style="color:black"><b>$0</b></span></p>
-                                <p>Total <span class="price itemCartTotal" style="color:black"><b>$0</b></span></p>
+                                <div id="tbodyfooter">
+                                    <p>SubTotal <span class="price itemCartSubTotal" style="color:black"><b>$0</b></span></p>
+                                    <p>Iva <span class="price itemCartIva" style="color:black"><b>$0</b></span></p>
+                                    <p>Total <span class="price itemCartTotal" style="color:black"><b>$0</b></span></p>
+                                </div>
                             </div>
+                            <template id="template-footer">
+                                <p>SubTotal <span class="price itemCartSubTotal" style="color:rgb(163, 135, 135)"><b>$0</b></span></p>
+                                    <p>Iva <span class="price itemCartIva" style="color:black"><b>$0</b></span></p>                                    
+                                    <p>Total <span class="price itemCartTotal" style="color:black"><b>$0</b></span></p>
+                            </template>
+
+
+
                         </div>
                     </div>
                 </div>

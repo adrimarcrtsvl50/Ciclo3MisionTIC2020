@@ -5,235 +5,181 @@ $(document).ready(() => {
             type: 'GET',
             dataType: 'json',
             success: function(res) {
-                let data = '';
-                res.forEach(element => {
-
-                        const titulo = document.querySelector('.card-title')
-                        const product_serie = document.querySelector('.product_serie')
-                        const product_marca = document.querySelector('.product_marca')
-                        const product_tipo = document.querySelector('.product_tipo')
-                        const product_tamano = document.querySelector('.product_tamano')
-                        const product_genero = document.querySelector('.product_genero')
-                        const product_color = document.querySelector('.product_color')
-                        const product_modelo = document.querySelector('.product_modelo')
-                        const product_estado = document.querySelector('.product_estado')
-                        const product_edad = document.querySelector('.product_edad')
-                        const precio = document.querySelector('.precio')
-                        titulo.innerHTML = `${element.marca}`
-                        product_serie.innerHTML = `${element.id}`
-                        product_marca.innerHTML = `${element.marca}`
-                        product_tipo.innerHTML = `${element.tipo}`
-                        product_tamano.innerHTML = `${element.tamano}`
-                        product_genero.innerHTML = `${element.genero}`
-                        product_color.innerHTML = `${element.color}`
-                        product_modelo.innerHTML = `${element.modelo}`
-                        product_estado.innerHTML = `${element.estado}`
-                        product_edad.innerHTML = `${element.edad}`
-                        precio.innerHTML = `$${element.precio}`
-                    })
-                    // $('#tbodycard').html(data);
-
+                const data = res
+                pintarProductos(data)
+                detectarBotones(data)
             },
             error: function(e) {
-
                 console.log("ERROR : ", e);
             }
-
         });
     }
-
-
     list();
-
-
 })
+const fottertotal = document.querySelector('#tbodyfooter')
+const contenedorProductos = document.querySelector('#pills-producto1')
+const items = document.querySelector('#tbody')
+const tbody1 = document.querySelector('#tbody1')
+let carrito = {}
 
-//const tbodycard = document.querySelectorAll('#tbodycard')
-//console.log(tbodycard)
-const tbody = document.querySelector('.tbody')
-const tbody1 = document.querySelector('.tbody1')
-const Clickbutton = document.querySelectorAll('.button_add')
-let carrito = []
+const pintarProductos = (data) => {
+    const template = document.querySelector('#template-productos').content
+    const fragment = document.createDocumentFragment()
 
-Clickbutton.forEach(btn => {
-    btn.addEventListener('click', addTocarritoItem)
-})
+    data.forEach(producto => {
+        //template.querySelector('img').setAttribute('src', producto.thumbnailUrl)
+        template.querySelector('h5').textContent = producto.marca
+        template.querySelector('.product_serie').textContent = producto.id
+        template.querySelector('.product_marca').textContent = producto.marca
+        template.querySelector('.product_tipo').textContent = producto.tipo
+        template.querySelector('.product_tamano').textContent = producto.tamano
+        template.querySelector('.product_genero').textContent = producto.genero
+        template.querySelector('.product_color').textContent = producto.color
+        template.querySelector('.product_modelo').textContent = producto.modelo
+        template.querySelector('.product_estado').textContent = producto.estado
+        template.querySelector('.product_edad').textContent = producto.edad
+        template.querySelector('.precio').textContent = producto.precio
+        template.querySelector('.button_add').dataset.id = producto.id
 
-function addTocarritoItem(e) {
-    const button = e.target
-    const item = button.closest('.card')
-    const itemTitle = item.querySelector('.card-title').textContent;
-    const itemPrice = item.querySelector('.precio').textContent;
-    const itemTalla = item.querySelector('.product_tamano').textContent;
-    const itemImg = item.querySelector('.card-img-top').src;
-    console.log(item, itemTitle)
-    const newItem = {
-        title: itemTitle,
-        precio: itemPrice,
-        talla: itemTalla,
-        img: itemImg,
-        cantidad: 1
-    }
-
-    addItemCarrito(newItem)
-}
-
-function addItemCarrito(newItem) {
-
-    const alert = document.querySelector('.alert')
-
-    setTimeout(function() {
-        alert.classList.add('hide')
-    }, 2000)
-    alert.classList.remove('hide')
-
-    const InputElemnto = tbody.getElementsByClassName('input__elemento')
-    for (let i = 0; i < carrito.length; i++) {
-        if (carrito[i].title.trim() === newItem.title.trim()) {
-            carrito[i].cantidad++;
-            const inputValue = InputElemnto[i]
-            inputValue.value++;
-            CarritoTotal()
-            return null;
-        }
-    }
-    carrito.push(newItem)
-    renderCarrito()
-    renderCarritocard()
-}
-
-function renderCarrito() {
-    tbody.innerHTML = ''
-
-    carrito.map(item => {
-        const tr = document.createElement('tr')
-        tr.classList.add('ItemCarrito')
-        const Content = `
-                    <th scope="row">1</th>
-                    <td class="table_productos">
-                        <img src=${item.img} alt="">
-                        <h6 class="title">${item.title}</h6>
-                    </td>
-                    <td class="table_precio">
-                        <p>${item.precio}</p>
-                    </td>
-                    <td class="table_talla">
-                        <p>${item.talla}</p>
-                    </td>
-                    <td class="table_cantidad">
-                        <input type="number" min="1" value=${item.cantidad} class="input__elemento">
-                        <button class="delete btn btn-danger">x</button>
-                    </td>
-                `
-        tr.innerHTML = Content;
-        tbody.append(tr)
-        tr.querySelector(".delete").addEventListener('click', removeItemCarrito)
-        tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
+        const clone = template.cloneNode(true)
+        fragment.appendChild(clone)
     })
-    CarritoTotal()
+    contenedorProductos.appendChild(fragment)
+}
+
+const detectarBotones = (data) => {
+    const botones = document.querySelectorAll('.card button')
+
+
+    botones.forEach(btn => {
+        btn.addEventListener('click', () => {
+
+            const producto = data.find(item => item.id === parseInt(btn.dataset.id))
+            producto.cantidad = 1
+            if (carrito.hasOwnProperty(producto.id)) {
+                producto.cantidad = carrito[producto.id].cantidad + 1
+            }
+            carrito[producto.id] = {...producto }
+
+            const alert = document.querySelector('.alert')
+
+            setTimeout(function() {
+                alert.classList.add('hide')
+            }, 2000)
+            alert.classList.remove('hide')
+            pintarCarrito()
+            renderCarritocard()
+
+        })
+
+    })
+}
+
+const pintarCarrito = () => {
+    items.innerHTML = ''
+    const template = document.querySelector('#template-carrito').content
+    const fragment = document.createDocumentFragment()
+    Object.values(carrito).forEach(producto => {
+
+        template.querySelector('th').textContent = producto.id
+            //template.querySelector('img').setAttribute('src', producto.thumbnailUrl)
+        template.querySelector('h6').textContent = producto.marca
+        template.querySelector('.table_precio').textContent = producto.precio
+        template.querySelector('.table_tamano').textContent = producto.tamano
+        template.querySelector('.table_cantidad').textContent = producto.cantidad
+
+        //botones 
+        template.querySelector('.sumar').dataset.id = producto.id
+        template.querySelector('.disminuir').dataset.id = producto.id
+        template.querySelector('.delete').dataset.id = producto.id
+
+        const clone = template.cloneNode(true)
+        fragment.appendChild(clone)
+
+    })
+    items.appendChild(fragment)
+    accionBotones()
 
 }
 
 function renderCarritocard() {
     tbody1.innerHTML = ''
-    carrito.map(item => {
+    Object.values(carrito).forEach(item => {
         const p = document.createElement('p')
         p.classList.add('ItemCarrito1')
         const Content = `
-                    <a class="nombrepro">${item.title} </a> <span class="price ">${item.precio}</span> <span class="price ml-4">can: ${item.cantidad}</span>
+        <a class="idprod">${item.id} </a> <a class="nombrepro">${item.marca} </a> <span class="price ">${item.precio}</span> <span class="price ml-4">can: ${item.cantidad}</span>
                 `
         p.innerHTML = Content;
         tbody1.append(p)
 
     })
-}
-
-
-
-function CarritoTotal() {
-    let SubTotal = 0;
-    let Iva = 0;
-    let Multa = 0;
-    let Total = 0;
-    const itemCartSubTotal = document.querySelector('.itemCartSubTotal')
-    const itemCartIva = document.querySelector('.itemCartIva')
-    const itemCartMulta = document.querySelector('.itemCartMulta')
-    const itemCartTotal = document.querySelector('.itemCartTotal')
-    carrito.forEach((item) => {
-        const precio = Number(item.precio.replace("$", ''))
-        SubTotal = SubTotal + precio * item.cantidad
-        Iva = SubTotal * 0.19
-        Multa
-        Total = SubTotal + Iva + Multa
-
-    })
-
-    itemCartSubTotal.innerHTML = `$${SubTotal}`
-    itemCartIva.innerHTML = `$${Iva}`
-    itemCartMulta.innerHTML = `$${Multa}`
-    itemCartTotal.innerHTML = `$${Total}`
-    addLocalStorage()
-}
-
-
-
-function removeItemCarrito(e) {
-    const buttonDelete = e.target
-    const tr = buttonDelete.closest(".ItemCarrito")
-    const title = tr.querySelector('.title').textContent;
-    for (let i = 0; i < carrito.length; i++) {
-        if (carrito[i].title.trim() === title.trim()) {
-            carrito.splice(i, 1)
-        }
-    }
-
-    const alert = document.querySelector('.remove')
-
-    setTimeout(function() {
-        alert.classList.add('remove')
-    }, 2000)
-    alert.classList.remove('remove')
-
-    tr.remove()
     CarritoTotal()
-    renderCarritocard()
 }
 
-function sumaCantidad(e) {
-    const sumaInput = e.target
-    const tr = sumaInput.closest(".ItemCarrito")
-    const title = tr.querySelector('.title').textContent;
+const CarritoTotal = () => {
+    fottertotal.innerHTML = ''
+    const template = document.querySelector('#template-footer').content
+    const fragment = document.createDocumentFragment()
+    const nSubtotal = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
+    const nIva = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + nSubtotal * 0.19, 0)
+    const nTotal = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + nSubtotal + nIva, 0)
 
-    carrito.forEach(item => {
-        if (item.title.trim() === title) {
-            sumaInput.value < 1 ? (sumaInput.value = 1) : sumaInput.value;
-            item.cantidad = sumaInput.value;
-            CarritoTotal()
+    template.querySelector('.itemCartSubTotal').textContent = `$${nSubtotal}`
+    template.querySelector('.itemCartIva').textContent = `$${nIva}`
+    template.querySelector('.itemCartTotal').textContent = `$${nTotal}`
+
+    const clone = template.cloneNode(true)
+    fragment.appendChild(clone)
+
+    fottertotal.appendChild(fragment)
+
+}
+
+const accionBotones = () => {
+    const botonesAgregar = document.querySelectorAll('#tbody .sumar')
+    const botonesDisminuir = document.querySelectorAll('#tbody .disminuir')
+    const botonesEliminar = document.querySelectorAll('#tbody .delete')
+
+    botonesAgregar.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const producto = carrito[btn.dataset.id]
+            producto.cantidad++
+                carrito[btn.dataset.id] = {...producto }
+            pintarCarrito()
             renderCarritocard()
-
-
-        }
-
+        })
     })
-}
-
-function compararFechas(e) {
-    var fechai = document.getElementById("FechaI").value;
-    console.log(fechai)
-}
-
-
-
-function addLocalStorage() {
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-}
-
-
-window.onload = function() {
-    const storage = JSON.parse(localStorage.getItem('carrito'));
-    if (storage) {
-        carrito = storage;
-        renderCarrito()
-        renderCarritocard()
-    }
+    botonesDisminuir.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const producto = carrito[btn.dataset.id]
+            producto.cantidad--
+                if (producto.cantidad === 0) {
+                    const alert = document.querySelector('.remove')
+                    setTimeout(function() {
+                        alert.classList.add('remove')
+                    }, 2000)
+                    alert.classList.remove('remove')
+                    delete carrito[btn.dataset.id]
+                    pintarCarrito()
+                    renderCarritocard()
+                } else {
+                    carrito[btn.dataset.id] = {...producto }
+                }
+            pintarCarrito()
+            renderCarritocard()
+        })
+    })
+    botonesEliminar.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const alert = document.querySelector('.remove')
+            setTimeout(function() {
+                alert.classList.add('remove')
+            }, 2000)
+            alert.classList.remove('remove')
+            delete carrito[btn.dataset.id]
+            pintarCarrito()
+            renderCarritocard()
+        })
+    })
 }
