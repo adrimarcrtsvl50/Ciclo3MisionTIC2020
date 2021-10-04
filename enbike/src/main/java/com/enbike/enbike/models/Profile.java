@@ -22,15 +22,22 @@ public class Profile {
     
     @Column(nullable = false)
     private String apellido;
+
+    @Column(nullable = false)
+    private String tipodedocumento;
     
     @Column(nullable = false)
-    private Date fechaNacimiento;
+    private String email;
 
     @Column(nullable = false)
     private String tipoUsuario;
 
     @Column(nullable = false)
     private String contrasena;
+
+    @Column(nullable = false)
+    private String recontrasena;
+
 
     public Integer getId() {
         return id;
@@ -48,6 +55,14 @@ public class Profile {
         this.nombre = nombre;
     }
 
+    public String getTipodedocumento() {
+        return tipodedocumento;
+    }
+
+    public void setTipodedocumento(String tipodedocumento) {
+        this.tipodedocumento = tipodedocumento;
+    }
+
     public String getApellido() {
         return apellido;
     }
@@ -56,20 +71,36 @@ public class Profile {
         this.apellido = apellido;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
     public String getTipoUsuario() {
         return tipoUsuario;
     }
 
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrsena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getRecontrasena() {
+        return recontrasena;
+    }
+
+    public void setRecontrsena(String recontrasena) {
+        this.recontrasena = recontrasena;
     }
 
     @ManyToOne(optional = false)

@@ -26,7 +26,7 @@ public class RentController {
         return rentService.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Rent findById(@PathVariable Integer id) {
         return rentService.findById(id);
     }

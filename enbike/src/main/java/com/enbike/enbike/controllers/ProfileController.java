@@ -26,7 +26,7 @@ public class ProfileController {
         return profileService.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Profile findById(@PathVariable Integer id) {
         return profileService.findById(id);
     }

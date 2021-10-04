@@ -1,26 +1,112 @@
 $(document).ready(() => {
+    //metodo agregar productos 
     const list = () => {
-        $.ajax({
-            url: 'http://localhost:8080/bikes',
-            type: 'GET',
-            dataType: 'json',
-            success: function(res) {
-                const data = res
-                pintarProductos(data)
-                detectarBotones(data)
-            },
-            error: function(e) {
-                console.log("ERROR : ", e);
-            }
-        });
+            $.ajax({
+                url: 'http://localhost:8080/bikes',
+                type: 'GET',
+                dataType: 'json',
+                success: function(res) {
+                    const data = res
+                    pintarProductos(data)
+                    detectarBotones(data)
+
+                },
+                error: function(e) {
+                    console.log("ERROR : ", e);
+                }
+            });
+        }
+        //metodo direccion factura
+        /*
+    const DireccionFac = () => {
+            $('#btn_Conf').on('click', function() {
+                console.log('me diste')
+                const datosDireccion = {
+                    ciudad: $('#city').val(),
+                    departamento: $('#state').val(),
+                    direccion: $('#adr').val(),
+                    email: $('#email').val(),
+                    nombre: $('#fname').val(),
+                    telefono: $('#telephone').val(),
+                }
+                console.log(datosDireccion)
+                $.ajax({
+                    url: 'http://localhost:8080/billingAddress',
+                    contentType: 'application/json',
+                    type: 'POST',
+                    data: JSON.stringify(datosDireccion),
+                    dataType: 'json',
+                    success: (data) => {
+                        resert();
+                        const alert = document.querySelector('.alert')
+                        setTimeout(function() {
+                            alert.classList.add('hide')
+                        }, 2000)
+                        alert.classList.remove('hide')
+                    }
+                })
+            })
+        }
+        */
+        //metodo pago factura
+        /*
+    const PagoFac = () => {
+            $('#btn_Conf').on('click', function() {
+                console.log('me diste')
+                const datosPago = {
+                    cvv: $('#cvv').val(),
+                    nombre: $('#cname').val(),
+                    numero: $('#ccnum').val(),
+                    vencimiento: $('#expmonth').val(),
+                }
+                console.log(datosPago)
+                $.ajax({
+                    url: 'http://localhost:8080/cards',
+                    contentType: 'application/json',
+                    type: 'POST',
+                    data: JSON.stringify(datosPago),
+                    dataType: 'json',
+                    success: (data) => {
+                        resert();
+                        const alert = document.querySelector('.alert')
+                        setTimeout(function() {
+                            alert.classList.add('conf')
+                        }, 2000)
+                        alert.classList.remove('conf')
+                    }
+                })
+            })
+        }
+        */
+        //metodo pos
+    const PosFac = () => {
+            $('#btn_Conf').on('click', function() {
+
+                rentFactura()
+
+            })
+        }
+        //metodo para limpiar el formulario
+    const resert = () => {
+        $('#cvv').val('');
+        $('#cname').val('');
+        $('#ccnum').val('');
+        $('#expmonth').val('');
     }
     list();
+    //DireccionFac();
+    //PagoFac();
+    PosFac();
 })
+
 const fottertotal = document.querySelector('#tbodyfooter')
 const contenedorProductos = document.querySelector('#pills-producto1')
 const items = document.querySelector('#tbody')
 const tbody1 = document.querySelector('#tbody1')
+
+
 let carrito = {}
+
 
 const pintarProductos = (data) => {
     const template = document.querySelector('#template-productos').content
@@ -49,13 +135,13 @@ const pintarProductos = (data) => {
 
 const detectarBotones = (data) => {
     const botones = document.querySelectorAll('.card button')
-
-
     botones.forEach(btn => {
         btn.addEventListener('click', () => {
 
             const producto = data.find(item => item.id === parseInt(btn.dataset.id))
+
             producto.cantidad = 1
+
             if (carrito.hasOwnProperty(producto.id)) {
                 producto.cantidad = carrito[producto.id].cantidad + 1
             }
@@ -69,6 +155,7 @@ const detectarBotones = (data) => {
             alert.classList.remove('hide')
             pintarCarrito()
             renderCarritocard()
+            console.log(producto)
 
         })
 
@@ -100,6 +187,7 @@ const pintarCarrito = () => {
     items.appendChild(fragment)
     accionBotones()
 
+
 }
 
 function renderCarritocard() {
@@ -115,25 +203,65 @@ function renderCarritocard() {
 
     })
     CarritoTotal()
+
+}
+
+const fechasonIguales = () => {
+    var fechaInicio = $("#FechaI").val().split("-");
+    var fechaFin = $("#FechaFin").val().split("-");
+    var fechadesde = new Date(fechaInicio[0], fechaInicio[1] - 1, fechaInicio[2]);
+    var fechahasta = new Date(fechaFin[0], fechaFin[1] - 1, fechaFin[2]);
+    if (fechadesde.getTime() == fechahasta.getTime()) {
+        swal("La Fecha de Entrega", "las dos fechas son iguales por favor coloque otra fecha.", "error");
+    } else {
+        if (fechadesde.getTime() >= fechahasta.getTime()) {
+            swal("La Fecha de Entrega", "es menor de la fecha de inicio.", "error");
+        } else {
+            CarritoTotal()
+        }
+    }
 }
 
 const CarritoTotal = () => {
     fottertotal.innerHTML = ''
+    var fechaInicio = $("#FechaI").val().split("-");
+    var fechaFin = $("#FechaFin").val().split("-");
+    var fechadesde = new Date(fechaInicio[0], fechaInicio[1] - 1, fechaInicio[2]);
+    var fechahasta = new Date(fechaFin[0], fechaFin[1] - 1, fechaFin[2]);
+    var dias = fechahasta.getTime() - fechadesde.getTime();
+    var diff = dias / (1000 * 3600 * 24);
+
     const template = document.querySelector('#template-footer').content
     const fragment = document.createDocumentFragment()
     const nSubtotal = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
-    const nIva = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + nSubtotal * 0.19, 0)
-    const nTotal = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + nSubtotal + nIva, 0)
+    const nTotalDias = Object.values(carrito).reduce((acc, {}) => acc + nSubtotal * diff, 0)
 
-    template.querySelector('.itemCartSubTotal').textContent = `$${nSubtotal}`
+    const multa = nTotalDias
+
+    if (diff >= 4) {
+        multaTotal = multa * 0.10;
+        template.querySelector('.itemCartMulta').textContent = `$${multaTotal}`
+    } else {
+        if (diff <= 3) {
+            multaTotal = 0
+            template.querySelector('.itemCartMulta').textContent = `$${multaTotal}`
+        }
+    }
+    const nIva = Object.values(carrito).reduce((acc, {}) => acc + nTotalDias * 0.19, 0)
+    const nTotal = Object.values(carrito).reduce((acc, {}) => acc + (multaTotal + nIva + nTotalDias), 0)
     template.querySelector('.itemCartIva').textContent = `$${nIva}`
     template.querySelector('.itemCartTotal').textContent = `$${nTotal}`
+
+    template.querySelector('.itemCartSubTotal').textContent = `$${nSubtotal}`
+    template.querySelector('.itemCartDias').textContent = `${diff}`
+    template.querySelector('.itemCartTotalDias').textContent = `$${nTotalDias}`
+
+
 
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)
 
     fottertotal.appendChild(fragment)
-
 }
 
 const accionBotones = () => {
@@ -182,4 +310,22 @@ const accionBotones = () => {
             renderCarritocard()
         })
     })
+}
+
+
+
+const rentFactura = () => {
+    const Fechas = {
+
+
+    }
+    const rent = {
+        ciudad: $('#city').val(),
+        departamento: $('#state').val(),
+        direccion: $('#adr').val(),
+        email: $('#email').val(),
+        nombre: $('#fname').val(),
+        telefono: $('#telephone').val(),
+    }
+    console.log(rent)
 }

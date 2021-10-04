@@ -59,15 +59,16 @@
                       type: 'DELETE',
                       dataType: 'json',
                       success: (data) => {
-                          resert1();
+
                           const alert = document.querySelector('.alert')
                           setTimeout(function() {
                               alert.classList.add('hide')
                           }, 2000)
                           alert.classList.remove('hide')
+                          resert1();
                       }
 
-                  })
+                  });
 
               })
 

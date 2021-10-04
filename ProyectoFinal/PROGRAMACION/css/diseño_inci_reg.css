@@ -48,6 +48,7 @@ body {
 }
 
 input[type=text],
+input[type=email],
 input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -58,6 +59,7 @@ input[type=password] {
 }
 
 input[type="text"],
+input[type=email],
 input[type="password"] {
     font-size: 20px;
 }
@@ -68,7 +70,7 @@ input[type="password"] {
 }
 
 .button_for {
-    width: 40%;
+    width: 90%;
     background: #7f8c8d;
     color: #fff;
     display: inline-block;

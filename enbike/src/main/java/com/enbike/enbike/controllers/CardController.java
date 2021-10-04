@@ -26,7 +26,7 @@ public class CardController {
         return cardService.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Card findById(@PathVariable Integer id) {
         return cardService.findById(id);
     }

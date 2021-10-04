@@ -17,29 +17,29 @@
                 <a href="../paginas/clientes.html"><img src="../imagenes/letra-x.png"></a>
             </div>
             <h1>Iniciar Sesion</h1>
+            <form action="javascript:void(0)" id="formInciar" method="POST">
+                <div class="container">
+                    <i class="fas fa-envelope"></i>
+                    <label for="uname"><b>Correo</b></label>
+                    <input type="email" placeholder="Introduzca el correo de usuario" name="uname" required>
 
-            <div class="container">
-                <i class="fas fa-user"></i>
-                <label for="uname"><b>Nombre de usuario</b></label>
-                <input type="text" placeholder="Introduzca el nombre de usuario" name="uname" required>
+                    <i class="fas fa-key"></i>
+                    <label for="psw"><b>Contraseña</b></label>
+                    <input type="password" placeholder="Introduzca la contraseña" name="psw" required>
 
-                <i class="fas fa-key"></i>
-                <label for="psw"><b>Contraseña</b></label>
-                <input type="password" placeholder="Introduzca la contraseña" name="psw" required>
-
-                <input type="submit" value="Inciar Sesion" class="button_for">
-                <input type="submit" value="Cancelar" class="button_for">
-                <br>
-                <label>
+                    <input type="submit" value="Inciar Sesion" class="button_for">
+                    <br>
+                    <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
-            </div>
-            <h3>¿Aún no tienes una cuenta?</h3>
-            <p>Registrate para que puedas iniciar sesión</p>
-            <a href="../paginas/crearcuenta.html">No registrado</a>
+                </div>
+                <h3>¿Aún no tienes una cuenta?</h3>
+                <p>Registrate para que puedas iniciar sesión <a href="../paginas/registrar.html">Ingresa aqui</a></p>
+            </form>
         </div>
 
     </form>
 </body>
+<script defer src="../js/index.js"></script>
 
 </html>

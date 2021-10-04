@@ -128,6 +128,7 @@ public class Bike {
         this.edad = edad;
     }
 
+    
     @OneToMany(mappedBy = "fk_id_bike")
     private Collection<Rent> id_rent;
 
