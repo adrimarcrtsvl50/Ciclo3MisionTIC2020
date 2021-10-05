@@ -21,20 +21,21 @@
             <h1>Registrate</h1>
 
             <p>Por favor diligencie este formulario para registrar un nuevo usuario.</p>
-            <div class="container">
-                <i class="fas fa-user"></i>
-                <label for="first_name"><b>Nombre</b></label>
-                <input type="text" placeholder="Introduzca su nombre" name="first_name" required>
+            <form>
+                <div class="container">
+                    <i class="fas fa-user"></i>
+                    <label for="first_name"><b>Nombre</b></label>
+                    <input id="name" type="text" placeholder="Introduzca su nombre" name="first_name" required>
+                    <br>
+                    <i class="fas fa-user"></i>
+                    <label for="last_name"><b>Apellido</b></label>
+                    <input id="appellido" type="text" placeholder="Introduzca su apellido" name="last_name" required>
 
-                <i class="fas fa-user"></i>
-                <label for="last_name"><b>Apellido</b></label>
-                <input type="text" placeholder="Introduzca su apellido" name="last_name" required>
-
-                <i class="far fa-id-card"></i>
-                <label for="Tipo de documento"><b>Tipo de documento</b></label>
-                <br>
-                <div class="input-contenedor">
-                    <select name="Tipo de documento" class="select-doc" required>
+                    <i class="far fa-id-card"></i>
+                    <label for="Tipo de documento"><b>Tipo de documento</b></label>
+                    <br>
+                    <div id="documento" class="input-contenedor">
+                        <select name="Tipo de documento" class="select-doc" required>
                         <option disabled selected>Selecciona tipo de documento</option>
                         <option value="1|CC">CEDULA DE CIUDADANIA</option>
                         <option value="2|PA">PASAPORTE</option>
@@ -42,44 +43,45 @@
                         <option value="4|CE">CEDULA DE EXTRANJERIA</option>
                     
                     </select>
-                </div>
+                    </div>
 
-                <i class="far fa-id-card"></i>
-                <label for="id"><b>ID</b></label>
-                <input type="text" placeholder="Introduzca su número de identificación" name="id" required>
+                    <i class="far fa-id-card"></i>
+                    <label for="id"><b>ID</b></label>
+                    <input id="numid" type="text" placeholder="Introduzca su número de identificación" name="id" required>
 
-                <i class="fas fa-envelope"></i>
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Introduzca su Email" name="email" required>
+                    <i class="fas fa-envelope"></i>
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Introduzca su Email" name="email" required>
 
-                <i class="fas fa-users"></i>
-                <label for="tipe_user"><b>Tipo de usuario</b></label>
-                <br>
-                <div class="input-contenedor">
-                    <select name="tipe_user" class="select-doc" required>
-                    <option value="admin">Administrador</option>
-                    <option value="client">Cliente</option>
-                    </select>
-                </div>
+                    <i class="fas fa-users"></i>
+                    <label for="tipe_user"><b>Tipo de usuario</b></label>
+                    <br>
+                    <div id="tipe_user" class="input-contenedor">
+                        <select name="tipe_user" class="select-doc" required>
+                            <option value="admin">Administrador</option>
+                            <option value="client">Cliente</option>
+                        </select>
+                    </div>
 
-                <i class="fas fa-key"></i>
-                <label for="psw"><b>Contraseña</b></label>
-                <input type="password" placeholder="Introduzca su contraseña" name="psw" required>
+                    <i class="fas fa-key"></i>
+                    <label for="psw"><b>Contraseña</b></label>
+                    <input id="password" type="password" placeholder="Introduzca su contraseña" name="psw" required>
 
-                <i class="fas fa-key"></i>
-                <label for="psw-repeat"><b>Repetir contraseña</b></label>
-                <input type="password" placeholder="Repetir contraseña" name="psw-repeat" required>
+                    <i class="fas fa-key"></i>
+                    <label for="psw-repeat"><b>Repetir contraseña</b></label>
+                    <input id="repassword" type="password" placeholder="Repetir contraseña" name="psw-repeat" required>
 
-                <label>
+                    <label>
                  <input type="checkbox" checked="checked" name="recordar" style="margin-bottom:15px"> Recordarme
                  </label>
-                <br>
-                <input type="submit" value="Crear Cuenta" class="button_for">
-                <a href="../paginas/indexcli.html"><input type="submit" value="Cancelar" class="button_for"></a>
-
-            </div>
+                    <br>
+                    <input id="btn_registrar" type="submit" value="Registrar" class="button_for" required>
+                    <p class="form_link">¿Ya tiene una cuenta? <a href="../paginas/index.html">Ingresa aqui</a></p>
+                </div>
+            </form>
         </div>
     </form>
 </body>
+<script defer src="../js/index.js"></script>
 
 </html>

@@ -12,18 +12,18 @@ import java.util.Collection;
 
 @Entity
 public class Bike {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, unique = true)
     private Integer id;
-    
+
     @Column(nullable = false)
     private String marca;
-    
+
     @Column(nullable = false)
     private String tipo;
-    
+
     @Column(nullable = false)
     private String tamano;
 

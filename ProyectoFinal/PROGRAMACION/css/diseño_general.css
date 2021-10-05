@@ -173,6 +173,10 @@ header,
     display: none;
 }
 
+.conf {
+    display: none;
+}
+
 
 /*iniciarsesion*/
 
@@ -669,7 +673,7 @@ span.price {
     margin-bottom: 20px;
 }
 
-.table_cantidad>button {
+.tabla_botones>button {
     width: 40px;
     border: none;
     outline: 0;

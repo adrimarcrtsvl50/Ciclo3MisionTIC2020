@@ -26,7 +26,7 @@ public class POSController {
         return posService.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public POS findById(@PathVariable Integer id) {
         return posService.findById(id);
     }

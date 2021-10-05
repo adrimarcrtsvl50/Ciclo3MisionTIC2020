@@ -23,7 +23,9 @@ public class BikeService {
         return (ArrayList<Bike>) bikeRepository.findAll();
     }
 
-    public Bike findById(Integer id){ return bikeRepository.findById(id).get();}
+    public Bike findById(Integer id){ return bikeRepository.findById(id).get();};
+
+   
 
     public Bike save(Bike bike) {
         return bikeRepository.save(bike);

@@ -11,17 +11,20 @@ import java.sql.Date;
 
 @Entity
 public class Profile {
-    
+
     @Id
     @Column(nullable = false, unique = true)
     private Integer id;
-    
+
     @Column(nullable = false)
     private String nombre;
-    
+
     @Column(nullable = false)
     private String apellido;
-    
+
+    @Column(nullable = false)
+    private String tipodedocumento;
+
     @Column(nullable = false)
     private String tipodocumento;
 
@@ -30,6 +33,10 @@ public class Profile {
 
     @Column(nullable = false)
     private String contrasena;
+
+    @Column(nullable = false)
+    private String recontrasena;
+
 
     public Integer getId() {
         return id;
@@ -47,12 +54,12 @@ public class Profile {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getTipodedocumento() {
+        return tipodedocumento;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setTipodedocumento(String tipodedocumento) {
+        this.tipodedocumento = tipodedocumento;
     }
 
     public String getTipodocumento() {

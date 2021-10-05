@@ -27,17 +27,19 @@ public class BikeController {
         return bikeService.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Bike findById(@PathVariable Integer id) {
         return bikeService.findById(id);
     }
+
+    
 
     @PostMapping
     public Bike save(@RequestBody Bike bike) {
         return bikeService.save(bike);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         bikeService.deleteById(id);
     }
