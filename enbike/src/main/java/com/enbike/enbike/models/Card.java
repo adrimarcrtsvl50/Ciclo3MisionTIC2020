@@ -69,14 +69,14 @@ public class Card {
         this.cvv = cvv;
     }
 
-    @OneToMany(mappedBy = "fk_id_profile")
-    private Collection<Profile> id_profile;
+    @OneToOne
+    private BillingAddress fk_id_billingAddress;
 
-    public Collection<Profile> getId_profile() {
-        return id_profile;
+    public BillingAddress getFk_id_billingAddress() {
+        return fk_id_billingAddress;
     }
 
-    public void setId_profile(Collection<Profile> id_profile) {
-        this.id_profile = id_profile;
+    public void setFk_id_billingAddress(BillingAddress fk_id_billingAddress) {
+        this.fk_id_billingAddress = fk_id_billingAddress;
     }
 }

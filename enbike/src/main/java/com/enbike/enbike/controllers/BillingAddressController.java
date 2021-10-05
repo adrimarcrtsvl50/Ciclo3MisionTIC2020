@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping(path = "/billingAddress")
+@RequestMapping(path = "/bill")
 @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})
 public class BillingAddressController {
     
@@ -36,8 +36,8 @@ public class BillingAddressController {
         return billingAddressService.save(billingAddress);
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable(value = "id") Integer id) {
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) {
         billingAddressService.deleteById(id);
     }
 

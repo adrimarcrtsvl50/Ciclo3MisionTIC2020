@@ -45,9 +45,6 @@ public class Bike {
     @Column(nullable = false)
     private String edad;
 
-//    @Column
-//    private String imagen;
-
     public Integer getId() {
         return id;
     }
@@ -126,16 +123,5 @@ public class Bike {
 
     public void setEdad(String edad) {
         this.edad = edad;
-    }
-
-    @OneToMany(mappedBy = "fk_id_bike")
-    private Collection<Rent> id_rent;
-
-    public Collection<Rent> getId_rent() {
-        return id_rent;
-    }
-
-    public void setId_rent(Collection<Rent> id_rent) {
-        this.id_rent = id_rent;
     }
 }

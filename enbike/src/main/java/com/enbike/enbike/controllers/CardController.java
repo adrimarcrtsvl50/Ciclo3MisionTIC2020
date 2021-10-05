@@ -36,8 +36,8 @@ public class CardController {
         return cardService.save(card);
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable(value = "id") Integer id) {
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) {
         cardService.deleteById(id);
     }
 

@@ -10,7 +10,6 @@ import javax.security.auth.callback.PasswordCallback;
 import java.sql.Date;
 
 @Entity
-@Table(name = "profile")
 public class Profile {
     
     @Id
@@ -24,10 +23,10 @@ public class Profile {
     private String apellido;
     
     @Column(nullable = false)
-    private Date fechaNacimiento;
+    private String tipodocumento;
 
     @Column(nullable = false)
-    private String tipoUsuario;
+    private String tipo;
 
     @Column(nullable = false)
     private String contrasena;
@@ -56,41 +55,38 @@ public class Profile {
         this.apellido = apellido;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getTipodocumento() {
+        return tipodocumento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setTipodocumento(String tipodocumento) {
+        this.tipodocumento = tipodocumento;
     }
 
-    public String getTipoUsuario() {
-        return tipoUsuario;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setTipoUsuario(String tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    @ManyToOne(optional = false)
-    private Card fk_id_profile;
-
-    public Card getFk_id_profile() {
-        return fk_id_profile;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setFk_id_profile(Card fk_id_profile) {
-        this.fk_id_profile = fk_id_profile;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
-    @OneToOne(mappedBy = "fk_rent_prof", optional = false)
-    private Rent id_rent;
+    @OneToOne
+    private Card fk_id_card;
 
-    public Rent getId_rent() {
-        return id_rent;
+    public Card getFk_id_card() {
+        return fk_id_card;
     }
 
-    public void setId_rent(Rent id_rent) {
-        this.id_rent = id_rent;
+    public void setFk_id_card(Card fk_id_card) {
+        this.fk_id_card = fk_id_card;
     }
 }

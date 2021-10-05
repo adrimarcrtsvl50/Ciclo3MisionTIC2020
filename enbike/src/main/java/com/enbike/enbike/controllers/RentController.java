@@ -36,8 +36,8 @@ public class RentController {
         return rentService.save(rent);
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable(value = "id") Integer id) {
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) {
         rentService.deleteById(id);
     }
 

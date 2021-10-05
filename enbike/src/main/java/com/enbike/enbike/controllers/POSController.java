@@ -36,8 +36,8 @@ public class POSController {
         return posService.save(pos);
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable(value = "id") Integer id) {
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) {
         posService.deleteById(id);
     }
 

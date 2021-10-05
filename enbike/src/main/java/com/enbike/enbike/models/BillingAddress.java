@@ -88,15 +88,4 @@ public class BillingAddress {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
-
-    @OneToOne(mappedBy = "fk_id_billingAdd", optional = false)
-    private Rent rent_id;
-
-    public Rent getRent_id() {
-        return rent_id;
-    }
-
-    public void setRent_id(Rent rent_id) {
-        this.rent_id = rent_id;
-    }
 }

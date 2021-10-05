@@ -36,8 +36,8 @@ public class ProfileController {
         return profileService.save(profile);
     }
 
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable(value = "id") Integer id) {
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Integer id) {
         profileService.deleteById(id);
     }
 
