@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping(path = "/bikes")
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE})
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 public class BikeController {
 
     @Autowired
@@ -32,8 +32,6 @@ public class BikeController {
         return bikeService.findById(id);
     }
 
-    
-
     @PostMapping
     public Bike save(@RequestBody Bike bike) {
         return bikeService.save(bike);
@@ -42,6 +40,11 @@ public class BikeController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         bikeService.deleteById(id);
+    }
+
+    @PutMapping
+    public Bike modify(@RequestBody Bike bike) {
+        return bikeService.save(bike);
     }
 
 }

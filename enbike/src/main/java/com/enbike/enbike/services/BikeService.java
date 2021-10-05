@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 @Service
 public class BikeService {
@@ -25,8 +24,6 @@ public class BikeService {
 
     public Bike findById(Integer id){ return bikeRepository.findById(id).get();};
 
-   
-
     public Bike save(Bike bike) {
         return bikeRepository.save(bike);
     }
@@ -34,5 +31,4 @@ public class BikeService {
     public void deleteById(Integer id) {
         bikeRepository.deleteById(id);
     }
-
 }
