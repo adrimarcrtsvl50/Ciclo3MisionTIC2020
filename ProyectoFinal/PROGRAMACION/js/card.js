@@ -3,6 +3,7 @@ $(document).ready(() => {
 
     //metodo de guardar datos
     const save = () => {
+
             $('#btn_Conf').on('click', function() {
                 console.log('me diste')
                 const datosCard = {
@@ -10,6 +11,8 @@ $(document).ready(() => {
                     nombre: $('#cname').val(),
                     numero: $('#ccnum').val(),
                     vencimiento: $('#expmonth').val(),
+
+
                 }
                 console.log(datosCard)
                 $.ajax({

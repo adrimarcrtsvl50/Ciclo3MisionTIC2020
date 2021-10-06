@@ -26,16 +26,13 @@ public class Profile {
     private String tipodedocumento;
 
     @Column(nullable = false)
-    private String tipodocumento;
-
-    @Column(nullable = false)
     private String tipo;
 
     @Column(nullable = false)
     private String contrasena;
 
     @Column(nullable = false)
-    private String recontrasena;
+    private String email;
 
 
     public Integer getId() {
@@ -62,13 +59,6 @@ public class Profile {
         this.tipodedocumento = tipodedocumento;
     }
 
-    public String getTipodocumento() {
-        return tipodocumento;
-    }
-
-    public void setTipodocumento(String tipodocumento) {
-        this.tipodocumento = tipodocumento;
-    }
 
     public String getTipo() {
         return tipo;
@@ -84,6 +74,14 @@ public class Profile {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @OneToOne

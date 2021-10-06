@@ -17,16 +17,16 @@ public class POS {
     private Integer id;
     
     @Column(nullable = false)
-    private Long SubTotal;
+    private float SubTotal;
     
     @Column()
-    private Long multa;
+    private float multa;
     
     @Column(nullable = false)
-    private Long iva;
+    private float iva;
 
     @Column(nullable = false)
-    private Long total;
+    private float total;
 
     public Integer getId() {
         return id;
@@ -36,35 +36,35 @@ public class POS {
         this.id = id;
     }
 
-    public Long getSubTotal() {
+    public float getSubTotal() {
         return SubTotal;
     }
 
-    public void setSubTotal(Long subTotal) {
+    public void setSubTotal(float subTotal) {
         SubTotal = subTotal;
     }
 
-    public Long getMulta() {
+    public float getMulta() {
         return multa;
     }
 
-    public void setMulta(Long multa) {
+    public void setMulta(float multa) {
         this.multa = multa;
     }
 
-    public Long getIva() {
+    public float getIva() {
         return iva;
     }
 
-    public void setIva(Long iva) {
+    public void setIva(float iva) {
         this.iva = iva;
     }
 
-    public Long getTotal() {
+    public float getTotal() {
         return total;
     }
 
-    public void setTotal(Long total) {
+    public void setTotal(float total) {
         this.total = total;
     }
 }
