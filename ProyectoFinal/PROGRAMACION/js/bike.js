@@ -174,6 +174,7 @@ const CarritoTotal = () => {
     const nIva = Object.values(carrito).reduce((acc, {}) => acc + nTotalDias * 0.19, 0)
     const nTotal = Object.values(carrito).reduce((acc, {}) => acc + (multaTotal + nIva + nTotalDias), 0)
     template.querySelector('.itemCartIva').textContent = `$${nIva}`
+    console.log(nSubtotal, nTotalDias, multa, nIva, nTotal)
     template.querySelector('.itemCartTotal').textContent = `$${nTotal}`
 
     template.querySelector('.itemCartSubTotal').textContent = `$${nSubtotal}`

@@ -49,7 +49,7 @@
                         <label class="formulario__label" for="Tipo de documento"><b>Tipo de documento</b></label>
                         <br>
                         <div id="documento" class="input-contenedor">
-                            <select name="Tipo de documento" class="select-doc" required>
+                            <select id="tipodoc" name="Tipo de documento" class="select-doc" required>
                                     <option disabled selected>Selecciona tipo de documento</option>
                                     <option value="1|CC">CEDULA DE CIUDADANIA</option>
                                     <option value="2|PA">PASAPORTE</option>
@@ -85,7 +85,7 @@
                         <label class="formulario__label" for="tipe_user"><b>Tipo de usuario</b></label>
                         <br>
                         <div id="tipe_user" class="input-contenedor">
-                            <select name="tipe_user" class="select-doc" required>
+                            <select id="tipous" name="tipe_user" class="select-doc" required>
                                     <option value="admin">Administrador</option>
                                     <option value="client">Cliente</option>
                                 </select>
@@ -125,7 +125,7 @@
                         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
                     </div>
                     <div class="formulario__grupo formulario__grupo-btn-enviar">
-                        <button type="submit" class="button_for">Enviar</button>
+                        <button type="submit" id="btn_reg" class="button_for">Enviar</button>
                         <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
                     </div>
                     <p class="form_link">¿Ya tiene una cuenta? <a href="../paginas/index.html">Ingresa aqui</a></p>

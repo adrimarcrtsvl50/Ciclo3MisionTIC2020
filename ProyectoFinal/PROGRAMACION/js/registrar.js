@@ -90,6 +90,7 @@ inputs.forEach((input) => {
 });
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
+    save()
     const terminos = document.getElementById('terminos');
     if (campos.nombre && campos.apellido && campos.password && campos.email && campos.id && terminos.checked) {
         formulario.reset();
@@ -111,3 +112,33 @@ formulario.addEventListener('submit', (e) => {
 
 
 });
+
+//metodo de guardar datos
+const save = () => {
+    console.log("me diste")
+
+
+    const id = document.getElementById('numid').value
+
+    console.log(id)
+        /*
+    apellido: $('#appellido').val(),
+        contrasena: $('#password').val(),
+        email: $('#email').val(),
+        nombre: $('#name').val(),
+        tipo: $('#tipous').val(),
+        tipodedocumento: $('#tipodoc').val(),
+
+
+    $.ajax({
+        url: 'http://localhost:8080/profiles',
+        contentType: 'application/json',
+        type: 'POST',
+        data: JSON.stringify({
+            id: id
+        }),
+        dataType: 'json',
+
+    })
+*/
+}
