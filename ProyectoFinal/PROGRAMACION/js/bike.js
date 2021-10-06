@@ -60,23 +60,28 @@ const detectarBotones = (data) => {
         btn.addEventListener('click', () => {
 
             const producto = data.find(item => item.id === parseInt(btn.dataset.id))
-
+            const estado = producto.estado
             producto.cantidad = 1
 
-            if (carrito.hasOwnProperty(producto.id)) {
-                producto.cantidad = carrito[producto.id].cantidad + 1
+            if (estado == "prestamo" || estado == "mantenimiento") {
+                swal("El estado de la Bicicleta", "la bicicleta se encuentra en mantenimiento o prestada.", "error");
+            } else {
+                if (carrito.hasOwnProperty(producto.id)) {
+                    producto.cantidad = carrito[producto.id].cantidad + 1
+                }
+                carrito[producto.id] = {...producto }
+
+                const alert = document.querySelector('.alert')
+
+                setTimeout(function() {
+                    alert.classList.add('hide')
+                }, 2000)
+                alert.classList.remove('hide')
+                pintarCarrito()
+                renderCarritocard()
+                    //console.log(producto)
             }
-            carrito[producto.id] = {...producto }
 
-            const alert = document.querySelector('.alert')
-
-            setTimeout(function() {
-                alert.classList.add('hide')
-            }, 2000)
-            alert.classList.remove('hide')
-            pintarCarrito()
-            renderCarritocard()
-            console.log(producto)
 
         })
 
@@ -229,22 +234,4 @@ const accionBotones = () => {
             renderCarritocard()
         })
     })
-}
-
-
-
-const rentFactura = () => {
-    const Fechas = {
-
-
-    }
-    const rent = {
-        ciudad: $('#city').val(),
-        departamento: $('#state').val(),
-        direccion: $('#adr').val(),
-        email: $('#email').val(),
-        nombre: $('#fname').val(),
-        telefono: $('#telephone').val(),
-    }
-    console.log(rent)
 }
