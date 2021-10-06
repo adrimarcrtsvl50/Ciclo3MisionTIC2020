@@ -3,17 +3,21 @@ $(document).ready(() => {
     //metodo de guardar datos
     const save = () => {
         $('#btn_Regis').on('click', function () {
-            const datosCard = {
-                cvv: $('#cvv').val(),
-                nombre: $('#nombre').val(),
-                numero: $('#numero').val(),
-                vencimiento: $('#vencimiento').val()
+            const datosRent = {
+                duracion_estimada: $('#duracion_estimada').val(),
+                duracion_real: $('#duracion_real').val(),
+                fecha_entrega: $('#fecha_entrega').val(),
+                fecha_final: $('#fecha_final').val(),
+                fecha_inicial: $('#fecha_finicial').val(),
+                fk_id_bike_id: $('#fk_id_bike_id').val(),
+                fk_id_pos_id: $('#fk_id_pos_id').val(),
+                fk_id_profile_id: $('#fk_id_profile_id').val()
             }
             $.ajax({
-                url: 'http://localhost:8080/card',
+                url: 'http://localhost:8080/rent',
                 contentType: 'application/json',
                 type: 'POST',
-                data: JSON.stringify(datosCard),
+                data: JSON.stringify(datosRent),
                 dataType: 'json',
                 success: (data) => {
                     reset();
@@ -34,7 +38,7 @@ $(document).ready(() => {
             let id = $(detalle).val();
             console.log(id)
             $.ajax({
-                url: 'http://localhost:8080/card/' + id,
+                url: 'http://localhost:8080/rent/' + id,
                 contentType: 'application/json',
                 type: 'DELETE',
                 dataType: 'json',
@@ -52,10 +56,14 @@ $(document).ready(() => {
     }
     //metodo para limpiar el formulario
     const reset = () => {
-        $('#cvv').val(),
-            $('#nombre').val(),
-            $('#numero').val(),
-            $('#vencimiento').val()
+        $('#duracion_estimada').val(),
+        $('#duracion_real').val(),
+        $('#fecha_entrega').val(),
+        $('#fecha_final').val(),
+        $('#fecha_finicial').val(),
+        $('#fk_id_bike_id').val(),
+        $('#fk_id_pos_id').val(),
+        $('#fk_id_profile_id').val()
     }
 
     const reset1 = () => {
@@ -65,5 +73,5 @@ $(document).ready(() => {
 
     //llamadas a funciones
     save();
-    deleteCard();
+    deleteRent();
 })

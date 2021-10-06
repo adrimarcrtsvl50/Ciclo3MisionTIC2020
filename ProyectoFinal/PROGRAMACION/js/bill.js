@@ -32,7 +32,7 @@ $(document).ready(() => {
     const deleteBill = () => {
         $(document).on('click', '#btn_Elim', function () {
 
-            let detalle = document.getElementById('serial');
+            let detalle = document.getElementById('id');
             let id = $(detalle).val();
             console.log(id)
             $.ajax({
