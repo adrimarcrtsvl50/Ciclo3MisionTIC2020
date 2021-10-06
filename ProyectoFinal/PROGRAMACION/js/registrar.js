@@ -16,7 +16,7 @@ const campos = {
     id: false,
     password: false,
     email: false,
-    telefono: false
+
 }
 const validarFormulario = (e) => {
 
@@ -24,7 +24,6 @@ const validarFormulario = (e) => {
     switch (e.target.name) {
 
         case "first_name":
-            console.log("funciona")
             validarCampo(expresiones.nombre, e.target, 'nombre');
             break;
         case "last_name":
@@ -91,6 +90,24 @@ inputs.forEach((input) => {
 });
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
+    const terminos = document.getElementById('terminos');
+    if (campos.nombre && campos.apellido && campos.password && campos.email && campos.id && terminos.checked) {
+        formulario.reset();
+
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+        }, 5000);
+
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formulario__grupo-correcto');
+        });
+    } else {
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+        }, 2000);
+    }
 
 
 });

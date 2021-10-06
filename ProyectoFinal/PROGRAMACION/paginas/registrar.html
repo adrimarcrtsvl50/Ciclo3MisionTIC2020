@@ -7,7 +7,6 @@
     <title>Crear Cuenta</title>
     <link rel="stylesheet" href="../css/diseño_inci_reg.css">
     <script src="https://kit.fontawesome.com/3f79f6487f.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -46,7 +45,7 @@
                     </div>
                     <br>
                     <div class="formulario__grupo" id="grupo__tipo">
-                        <i class="far fa-id-card"></i>
+                        <i class="fas fa-id-card"></i>
                         <label class="formulario__label" for="Tipo de documento"><b>Tipo de documento</b></label>
                         <br>
                         <div id="documento" class="input-contenedor">
@@ -61,7 +60,7 @@
                     </div>
                     <br>
                     <div class="formulario__grupo" id="grupo__id">
-                        <i class="far fa-id-card"></i>
+                        <i class="fas fa-id-card"></i>
                         <label class="formulario__label" for="id"><b>ID</b></label>
                         <div class="formulario__grupo-input">
                             <input class="formulario__input" id="numid" type="text" placeholder="Introduzca su número de identificación" name="id" required>
@@ -113,9 +112,14 @@
                         </div>
                     </div>
                     <br>
-                    <label>
-                        <input type="checkbox" checked="checked" name="recordar" style="margin-bottom:15px"> Recordarme
-                    </label>
+
+                    <!-- Grupo: Terminos y Condiciones -->
+                    <div class="formulario__grupo" id="grupo__terminos">
+                        <label class="formulario__label">
+                            <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                            Acepto los Terminos y Condiciones
+				        </label>
+                    </div>
                     <br>
                     <div class="formulario__mensaje" id="formulario__mensaje">
                         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
@@ -130,6 +134,6 @@
         </div>
     </form>
 </body>
-<script defer src="../js/index.js"></script>
+<script src="../js/registrar.js"></script>
 
 </html>
