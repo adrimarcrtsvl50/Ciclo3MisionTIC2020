@@ -195,31 +195,109 @@
                             <p>Diligencie los campos a continuacion:</p>
                             <label> Serial
                                     <br>
-                                    <input name="serial" action="" autocomplete="off"required="required">                                 
+                                    <input id="serialm" name="serial" action="" autocomplete="off"required="required">                                 
                                 </label>
                             <br>
-                            <button id="boton1" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar</button>
+                            <button id="btn_cons" class="btns_cos" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar</button>
                             <br>
                             <br>
-
-                            <label> Marca
+                            <div id="tbody_modi">
+                                <label> Marca
                                     <br>
-                                     <input name="marca" action="" autocomplete="off"required="required">              
+                                     <input id="marca" name="marca" action="" autocomplete="off"required="required">              
                                 </label>
-                            <br>
+                                <br>
 
-                            <label> Tipo
+                                <label> Tipo
                                     <br>
                                     <input name="tipo" action="" autocomplete="off"
                                         required="required">
                                 </label>
-                            <br>
+                                <br>
 
-                            <label> Tamaño
+                                <label> Tamaño
                                     <br>
                                     <input name="tamano" action="" autocomplete="off"
                                         required="required">
                                 </label>
+                                <br>
+
+                                <label>Género
+                                    <br>
+                                    <select class="select-css1" name="genero"  required="required">                
+                                        <option value="femenino">Femenino</option>
+                                        <option value="masculino">Masculino</option>                            <
+                                    </select>
+                                 </label>
+                                <br>
+
+                                <label> Color
+                                    <br>
+                                    <input name="color" action="" autocomplete="off"
+                                        required="required">
+                                </label>
+                                <br>
+
+                                <label> Modelo
+                                    <br>
+                                    <input name="modelo" action="" autocomplete="off"
+                                        required="required">
+                                </label>
+                                <br>
+
+                                <label> Edad
+                                    <br>
+                                    <select class="select-css1" name="edad"  required="required">                
+                                        <option value="adulto">Adulto</option>
+                                        <option value="nino">Niño</option>                            
+                                    </select>
+                                </label>
+                                <br>
+
+                                <label> Talla
+                                        <br>
+                                        <select class="select-css1" name="talla"  required="required">                
+                                            <option value="s">S</option>
+                                            <option value="m">M</option>  
+                                            <option value="l">L</option>                            
+                                        </select>
+                                </label>
+                                <br>
+
+                                <label> Estado
+                                        <br>
+                                        <select class="select-css1" name="estado"  required="required">                
+                                            <option value="disponible">Disponible</option>
+                                            <option value="prestamo">Prestamo</option>
+                                            <option value="mantenimiento">Mantenimiento</option>
+                                        </select>
+                                </label>
+                                <br>
+
+                                <div style="text-align: center;">
+                                    <button id="btn_Modif" class="btns" name="modificar" value="True" autofocus="autofocus" type="submit">MODIFICAR</button>
+                                </div>
+                            </div>
+                        </div>
+                        <template id="template_modificar">
+                            <label> Marca
+                                <br>
+                                 <input class="marca_mod" name="marca" action="" autocomplete="off"required="required">              
+                            </label>
+                            <br>
+
+                            <label> Tipo
+                                <br>
+                                <input name="tipo" action="" autocomplete="off"
+                                    required="required">
+                            </label>
+                            <br>
+
+                            <label> Tamaño
+                                <br>
+                                <input name="tamano" action="" autocomplete="off"
+                                    required="required">
+                            </label>
                             <br>
 
                             <label>Género
@@ -228,21 +306,21 @@
                                     <option value="femenino">Femenino</option>
                                     <option value="masculino">Masculino</option>                            <
                                 </select>
-                            </label>
+                             </label>
                             <br>
 
                             <label> Color
-                                    <br>
-                                    <input name="color" action="" autocomplete="off"
-                                        required="required">
-                                </label>
+                                <br>
+                                <input name="color" action="" autocomplete="off"
+                                    required="required">
+                            </label>
                             <br>
 
                             <label> Modelo
-                                    <br>
-                                    <input name="modelo" action="" autocomplete="off"
-                                        required="required">
-                                </label>
+                                <br>
+                                <input name="modelo" action="" autocomplete="off"
+                                    required="required">
+                            </label>
                             <br>
 
                             <label> Edad
@@ -255,29 +333,29 @@
                             <br>
 
                             <label> Talla
-                                <br>
-                                <select class="select-css1" name="talla"  required="required">                
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>  
-                                    <option value="l">L</option>                            
-                                </select>
+                                    <br>
+                                    <select class="select-css1" name="talla"  required="required">                
+                                        <option value="s">S</option>
+                                        <option value="m">M</option>  
+                                        <option value="l">L</option>                            
+                                    </select>
                             </label>
                             <br>
 
                             <label> Estado
-                                <br>
-                                <select class="select-css1" name="estado"  required="required">                
-                                    <option value="disponible">Disponible</option>
-                                    <option value="prestamo">Prestamo</option>
-                                    <option value="mantenimiento">Mantenimiento</option>
-                                </select>
+                                    <br>
+                                    <select class="select-css1" name="estado"  required="required">                
+                                        <option value="disponible">Disponible</option>
+                                        <option value="prestamo">Prestamo</option>
+                                        <option value="mantenimiento">Mantenimiento</option>
+                                    </select>
                             </label>
                             <br>
 
                             <div style="text-align: center;">
                                 <button id="btn_Modif" class="btns" name="modificar" value="True" autofocus="autofocus" type="submit">MODIFICAR</button>
                             </div>
-                        </div>
+                        </template>
                         <!--ELIMINAR-->
 
                         <div id="eliminar" class="tabcontent">
@@ -303,7 +381,7 @@
                                     <input name="serial" action="" autocomplete="off"
                                            required="required">
                                 </label>
-                            <button id="boton1" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar
+                            <button id="btn_cons" class="btns_cos" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar
                                     </button>
                             <br>
                             <br>

@@ -1,102 +1,23 @@
 $(document).ready(() => {
     //metodo agregar productos 
     const list = () => {
-            $.ajax({
-                url: 'http://localhost:8080/bikes',
-                type: 'GET',
-                dataType: 'json',
-                success: function(res) {
-                    const data = res
-                    pintarProductos(data)
-                    detectarBotones(data)
+        $.ajax({
+            url: 'http://localhost:8080/bikes',
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+                const data = res
+                pintarProductos(data)
+                detectarBotones(data)
 
-                },
-                error: function(e) {
-                    console.log("ERROR : ", e);
-                }
-            });
-        }
-        //metodo direccion factura
-        /*
-    const DireccionFac = () => {
-            $('#btn_Conf').on('click', function() {
-                console.log('me diste')
-                const datosDireccion = {
-                    ciudad: $('#city').val(),
-                    departamento: $('#state').val(),
-                    direccion: $('#adr').val(),
-                    email: $('#email').val(),
-                    nombre: $('#fname').val(),
-                    telefono: $('#telephone').val(),
-                }
-                console.log(datosDireccion)
-                $.ajax({
-                    url: 'http://localhost:8080/billingAddress',
-                    contentType: 'application/json',
-                    type: 'POST',
-                    data: JSON.stringify(datosDireccion),
-                    dataType: 'json',
-                    success: (data) => {
-                        resert();
-                        const alert = document.querySelector('.alert')
-                        setTimeout(function() {
-                            alert.classList.add('hide')
-                        }, 2000)
-                        alert.classList.remove('hide')
-                    }
-                })
-            })
-        }
-        */
-        //metodo pago factura
-        /*
-    const PagoFac = () => {
-            $('#btn_Conf').on('click', function() {
-                console.log('me diste')
-                const datosPago = {
-                    cvv: $('#cvv').val(),
-                    nombre: $('#cname').val(),
-                    numero: $('#ccnum').val(),
-                    vencimiento: $('#expmonth').val(),
-                }
-                console.log(datosPago)
-                $.ajax({
-                    url: 'http://localhost:8080/cards',
-                    contentType: 'application/json',
-                    type: 'POST',
-                    data: JSON.stringify(datosPago),
-                    dataType: 'json',
-                    success: (data) => {
-                        resert();
-                        const alert = document.querySelector('.alert')
-                        setTimeout(function() {
-                            alert.classList.add('conf')
-                        }, 2000)
-                        alert.classList.remove('conf')
-                    }
-                })
-            })
-        }
-        */
-        //metodo pos
-    const PosFac = () => {
-            $('#btn_Conf').on('click', function() {
-
-                rentFactura()
-
-            })
-        }
-        //metodo para limpiar el formulario
-    const resert = () => {
-        $('#cvv').val('');
-        $('#cname').val('');
-        $('#ccnum').val('');
-        $('#expmonth').val('');
+            },
+            error: function(e) {
+                console.log("ERROR : ", e);
+            }
+        });
     }
     list();
-    //DireccionFac();
-    //PagoFac();
-    PosFac();
+
 })
 
 const fottertotal = document.querySelector('#tbodyfooter')
@@ -186,8 +107,6 @@ const pintarCarrito = () => {
     })
     items.appendChild(fragment)
     accionBotones()
-
-
 }
 
 function renderCarritocard() {

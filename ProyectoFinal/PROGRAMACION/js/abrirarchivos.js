@@ -73,6 +73,28 @@
               })
 
           }
+          //metodo de modificar los datos 
+      const modificarBike = () => {
+              $(document).on('click', '#btn_cons', function() {
+
+                  let detalle = document.getElementById('serialm');
+                  let id = $(detalle).val();
+                  console.log(id)
+                  $.ajax({
+                      url: 'http://localhost:8080/bikes/' + id,
+                      type: 'GET',
+                      dataType: 'json',
+                      success: function(res) {
+                          const data = res
+                          mostrarProductos(data)
+
+
+                      }
+
+                  });
+
+              })
+          }
           //metodo para limpiar el formulario
       const resert = () => {
           $('#color').val('');
@@ -95,5 +117,25 @@
       //llamadas a funciones
       save();
       deleteBikes();
+      modificarBike();
 
   })
+  const items = document.querySelector('#tbody_modi')
+  const mostrarProductos = (data) => {
+      console.log("mostrar", data)
+      items.innerHTML = ''
+      const template = document.querySelector('#template_modificar').content
+      const fragment = document.createDocumentFragment()
+      Object.values(data).forEach(producto => {
+          //console.log("dentro", producto)
+          template.querySelector('.marca_mod').textContent = producto.marca
+
+          const clone = template.cloneNode(true)
+              //console.log(clone)
+          fragment.appendChild(clone)
+              //console.log(fragment)
+
+      })
+      items.appendChild(fragment)
+      console.log(items)
+  }
