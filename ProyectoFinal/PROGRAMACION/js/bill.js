@@ -2,7 +2,7 @@ $(document).ready(() => {
 
     //metodo de guardar datos
     const save = () => {
-        // $('#btn_Regis').on('click', function() {
+        $('#btn_Regis').on('click', function() {
             const datosBill = {
                 ciudad: $('#ciudad').val(),
                 departamento: $('#departamento').val(),
