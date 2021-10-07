@@ -128,11 +128,11 @@ const save = () => {
     fetch('http://localhost:8080/profiles', {
             method: 'POST',
             body: JSON.stringify({
-                id: id,
                 apellido: apellido,
                 contrasena: contrasena,
                 email: email,
                 nombre: nombre,
+                numid: id,
                 tipo: tipo,
                 tipodedocumento: tipodedocumento
             }),
