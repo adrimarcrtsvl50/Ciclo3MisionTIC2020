@@ -9,7 +9,6 @@ $(document).ready(() => {
                 const data = res
                 pintarProductos(data)
                 detectarBotones(data)
-
             },
             error: function(e) {
                 console.log("ERROR : ", e);
@@ -17,7 +16,6 @@ $(document).ready(() => {
         });
     }
     list();
-
 })
 
 const fottertotal = document.querySelector('#tbodyfooter')
@@ -25,9 +23,7 @@ const contenedorProductos = document.querySelector('#pills-producto1')
 const items = document.querySelector('#tbody')
 const tbody1 = document.querySelector('#tbody1')
 
-
 let carrito = {}
-
 
 const pintarProductos = (data) => {
     const template = document.querySelector('#template-productos').content
@@ -81,10 +77,7 @@ const detectarBotones = (data) => {
                 renderCarritocard()
                     //console.log(producto)
             }
-
-
         })
-
     })
 }
 
@@ -124,7 +117,6 @@ function renderCarritocard() {
                 `
         p.innerHTML = Content;
         tbody1.append(p)
-
     })
     CarritoTotal()
 
@@ -180,8 +172,6 @@ const CarritoTotal = () => {
     template.querySelector('.itemCartSubTotal').textContent = `$${nSubtotal}`
     template.querySelector('.itemCartDias').textContent = `${diff}`
     template.querySelector('.itemCartTotalDias').textContent = `$${nTotalDias}`
-
-
 
     const clone = template.cloneNode(true)
     fragment.appendChild(clone)

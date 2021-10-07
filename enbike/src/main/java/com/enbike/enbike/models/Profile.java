@@ -6,15 +6,17 @@
 package com.enbike.enbike.models;
 
 import javax.persistence.*;
-import javax.security.auth.callback.PasswordCallback;
-import java.sql.Date;
 
 @Entity
 public class Profile {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, unique = true)
     private Integer id;
+
+    @Column(nullable = false)
+    private String numid;
 
     @Column(nullable = false)
     private String nombre;
@@ -34,6 +36,13 @@ public class Profile {
     @Column(nullable = false)
     private String email;
 
+    public String getNumid() {
+        return numid;
+    }
+
+    public void setNumid(String numid) {
+        this.numid = numid;
+    }
 
     public Integer getId() {
         return id;
@@ -51,6 +60,14 @@ public class Profile {
         this.nombre = nombre;
     }
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
     public String getTipodedocumento() {
         return tipodedocumento;
     }
@@ -58,7 +75,6 @@ public class Profile {
     public void setTipodedocumento(String tipodedocumento) {
         this.tipodedocumento = tipodedocumento;
     }
-
 
     public String getTipo() {
         return tipo;

@@ -1,10 +1,9 @@
 $(document).ready(() => {
 
-
     //metodo de guardar datos
     const save = () => {
             $('#btn_Conf').on('click', function() {
-                console.log('me diste')
+                // console.log('me diste')
                 const datosPos = {
                     sub_total: $('.itemCartSubTotal').val(),
                     iva: $('.itemCartIva').val(),
@@ -41,7 +40,6 @@ $(document).ready(() => {
                     type: 'DELETE',
                     dataType: 'json',
                     success: (data) => {
-
                         const alert = document.querySelector('.alert')
                         setTimeout(function() {
                             alert.classList.add('hide')
