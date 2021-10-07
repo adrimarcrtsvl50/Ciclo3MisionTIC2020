@@ -9,13 +9,16 @@ $(document).ready(() => {
                 const data = res
                 pintarProductos(data)
                 detectarBotones(data)
+
             },
             error: function(e) {
                 console.log("ERROR : ", e);
             }
         });
     }
+
     list();
+
 })
 
 const fottertotal = document.querySelector('#tbodyfooter')
@@ -50,6 +53,7 @@ const pintarProductos = (data) => {
     contenedorProductos.appendChild(fragment)
 }
 
+
 const detectarBotones = (data) => {
     const botones = document.querySelectorAll('.card button')
     botones.forEach(btn => {
@@ -75,7 +79,8 @@ const detectarBotones = (data) => {
                 alert.classList.remove('hide')
                 pintarCarrito()
                 renderCarritocard()
-                    //console.log(producto)
+
+                //console.log(producto)
             }
         })
     })
@@ -115,10 +120,14 @@ function renderCarritocard() {
         const Content = `
         <a class="idprod">${item.id} </a> <a class="nombrepro">${item.marca} </a> <span class="price ">${item.precio}</span> <span class="price ml-4">can: ${item.cantidad}</span>
                 `
+
         p.innerHTML = Content;
         tbody1.append(p)
+
     })
     CarritoTotal()
+
+
 
 }
 
@@ -166,9 +175,7 @@ const CarritoTotal = () => {
     const nIva = Object.values(carrito).reduce((acc, {}) => acc + nTotalDias * 0.19, 0)
     const nTotal = Object.values(carrito).reduce((acc, {}) => acc + (multaTotal + nIva + nTotalDias), 0)
     template.querySelector('.itemCartIva').textContent = `$${nIva}`
-    console.log(nSubtotal, nTotalDias, multa, nIva, nTotal)
     template.querySelector('.itemCartTotal').textContent = `$${nTotal}`
-
     template.querySelector('.itemCartSubTotal').textContent = `$${nSubtotal}`
     template.querySelector('.itemCartDias').textContent = `${diff}`
     template.querySelector('.itemCartTotalDias').textContent = `$${nTotalDias}`
@@ -177,6 +184,11 @@ const CarritoTotal = () => {
     fragment.appendChild(clone)
 
     fottertotal.appendChild(fragment)
+    pos(nSubtotal, multaTotal, nIva, nTotal)
+
+    bill()
+    rents1(diff)
+
 }
 
 const accionBotones = () => {
@@ -224,5 +236,216 @@ const accionBotones = () => {
             pintarCarrito()
             renderCarritocard()
         })
+    })
+}
+
+
+//metodo de guardar datos pos
+const pos = (nSubtotal, multaTotal, nIva, nTotal) => {
+        //console.log("pos", "me diste")
+        const subtotal = nSubtotal
+        const iva = nIva
+        const multas = multaTotal
+        const total = nTotal
+            //console.log(subtotal, iva, multas, total)
+        $('#btn_Conf').on('click', function() {
+            fetch('http://localhost:8080/pos', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        multa: multas,
+                        iva: iva,
+                        total: total,
+                        subTotal: subtotal,
+                    }),
+                    headers: {
+                        "content-type": "application/json"
+                    }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log("pos", data)
+                    const producto = data;
+                    const posID = producto.id
+                    console.log("posID", posID);
+                    rents2(posID)
+                })
+
+            const alert = document.querySelector('.alert')
+            setTimeout(function() {
+                alert.classList.add('hide')
+            }, 2000)
+            alert.classList.remove('hide')
+        })
+
+
+
+    }
+    //metodo de guardar datos bill
+const bill = () => {
+    //console.log("bill", "me diste")
+    $('#btn_Conf').on('click', function() {
+        // console.log('me diste')
+
+        const ciudad = $('#city').val()
+        const departamento = $('#state').val()
+        const direccion = $('#adr').val()
+        const email = $('#email').val()
+        const nombre = $('#fname').val()
+        const telefono = $('#telephone').val()
+
+        //console.log(ciudad, departamento, direccion, email, nombre, telefono)
+        fetch('http://localhost:8080/bill', {
+                method: 'POST',
+                body: JSON.stringify({
+                    ciudad: ciudad,
+                    departamento: departamento,
+                    direccion: direccion,
+                    email: email,
+                    nombre: nombre,
+                    telefono: telefono
+                }),
+                headers: {
+                    "content-type": "application/json"
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log("bill", data);
+                const producto = data;
+                const billID = producto.id
+                console.log("billID", billID);
+                Card(billID);
+            })
+
+
+
+        resertbill();
+        const alert = document.querySelector('.alert')
+        setTimeout(function() {
+            alert.classList.add('hide')
+        }, 2000)
+        alert.classList.remove('hide')
+
+    })
+
+}
+
+//metodo para limpiar el formulario
+const resertbill = () => {
+    $('#city').val('');
+    $('#state').val('');
+    $('#adr').val('');
+    $('#email').val('');
+    $('#fname').val('');
+    $('#telephone').val('');
+}
+
+
+//metodo de guardar datos
+const Card = (billID) => {
+    // console.log("card", "me diste")
+    //console.log(billID)
+    const cvv = $('#cvv').val()
+    const nombrecard = $('#cname').val()
+    const numero = $('#ccnum').val()
+    const vencimiento = $('#expmonth').val()
+    const id_bill = billID
+        // console.log("card1", cvv, nombrecard, numero, vencimiento, id_bill)
+
+    fetch('http://localhost:8080/cards', {
+            method: 'POST',
+            body: JSON.stringify({
+                cvv: cvv,
+                nombre: nombrecard,
+                numero: numero,
+                vencimiento: vencimiento,
+                fk_id_billingAddress: { "id": id_bill }
+            }),
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log("card2", data);
+            const producto = data;
+            const cardID = producto.id
+            console.log("cardID", cardID);
+
+        })
+    resertCard()
+    const alert = document.querySelector('.alert')
+    setTimeout(function() {
+        alert.classList.add('hide')
+    }, 2000)
+    alert.classList.remove('hide')
+
+}
+
+const resertCard = () => {
+    $('#cvv').val('');
+    $('#cname').val('');
+    $('#ccnum').val('');
+    $('#expmonth').val('');
+}
+
+const rents1 = (diff) => {
+    const diasdifer = diff
+    console.log("dias diferentes", diasdifer)
+    rents3(diasdifer)
+
+}
+let poslis = []
+const rents2 = (posID) => {
+    const posid = posID
+    console.log("pos rents", posid)
+    poslis.push({ id: posid })
+    console.log("idpos", poslis[0].id)
+    console.log(poslis)
+
+}
+
+const rents3 = (diasdifer) => {
+
+    Object.values(carrito).forEach(item => {
+        const bikeid = item.id
+        const diadf = diasdifer
+        const postid = (poslis[0].id)
+        console.log("rents", bikeid, diadf, postid)
+        rents(bikeid, diadf, postid)
+    })
+
+}
+
+//metodo de guardar datos rent
+const rents = (psid, diadf, bikid) => {
+    console.log("rent", "me dste")
+    const fechaInicial = document.getElementById('FechaI').value
+    const fechaFinal = document.getElementById('FechaFin').value
+    const fechaEntrega = document.getElementById('FechaFin').value
+    const duracionEstimada = 3
+    const duracionReal = diadf
+        //console.log("rents", fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, duracionReal)
+
+    $('#btn_Conf').on('click', function() {
+        fetch('http://localhost:8080/rents', {
+                method: 'POST',
+                body: JSON.stringify({
+                    fechaInicial: fechaInicial,
+                    fechaFinal: fechaFinal,
+                    fechaEntrega: fechaEntrega,
+                    duracionEstimada: duracionEstimada,
+                    duracionReal: duracionReal,
+                    fk_id_bike: { "id": bikid },
+                    fk_id_profile: { "id": 2 },
+                    fk_id_pos: { "id": psid }
+
+                }),
+                headers: {
+                    "content-type": "application/json"
+                }
+            })
+            .then(res => res.json())
+            .then(data => console.log("rent", data))
     })
 }

@@ -124,7 +124,7 @@ const save = () => {
     const nombre = document.getElementById('name').value
     const tipo = document.getElementById('tipous').value
     const tipodedocumento = document.getElementById('tipodoc').value
-    console.log(id, apellido, contrasena, email, nombre, tipo, tipodedocumento)
+        //console.log(id, apellido, contrasena, email, nombre, tipo, tipodedocumento)
     fetch('http://localhost:8080/profiles', {
             method: 'POST',
             body: JSON.stringify({
@@ -142,20 +142,6 @@ const save = () => {
         })
         .then(res => res.json())
         .then(data => console.log(data))
-        /*
-    $.ajax({
-        url: 'http://localhost:8080/profiles',
-        contentType: 'application/json',
-        type: 'POST',
-        data: JSON.stringify({
-            id: id,
-            apellido: apellido,
-            contrasena: contrasena,
-            email: email,
-            nombre: nombre,
-            tipo: tipo,
-            tipodedocumento: tipodedocumento
-        }),
-        dataType: 'json',
-*/
+
+
 }
