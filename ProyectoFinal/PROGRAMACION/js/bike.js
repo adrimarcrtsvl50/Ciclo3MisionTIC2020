@@ -396,26 +396,26 @@ const resertCard = () => {
 
 
 
-function rents1(diff) {
+const rents1 = (diff) => {
     const newItem = {
             dias: diff
         }
         //console.log("items", newItem)
     addItem(newItem)
-
+    rents3()
 
 }
 
-function rents2(posID) {
+const rents2 = (posID) => {
     const newItem = {
             posid: posID
         }
         //console.log("items", newItem)
     addItem(newItem)
-
+    rents3()
 }
 
-function addItem(newItem) {
+const addItem = (newItem) => {
     poslis.push(newItem)
         //console.log("new", poslis)
     rents3()
@@ -449,6 +449,7 @@ const rents = (postid, diadf, bikeid) => {
 
     $('#btn_Conf').on('click', function() {
 
+        console.log("rent1", "me dste")
         fetch('http://localhost:8080/rents', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -458,7 +459,7 @@ const rents = (postid, diadf, bikeid) => {
                     duracionEstimada: duracionEstimada,
                     duracionReal: duracionReal,
                     fk_id_bike: { "id": biki },
-                    fk_id_profile: { "id": 2 },
+                    fk_id_profile: { "id": 1 },
                     fk_id_pos: { "id": idpos }
 
                 }),
