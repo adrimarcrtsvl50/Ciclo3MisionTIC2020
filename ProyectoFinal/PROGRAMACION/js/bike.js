@@ -163,6 +163,7 @@ const CarritoTotal = () => {
 
     const multa = nTotalDias
 
+
     if (diff >= 4) {
         multaTotal = multa * 0.10;
         template.querySelector('.itemCartMulta').textContent = `$${multaTotal}`
@@ -170,10 +171,12 @@ const CarritoTotal = () => {
         if (diff <= 3) {
             multaTotal = 0
             template.querySelector('.itemCartMulta').textContent = `$${multaTotal}`
+
         }
     }
     const nIva = Object.values(carrito).reduce((acc, {}) => acc + nTotalDias * 0.19, 0)
     const nTotal = Object.values(carrito).reduce((acc, {}) => acc + (multaTotal + nIva + nTotalDias), 0)
+
     template.querySelector('.itemCartIva').textContent = `$${nIva}`
     template.querySelector('.itemCartTotal').textContent = `$${nTotal}`
     template.querySelector('.itemCartSubTotal').textContent = `$${nSubtotal}`
@@ -239,6 +242,7 @@ const accionBotones = () => {
     })
 }
 
+let poslis = []
 
 //metodo de guardar datos pos
 const pos = (nSubtotal, multaTotal, nIva, nTotal) => {
@@ -266,8 +270,9 @@ const pos = (nSubtotal, multaTotal, nIva, nTotal) => {
                     console.log("pos", data)
                     const producto = data;
                     const posID = producto.id
-                    console.log("posID", posID);
+                        //console.log("posID", posID);
                     rents2(posID)
+                        //console.log("idpos", poslis[0])
                 })
 
             const alert = document.querySelector('.alert')
@@ -313,7 +318,7 @@ const bill = () => {
                 console.log("bill", data);
                 const producto = data;
                 const billID = producto.id
-                console.log("billID", billID);
+                    //console.log("billID", billID);
                 Card(billID);
             })
 
@@ -370,7 +375,7 @@ const Card = (billID) => {
             console.log("card2", data);
             const producto = data;
             const cardID = producto.id
-            console.log("cardID", cardID);
+                //console.log("cardID", cardID);
 
         })
     resertCard()
@@ -389,45 +394,61 @@ const resertCard = () => {
     $('#expmonth').val('');
 }
 
-const rents1 = (diff) => {
-    const diasdifer = diff
-    console.log("dias diferentes", diasdifer)
-    rents3(diasdifer)
 
-}
-let poslis = []
-const rents2 = (posID) => {
-    const posid = posID
-    console.log("pos rents", posid)
-    poslis.push({ id: posid })
-    console.log("idpos", poslis[0].id)
-    console.log(poslis)
+
+function rents1(diff) {
+    const newItem = {
+            dias: diff
+        }
+        //console.log("items", newItem)
+    addItem(newItem)
+
 
 }
 
-const rents3 = (diasdifer) => {
+function rents2(posID) {
+    const newItem = {
+            posid: posID
+        }
+        //console.log("items", newItem)
+    addItem(newItem)
+
+}
+
+function addItem(newItem) {
+    poslis.push(newItem)
+        //console.log("new", poslis)
+    rents3()
+}
+
+
+
+const rents3 = () => {
 
     Object.values(carrito).forEach(item => {
         const bikeid = item.id
-        const diadf = diasdifer
-        const postid = (poslis[0].id)
-        console.log("rents", bikeid, diadf, postid)
-        rents(bikeid, diadf, postid)
+        const diadf = poslis[0].dias
+        const postid = poslis[1].posid
+        rents(postid, diadf, bikeid)
     })
 
 }
 
 //metodo de guardar datos rent
-const rents = (psid, diadf, bikid) => {
+const rents = (postid, diadf, bikeid) => {
     console.log("rent", "me dste")
     const fechaInicial = document.getElementById('FechaI').value
     const fechaFinal = document.getElementById('FechaFin').value
     const fechaEntrega = document.getElementById('FechaFin').value
     const duracionEstimada = 3
     const duracionReal = diadf
-        //console.log("rents", fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, duracionReal)
+    const biki = bikeid
+    const idpos = postid
+
+    console.log("rents", fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, duracionReal, biki, idpos)
 
     $('#btn_Conf').on('click', function() {
+
         fetch('http://localhost:8080/rents', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -436,9 +457,9 @@ const rents = (psid, diadf, bikid) => {
                     fechaEntrega: fechaEntrega,
                     duracionEstimada: duracionEstimada,
                     duracionReal: duracionReal,
-                    fk_id_bike: { "id": bikid },
+                    fk_id_bike: { "id": biki },
                     fk_id_profile: { "id": 2 },
-                    fk_id_pos: { "id": psid }
+                    fk_id_pos: { "id": idpos }
 
                 }),
                 headers: {
