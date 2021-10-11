@@ -120,16 +120,13 @@ function renderCarritocard() {
         const Content = `
         <a class="idprod">${item.id} </a> <a class="nombrepro">${item.marca} </a> <span class="price ">${item.precio}</span> <span class="price ml-4">can: ${item.cantidad}</span>
                 `
-
         p.innerHTML = Content;
         tbody1.append(p)
 
     })
     CarritoTotal()
-
-
-
 }
+
 
 const fechasonIguales = () => {
     var fechaInicio = $("#FechaI").val().split("-");
@@ -154,7 +151,7 @@ const CarritoTotal = () => {
     var fechadesde = new Date(fechaInicio[0], fechaInicio[1] - 1, fechaInicio[2]);
     var fechahasta = new Date(fechaFin[0], fechaFin[1] - 1, fechaFin[2]);
     var dias = fechahasta.getTime() - fechadesde.getTime();
-    var diff = dias / (1000 * 3600 * 24);
+    const diff = Object.values(carrito).reduce((acc, {}) => acc + dias / (1000 * 3600 * 24), 0)
 
     const template = document.querySelector('#template-footer').content
     const fragment = document.createDocumentFragment()
@@ -188,9 +185,10 @@ const CarritoTotal = () => {
 
     fottertotal.appendChild(fragment)
     pos(nSubtotal, multaTotal, nIva, nTotal)
-
     bill()
     rents1(diff)
+
+
 
 }
 
@@ -243,6 +241,7 @@ const accionBotones = () => {
 }
 
 let poslis = []
+let diaslis = []
 
 //metodo de guardar datos pos
 const pos = (nSubtotal, multaTotal, nIva, nTotal) => {
@@ -272,7 +271,8 @@ const pos = (nSubtotal, multaTotal, nIva, nTotal) => {
                     const posID = producto.id
                         //console.log("posID", posID);
                     rents2(posID)
-                        //console.log("idpos", poslis[0])
+
+                    //console.log("idpos", poslis[0])
                 })
 
             const alert = document.querySelector('.alert')
@@ -320,10 +320,8 @@ const bill = () => {
                 const billID = producto.id
                     //console.log("billID", billID);
                 Card(billID);
+
             })
-
-
-
         resertbill();
         const alert = document.querySelector('.alert')
         setTimeout(function() {
@@ -344,7 +342,6 @@ const resertbill = () => {
     $('#fname').val('');
     $('#telephone').val('');
 }
-
 
 //metodo de guardar datos
 const Card = (billID) => {
@@ -375,10 +372,13 @@ const Card = (billID) => {
             console.log("card2", data);
             const producto = data;
             const cardID = producto.id
+            rents3()
                 //console.log("cardID", cardID);
 
         })
+
     resertCard()
+
     const alert = document.querySelector('.alert')
     setTimeout(function() {
         alert.classList.add('hide')
@@ -395,79 +395,103 @@ const resertCard = () => {
 }
 
 
-
+//adicinar el diff 
 const rents1 = (diff) => {
-    const newItem = {
-            dias: diff
-        }
-        //console.log("items", newItem)
-    addItem(newItem)
-    rents3()
+        const newItem = diff
+            //console.log("items", newItem)
+        addItem(newItem)
 
-}
-
+    }
+    //adicinar el pos id
 const rents2 = (posID) => {
-    const newItem = {
-            posid: posID
-        }
-        //console.log("items", newItem)
-    addItem(newItem)
-    rents3()
-}
+        const newItem = posID
+            //console.log("items", newItem)
+        addItem1(newItem)
 
+    }
+    //guardar en la lista
 const addItem = (newItem) => {
-    poslis.push(newItem)
-        //console.log("new", poslis)
-    rents3()
+    diaslis.push(newItem)
+    console.log("newdias", diaslis)
+
 }
+const addItem1 = (newItem) => {
+    poslis.push(newItem)
+    console.log("newpos", poslis)
 
-
+}
 
 const rents3 = () => {
-
     Object.values(carrito).forEach(item => {
         const bikeid = item.id
-        const diadf = poslis[0].dias
-        const postid = poslis[1].posid
-        rents(postid, diadf, bikeid)
+        let diadf = diaslis[0]
+        let postid = poslis[0]
+        const fechaInicial = document.getElementById('FechaI').value
+        const fechaFinal = document.getElementById('FechaFin').value
+        const fechaEntrega = document.getElementById('FechaFin').value
+        const duracionEstimada = 3
+            //console.log("resumen", fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, diadf, bikeid, postid)
+        rents(fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, diadf, bikeid, postid)
     })
+}
+const rents = (fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, diadf, bikeid, postid) => {
+    // console.log("me entre renta")
+    const Inicial = fechaInicial
+    const Final = fechaFinal
+    const Entrega = fechaEntrega
+    const duracion = duracionEstimada
+    const dias = diadf
+    const bike = bikeid
+    const post = postid
+
+    fetch('http://localhost:8080/rents', {
+            method: 'POST',
+            body: JSON.stringify({
+                fechaInicial: Inicial,
+                fechaFinal: Final,
+                fechaEntrega: Entrega,
+                duracionEstimada: duracion,
+                duracionReal: dias,
+                fk_id_bike: { "id": bike },
+                fk_id_profile: { "id": 1 },
+                fk_id_pos: { "id": post }
+
+            }),
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log("rents", data);
+            resertRent()
+            eliminarcard()
+
+
+        })
+    const alert = document.querySelector('.alert')
+    setTimeout(function() {
+        alert.classList.add('hide')
+    }, 2000)
+    alert.classList.remove('hide')
 
 }
 
-//metodo de guardar datos rent
-const rents = (postid, diadf, bikeid) => {
-    console.log("rent", "me dste")
-    const fechaInicial = document.getElementById('FechaI').value
-    const fechaFinal = document.getElementById('FechaFin').value
-    const fechaEntrega = document.getElementById('FechaFin').value
-    const duracionEstimada = 3
-    const duracionReal = diadf
-    const biki = bikeid
-    const idpos = postid
+const resertRent = () => {
+    $('#FechaI').val('');
+    $('#FechaFin').val('');
+}
 
-    console.log("rents", fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, duracionReal, biki, idpos)
+const eliminarcard = () => {
+    diaslis.splice(0);
+    poslis.splice(0);
+    console.log("fueron eliminados", diaslis, poslis)
+    carrito = {}
+        // Limpiamos los productos guardado
+        //};
+        // Renderizamos los cambios
+    pintarCarrito()
+    renderCarritocard()
+    CarritoTotal()
 
-    $('#btn_Conf').on('click', function() {
-
-        console.log("rent1", "me dste")
-        fetch('http://localhost:8080/rents', {
-                method: 'POST',
-                body: JSON.stringify({
-                    fechaInicial: fechaInicial,
-                    fechaFinal: fechaFinal,
-                    fechaEntrega: fechaEntrega,
-                    duracionEstimada: duracionEstimada,
-                    duracionReal: duracionReal,
-                    fk_id_bike: { "id": biki },
-                    fk_id_profile: { "id": 1 },
-                    fk_id_pos: { "id": idpos }
-
-                }),
-                headers: {
-                    "content-type": "application/json"
-                }
-            })
-            .then(res => res.json())
-            .then(data => console.log("rent", data))
-    })
 }
