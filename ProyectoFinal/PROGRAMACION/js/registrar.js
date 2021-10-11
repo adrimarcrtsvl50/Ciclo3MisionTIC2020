@@ -90,9 +90,10 @@ inputs.forEach((input) => {
 });
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
-    save()
+
     const terminos = document.getElementById('terminos');
     if (campos.nombre && campos.apellido && campos.password && campos.email && campos.id && terminos.checked) {
+        save()
         formulario.reset();
 
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
@@ -103,6 +104,7 @@ formulario.addEventListener('submit', (e) => {
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');
         });
+
     } else {
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         setTimeout(() => {
@@ -116,29 +118,45 @@ formulario.addEventListener('submit', (e) => {
 //metodo de guardar datos
 const save = () => {
     console.log("me diste")
-
-
     const id = document.getElementById('numid').value
-
-    console.log(id)
+    const apellido = document.getElementById('appellido').value
+    const contrasena = document.getElementById('password').value
+    const email = document.getElementById('email').value
+    const nombre = document.getElementById('name').value
+    const tipo = document.getElementById('tipous').value
+    const tipodedocumento = document.getElementById('tipodoc').value
+    console.log(id, apellido, contrasena, email, nombre, tipo, tipodedocumento)
+    fetch('http://localhost:8080/profiles', {
+            method: 'POST',
+            body: JSON.stringify({
+                id: id,
+                apellido: apellido,
+                contrasena: contrasena,
+                email: email,
+                nombre: nombre,
+                tipo: tipo,
+                tipodedocumento: tipodedocumento
+            }),
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
         /*
-    apellido: $('#appellido').val(),
-        contrasena: $('#password').val(),
-        email: $('#email').val(),
-        nombre: $('#name').val(),
-        tipo: $('#tipous').val(),
-        tipodedocumento: $('#tipodoc').val(),
-
-
     $.ajax({
         url: 'http://localhost:8080/profiles',
         contentType: 'application/json',
         type: 'POST',
         data: JSON.stringify({
-            id: id
+            id: id,
+            apellido: apellido,
+            contrasena: contrasena,
+            email: email,
+            nombre: nombre,
+            tipo: tipo,
+            tipodedocumento: tipodedocumento
         }),
         dataType: 'json',
-
-    })
 */
 }

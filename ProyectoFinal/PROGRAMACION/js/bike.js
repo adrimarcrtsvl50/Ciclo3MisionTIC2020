@@ -187,6 +187,7 @@ const CarritoTotal = () => {
     fragment.appendChild(clone)
 
     fottertotal.appendChild(fragment)
+    save()
 }
 
 const accionBotones = () => {
@@ -235,4 +236,44 @@ const accionBotones = () => {
             renderCarritocard()
         })
     })
+}
+
+//metodo de guardar datos
+const save = () => {
+    console.log("me diste")
+    const sub_total = document.getElementById('subtotal').value
+    const iva = document.getElementById('iva').value
+    const multa = document.getElementById('multa').value
+    const total = document.getElementById('total').value
+    console.log(sub_total, iva, multa, total)
+    fetch('http://localhost:8080/pos', {
+            method: 'POST',
+            body: JSON.stringify({
+                sub_total: sub_total,
+                iva: iva,
+                multa: multa,
+                total: total,
+            }),
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        /*
+    $.ajax({
+        url: 'http://localhost:8080/profiles',
+        contentType: 'application/json',
+        type: 'POST',
+        data: JSON.stringify({
+            id: id,
+            apellido: apellido,
+            contrasena: contrasena,
+            email: email,
+            nombre: nombre,
+            tipo: tipo,
+            tipodedocumento: tipodedocumento
+        }),
+        dataType: 'json',
+*/
 }
