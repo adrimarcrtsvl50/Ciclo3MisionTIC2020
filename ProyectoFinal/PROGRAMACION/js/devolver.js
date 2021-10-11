@@ -11,3 +11,33 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
+$(document).ready(() => {
+    const list = () => {
+        $(document).on('click', '#btn_cons_dev', function() {
+
+            let detalle = document.getElementById('serial_dev');
+            let id = $(detalle).val();
+            $.ajax({
+                url: 'http://localhost:8080/bikes/' + id,
+                type: 'GET',
+                dataType: 'json',
+                success: function(res) {
+                    const data = res
+                    console.log(data)
+                    devoluciones(data)
+
+                },
+                error: function(e) {
+                    console.log("ERROR : ", e);
+                }
+            });
+        })
+    }
+
+    list();
+})
+
+const devoluciones = (data) => {
+
+}

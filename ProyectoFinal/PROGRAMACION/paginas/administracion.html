@@ -218,20 +218,22 @@
                             <p>Diligencie los campos a continuacion:</p>
                             <label> Serial
                             <br>
-                            <input name="serial" action="" autocomplete="off"
+                            <input id="serial_dev" name="serial" action="" autocomplete="off"
                                    required="required">
                         </label>
-                            <button id="boton1" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar
+                            <button id="btn_cons_dev" class="btns" name="consultar" value="True" autofocus="autofocus" type="submit">Consultar
                             </button>
                             <br>
+
                             <br>
                             <label> Estado
-                            <br>
-                            <select class="select-css" name="estado">
-                                <option value="devuelto">Devuelto</option>
-                                <option value="nodevuelto">No devuelto</option>
-                            </select>
-                        </label>
+                                <br>
+                                <select id="estado_dev" class="select-css1" name="estado"  required="required">                
+                                    <option value="disponible">Disponible</option>
+                                    <option value="prestamo">Prestamo</option>
+                                    <option value="mantenimiento">Mantenimiento</option>
+                                </select>
+                            </label>
                             <br>
                             <br>
                             <div style="text-align: center;">

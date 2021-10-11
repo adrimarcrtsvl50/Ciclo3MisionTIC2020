@@ -48,54 +48,35 @@
           }
           //eliminar una lista de la bicicletas
       const deleteBikes = () => {
-              $(document).on('click', '#btn_Elim', function() {
+          $(document).on('click', '#btn_Elim', function() {
 
-                  let detalle = document.getElementById('serial');
-                  let id = $(detalle).val();
-                  console.log(id)
-                  $.ajax({
-                      url: 'http://localhost:8080/bikes/' + id,
-                      contentType: 'application/json',
-                      type: 'DELETE',
-                      dataType: 'json',
-                      success: (data) => {
+              let detalle = document.getElementById('serial');
+              let id = $(detalle).val();
+              console.log(id)
+              fetch('http://localhost:8080/bikes/' + id, {
+                      method: 'DELETE',
+                      body: JSON.stringify({
 
-                          const alert = document.querySelector('.alert')
-                          setTimeout(function() {
-                              alert.classList.add('hide')
-                          }, 2000)
-                          alert.classList.remove('hide')
-                          resert1();
+                      }),
+                      headers: {
+                          "content-type": "application/json"
                       }
+                  })
+                  .then(res => res.json())
+                  .then(data => {
+                      console.log("delete", data)
+                  })
+              resert1()
+              const alert = document.querySelector('.alert')
+              setTimeout(function() {
+                  alert.classList.add('remove')
+              }, 2000)
+              alert.classList.remove('remove')
 
-                  });
+          })
+      }
 
-              })
-
-          }
-          //metodo de modificar los datos 
-      const modificarBike = () => {
-              $(document).on('click', '#btn_cons', function() {
-
-                  let detalle = document.getElementById('serialm');
-                  let id = $(detalle).val();
-                  console.log(id)
-                  $.ajax({
-                      url: 'http://localhost:8080/bikes/' + id,
-                      type: 'GET',
-                      dataType: 'json',
-                      success: function(res) {
-                          const data = res
-                          mostrarProductos(data)
-
-
-                      }
-
-                  });
-
-              })
-          }
-          //metodo para limpiar el formulario
+      //metodo para limpiar el formulario
       const resert = () => {
           $('#color').val('');
           $('#edad1').val('');
@@ -110,32 +91,12 @@
 
       const resert1 = () => {
           $('#serial').val('');
-
       }
 
 
       //llamadas a funciones
       save();
       deleteBikes();
-      modificarBike();
+
 
   })
-  const items = document.querySelector('#tbody_modi')
-  const mostrarProductos = (data) => {
-      console.log("mostrar", data)
-      items.innerHTML = ''
-      const template = document.querySelector('#template_modificar').content
-      const fragment = document.createDocumentFragment()
-      Object.values(data).forEach(producto => {
-          //console.log("dentro", producto)
-          template.querySelector('.marca_mod').textContent = producto.marca
-
-          const clone = template.cloneNode(true)
-              //console.log(clone)
-          fragment.appendChild(clone)
-              //console.log(fragment)
-
-      })
-      items.appendChild(fragment)
-      console.log(items)
-  }
