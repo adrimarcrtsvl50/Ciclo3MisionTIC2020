@@ -487,9 +487,6 @@ const eliminarcard = () => {
     poslis.splice(0);
     console.log("fueron eliminados", diaslis, poslis)
     carrito = {}
-        // Limpiamos los productos guardado
-        //};
-        // Renderizamos los cambios
     pintarCarrito()
     renderCarritocard()
     CarritoTotal()
