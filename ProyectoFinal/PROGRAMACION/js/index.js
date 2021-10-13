@@ -94,19 +94,12 @@ const save = () => {
             }
 
         );
-
-
-
 }
 var baraja = [];
 const comparardatosgenerales = (datos) => {
-    baraja.push(datos);
-    console.log(baraja)
-    var existe = false;
-    for (i = 0; i < baraja.length; i++) {
-        console.log(i)
-        existe = true;
-
+    for (i = 0; i < datos.length; i++){
+        console.log(Object.values(datos)[i].email);
+        console.log(Object.values(datos)[i].contrasena);
+        console.log(Object.values(datos)[i].tipo);
     }
-    return existe;
 }
