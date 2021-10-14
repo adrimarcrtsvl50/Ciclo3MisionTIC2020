@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="../css/diseño_inci_reg.css">
+    <script src="https://kit.fontawesome.com/3f79f6487f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form class="formulario" id="formulario">
+
+        <div class="contenedor">
+            <div class="container2">
+                <a href="/clientes.html"><img src="../pictures/letra-x.png"></a>
+            </div>
+            <h1>Iniciar Sesion</h1>
+            <form action="javascript:void(0)" id="formInciar" method="POST">
+                <div class="container">
+                    <div class="formulario__grupo" id="grupo__email">
+                        <i class="fas fa-envelope"></i>
+                        <label class="formulario__label" for="email"><b>Correo</b></label>
+                        <div class="formulario__grupo-input">
+                            <input class="formulario__input" id="email" type="email" placeholder="Introduzca su Correo" name="email" required>
+                            <i class="formulario__validacion-estado formulario__validacion-estado-email fas fa-times-circle"></i>
+                            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                        </div>
+                    </div>
+                    <br>
+
+                    <br>
+                    <div class="formulario__grupo" id="grupo__password">
+                        <i class="fas fa-key"></i>
+                        <label class="formulario__label" for="psw"><b>Contraseña</b></label>
+                        <div class="formulario__grupo-input">
+                            <input class="formulario__input" id="password" type="password" placeholder="Introduzca su contraseña" name="password" required>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            <p class="formulario__input-error">la contraseña tiene que ser de 4 a 12 digitos</p>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                    </div>
+                    <div class="formulario__grupo formulario__grupo-btn-enviar">
+                        <button type="submit" id="btn_reg" class="button_for">Iniciar sesion</button>
+                        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </form>
+</body>
+<script defer src="../js/index.js"></script>
+
+</html>
