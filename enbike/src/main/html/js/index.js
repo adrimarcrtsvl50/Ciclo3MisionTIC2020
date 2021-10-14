@@ -96,13 +96,13 @@ const save = () => {
 const comparardatosgenerales = (datos, contrasena, email) => {
     for (i = 0; i < datos.length; i++) {
         if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "admin") {
-            window.open("enbike/src/main/html/sites/administracion.html");
+            window.open("../sites/administracion.html");
         } else {
             if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "client") {
-                window.open("enbike/src/main/html/sites/clientes.html");
+                window.open("../sites/clientes.html");
             } else {
                 if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "ninguno") {
-                    window.open("enbike/src/main/html/sites/index.html");
+                    window.open("../sites/index.html");
                 }
             }
         }
