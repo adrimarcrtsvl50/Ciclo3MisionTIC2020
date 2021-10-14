@@ -100,8 +100,8 @@ const pintarCarrito = () => {
         template.querySelector('.table_cantidad').textContent = producto.cantidad
 
         //botones 
-        template.querySelector('.sumar').dataset.id = producto.id
-        template.querySelector('.disminuir').dataset.id = producto.id
+        //template.querySelector('.sumar').dataset.id = producto.id
+        //  template.querySelector('.disminuir').dataset.id = producto.id
         template.querySelector('.delete').dataset.id = producto.id
 
         const clone = template.cloneNode(true)
@@ -193,11 +193,11 @@ const CarritoTotal = () => {
 }
 
 const accionBotones = () => {
-    const botonesAgregar = document.querySelectorAll('#tbody .sumar')
-    const botonesDisminuir = document.querySelectorAll('#tbody .disminuir')
+    //const botonesAgregar = document.querySelectorAll('#tbody .sumar')
+    // const botonesDisminuir = document.querySelectorAll('#tbody .disminuir')
     const botonesEliminar = document.querySelectorAll('#tbody .delete')
 
-    botonesAgregar.forEach(btn => {
+    /*botonesAgregar.forEach(btn => {
         btn.addEventListener('click', () => {
             const producto = carrito[btn.dataset.id]
             producto.cantidad++
@@ -225,7 +225,7 @@ const accionBotones = () => {
             pintarCarrito()
             renderCarritocard()
         })
-    })
+    })*/
     botonesEliminar.forEach(btn => {
         btn.addEventListener('click', () => {
             const alert = document.querySelector('.remove')
