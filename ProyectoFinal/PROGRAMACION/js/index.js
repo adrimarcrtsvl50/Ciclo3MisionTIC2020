@@ -100,6 +100,10 @@ const comparardatosgenerales = (datos, contrasena, email) => {
         } else {
             if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "client") {
                 window.open("../paginas/clientes.html");
+            } else {
+                if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "ninguno") {
+                    window.open("../paginas/index.html");
+                }
             }
         }
     }
