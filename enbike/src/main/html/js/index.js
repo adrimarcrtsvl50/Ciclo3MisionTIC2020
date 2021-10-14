@@ -96,13 +96,13 @@ const save = () => {
 const comparardatosgenerales = (datos, contrasena, email) => {
     for (i = 0; i < datos.length; i++) {
         if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "admin") {
-            window.open("../sites/administracion.html");
+            window.location.replace("../sites/administracion.html");
         } else {
             if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "client") {
-                window.open("../sites/clientes.html");
+                window.location.replace("../sites/clientes.html");
             } else {
                 if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "ninguno") {
-                    window.open("../sites/index.html");
+                    window.location.replace("../sites/index.html");
                 }
             }
         }

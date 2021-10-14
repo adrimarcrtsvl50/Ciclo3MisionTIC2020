@@ -465,7 +465,9 @@ const rents = (fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, diadf, 
         .then(data => {
             console.log("rents", data);
             resertRent()
+            cambiarbike()
             eliminarcard()
+            window.location.replace("../sites/clientes.html");
 
 
         })
@@ -490,5 +492,46 @@ const eliminarcard = () => {
     pintarCarrito()
     renderCarritocard()
     CarritoTotal()
+
+}
+
+const cambiarbike = () => {
+
+    Object.values(carrito).forEach(item => {
+        const bikeid = item.id
+        const table_marca = item.marca
+        const table_modelo = item.modelo
+        const table_tipo = item.tipo
+        const table_tamano = item.tamano
+        const table_genero = item.genero
+        const table_color = item.color
+        const table_edad = item.edad
+        const table_precio = item.precio
+        const table_estado = "prestamo"
+        console.log("prestamo bike", bikeid, table_marca, table_modelo, table_tipo, table_tamano, table_genero, table_color, table_edad, table_precio, table_estado)
+        fetch('http://localhost:8080/bikes', {
+                method: 'PUT',
+                body: JSON.stringify({
+                    id: bikeid,
+                    marca: table_marca,
+                    tipo: table_tipo,
+                    tamano: table_tamano,
+                    genero: table_genero,
+                    color: table_color,
+                    estado: table_estado,
+                    modelo: table_modelo,
+                    precio: table_precio,
+                    edad: table_edad
+                }),
+                headers: {
+                    "content-type": "application/json"
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log("cambios", data)
+
+            })
+    })
 
 }
