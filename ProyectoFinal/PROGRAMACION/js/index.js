@@ -73,13 +73,10 @@ formulario.addEventListener('submit', (e) => {
 //metodo de guardar datos
 const save = () => {
     console.log("me diste")
-
     const contrasena = document.getElementById('password').value
     const email = document.getElementById('email').value
 
     console.log(contrasena, email)
-
-
     fetch('http://localhost:8080/profiles', {
             method: 'GET',
             headers: {
@@ -90,16 +87,23 @@ const save = () => {
         .then(data => {
                 console.log(data)
                 const datos = data
-                comparardatosgenerales(datos)
+                comparardatosgenerales(datos, contrasena, email)
             }
 
         );
 }
-var baraja = [];
-const comparardatosgenerales = (datos) => {
-    for (i = 0; i < datos.length; i++){
-        console.log(Object.values(datos)[i].email);
-        console.log(Object.values(datos)[i].contrasena);
-        console.log(Object.values(datos)[i].tipo);
+
+
+const comparardatosgenerales = (datos, contrasena, email) => {
+    for (i = 0; i < datos.length; i++) {
+        if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "admin") {
+            window.open("../paginas/administracion.html");
+        } else {
+            if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "client") {
+                window.open("../paginas/clientes.html");
+            } else {
+                window.open("../paginas/index.html");
+            }
+        }
     }
 }
