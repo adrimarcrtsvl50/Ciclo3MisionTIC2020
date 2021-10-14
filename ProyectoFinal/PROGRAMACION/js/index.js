@@ -93,7 +93,6 @@ const save = () => {
         );
 }
 
-
 const comparardatosgenerales = (datos, contrasena, email) => {
     for (i = 0; i < datos.length; i++) {
         if (Object.values(datos)[i].email === email && Object.values(datos)[i].contrasena === contrasena && Object.values(datos)[i].tipo === "admin") {
