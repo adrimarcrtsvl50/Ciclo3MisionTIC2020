@@ -277,9 +277,9 @@ const pos = (nSubtotal, multaTotal, nIva, nTotal) => {
 
             const alert = document.querySelector('.alert')
             setTimeout(function() {
-                alert.classList.add('hide')
+                alert.classList.add('conf')
             }, 2000)
-            alert.classList.remove('hide')
+            alert.classList.remove('conf')
         })
 
 
@@ -325,9 +325,9 @@ const bill = () => {
         resertbill();
         const alert = document.querySelector('.alert')
         setTimeout(function() {
-            alert.classList.add('hide')
+            alert.classList.add('conf')
         }, 2000)
-        alert.classList.remove('hide')
+        alert.classList.remove('conf')
 
     })
 
@@ -381,9 +381,9 @@ const Card = (billID) => {
 
     const alert = document.querySelector('.alert')
     setTimeout(function() {
-        alert.classList.add('hide')
+        alert.classList.add('conf')
     }, 2000)
-    alert.classList.remove('hide')
+    alert.classList.remove('conf')
 
 }
 
@@ -471,9 +471,9 @@ const rents = (fechaInicial, fechaFinal, fechaEntrega, duracionEstimada, diadf, 
         })
     const alert = document.querySelector('.alert')
     setTimeout(function() {
-        alert.classList.add('hide')
+        alert.classList.add('conf')
     }, 2000)
-    alert.classList.remove('hide')
+    alert.classList.remove('conf')
 
 }
 
